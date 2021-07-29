@@ -1,10 +1,11 @@
 // import './Home.css';
+import ArticlesList from "../Articles/List";
 
 function Home() {
   return (
     <div className="Home">
-        <ArticlesList></ArticlesList>
-        <About></About>
+      <ArticlesList />
+      {/* <About /> */}
     </div>
   );
 }
