@@ -3,14 +3,19 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import Navigation from "./Navigation/index";
 import Home from "./Home";
-// import Footer from './Footer';
+import Article from "./Articles/Article";
+import Footer from "./Footer";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <Navigation />
-    <Home />
-    {/* <Footer/> */}
+    <BrowserRouter>
+      <Route path="/" exact component={Home}></Route>
+      <Route path="/article/:id" component={Article}></Route>
+    </BrowserRouter>
+    <Footer />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -2,31 +2,37 @@ import Article from "./model";
 
 const articles = [
   new Article({
-    title: "Career Investment Score",
+    title: "Technological Drive",
     description:
-      "We are very fortunate to be in the business of software development. This vocation grants us a chance at a potentially lifelong craft, it can even be exciting and stimulating. I think many of us get into software development on the fumes of this kind of excitement, without all that much planning. Later down the track in our careers, we may feel a little aimless. The excitement that we’ve been lead by has become harder to find, it’s now all about management of products and people. If this is the case, then we have likely unknowingly let the outside world determine what career we’re going to have! Why would we give this choice to anyone else? Our career is a serious investment, and if we want to maximise our freedom, creativity and impact, we’re not going to get there without a plan. ",
+      "How did you feel when you first started programming? People I have asked have shared their experience as awe at the potential that opens up and dopamine rush of excitement to discover more.",
     image: {
-      filename: "passion",
+      filename: "microcontrollers",
       extension: "jpg",
-      alt: "Passion Led Us Here",
+      alt: "Arduino and Raspberry Pi Microcontrollers",
     },
     components: [
       {
         type: "paragraph",
         data: {
-          text: "It is important to re-evaluate your career often, otherwise you may find yourself suddenly working on expired technologies or even outsourced. What do you want your career to look like? What do you want to invest yourself into? Only when you have a clear answer to these questions can you really outdo yourself, no matter what the career. In order to determine your own future and do things people think are impossible, you need to have well defined goals that are high and hard. ",
+          text: "I found the possibilities exhilarating, I was playing around with Arduinos and a Raspberry Pi 3B and I the whole world opened up. I wanted to take control of everything around me, to make the heater turn on in the morning, to make a farm that automatically grew produce and to build solar panels to power my microcontrollers and light up my room and power the fan in the summer.",
         },
       },
       {
         type: "paragraph",
         data: {
-          text: "Finding a direction for your career can be very difficult though. What if nobody will pay you to do what you love to do? What if you hate doing what people would pay you big money for? Perhaps you aren’t aware what pathways are available. What we really want is to find the cross section where we are maximally interested in a field or topic, while still catering to the market. ",
+          text: "I wanted to do this every day so I spruced up my resume and applied for developer jobs and was eventually hired at a start up agency called Svelte Studios. On the back of the fumes of this passion I often stayed in the office and would often get home at 11pm at night. Not once though did I really think carefully about what I was doing. I think it is often the case for programmers, without much of a real plan we follow the scent of excitement wherever it takes us and rarely stop to think about what we are aiming for.",
         },
       },
       {
         type: "paragraph",
         data: {
-          text: "To achieve this, I decided I would set out with a simple spread sheet like this:",
+          text: "Last month I discovered a book called The Passionate Programmer by Chad Fowler. In this book Chad asks us to look at are careers like investments into a company. You would never invest your money in a company without really researching first. You might even consider re-evaluating your investment every quarter or so depending on the kind of investment you are making. Inspired by this, I gave my own career pathway some love and care, and in doing so I can aim for higher and harder goals. This act of aiming higher as the Author of The Art of Impossible suggests when implemented correctly enhances your motivation by 11-25%.",
+        },
+      },
+      {
+        type: "paragraph",
+        data: {
+          text: "Finding where to aim your career can be challenging however. What if nobody will pay you to do what you love to do? What if you hate doing what people would pay you big money for? Perhaps you aren’t aware what pathways are available. What we really want is to find the cross section where we are maximally interested in a field or topic, while still catering to the market. To achieve this, I decided I would set out with a simple spread sheet like so:",
         },
       },
       { type: "table", data: {} },

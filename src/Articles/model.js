@@ -5,7 +5,7 @@ class Article {
     this.title = title || "Title Here";
     this.description = description || "Description Here";
     this.components = components || [];
-    this.author = "Author Name";
+    this.author = author || "Author Name";
     this.draft = true;
     this.publishedDate = null;
     this.image = image || null; // Todo: Image Class
