@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function ArticleCard({ article }) {
   const image = article.image;
   return (
-    <div className="ArticleCard bg-white w-6/12">
+    <div className="ArticleCard bg-gray-100 w-6/12">
       <img
         src={`/images/${image.filename}.${image.extension}`}
         alt={image.alt}
