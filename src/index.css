@@ -14,3 +14,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+p {
+  @apply py-2;
+}
+
+a {
+  @apply text-primary-200;
+}
+
+a:hover {
+  @apply border-primary-100;
+}

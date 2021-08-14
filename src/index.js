@@ -4,6 +4,7 @@ import "./index.css";
 import Navigation from "./Navigation/index";
 import Home from "./Home";
 import Article from "./Articles/Article";
+// import NotFound from "./NotFound";
 import Footer from "./Footer";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -14,6 +15,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Route path="/" exact component={Home}></Route>
       <Route path="/article/:id" component={Article}></Route>
+      {/* <Route component={NotFound}></Route> */}
     </BrowserRouter>
     <Footer />
   </React.StrictMode>,
