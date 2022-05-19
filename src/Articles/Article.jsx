@@ -8,27 +8,33 @@ function Article() {
   const image = article.image;
 
   return (
-    <div className="Article container mt-16">
-      <div className="flex">
-        <div className="w-4/12 pr-8">
-          <h1 className="text-2xl">{article.title}</h1>
-          <p className="mt-4">{article.publishedDate}</p>
-          <div>Tags</div>
-          <h2 className="mt-4">By {article.author}</h2>
-        </div>
-        <div className="w-8/12">
-          <img
-            src={`/images/${image.filename}.${image.extension}`}
-            alt={image.alt}
-            className="aspect-ration-16/9"
-          ></img>
+    <div className="Article container mt-8">
+      <div className="relative bg-black">
+        <div
+          className="w-full bg-cover bg-no-repeat bg-bottom"
+          style={{
+            height: "400px",
+            backgroundImage: `linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ), url(/images/${image.filename}.${image.extension})`,
+          }}
+        ></div>
+        <div className="text-white absolute pl-8 pb-8 text-xl bottom-0">
+          {article.title}
         </div>
       </div>
-      <div className="mt-16">
+      <div className="mt-16 w-8/12 text">
         {article.description}
-        {article.components.map((component) => {
+        {article.components.map((component, index) => {
           if (component.type === "markdown") {
-            return <Markdown className="mt-4" data={component.data}></Markdown>;
+            return (
+              <Markdown
+                key={index}
+                className="mt-4"
+                data={component.data}
+              ></Markdown>
+            );
           }
           return "";
         })}

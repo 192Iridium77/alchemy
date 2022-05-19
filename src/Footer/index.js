@@ -7,9 +7,7 @@ function Navigation() {
         <div className="w-6/12 flex">
           <img src="/logo.png" className="nav-logo" alt="logo" />
         </div>
-        <div className="w-6/12 flex justify-end">
-          Built by Matthew Martin, 2021
-        </div>
+        <div className="w-6/12 flex justify-end text-xs">Matthew Martin</div>
       </header>
     </div>
   );

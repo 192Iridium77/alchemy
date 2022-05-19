@@ -6,7 +6,9 @@ function Navigation() {
       <div className="container">
         <header className="flex w-full items-center space-between py-8">
           <div className="w-4/12 flex justify-start">
-            <img src="/logo.png" className="nav-logo" alt="logo" />
+            <a href="/">
+              <img src="/logo.png" className="nav-logo" alt="logo" />
+            </a>
           </div>
           <div className="w-4/12"></div>
           <div className="w-4/12 justify-end flex">
