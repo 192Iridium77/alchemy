@@ -2,6 +2,20 @@ import Article from "./model";
 
 const articles = [
   new Article({
+    title: "Must Reads - Business",
+    description:
+      "At Sine, I have discovered that many of my coworkers love to listen to audio books. I thought it would be exciting if we could share book lists in all sorts of categories like business, leadership and finance.",
+    image: {
+      filename: "library",
+      extension: "jpg",
+      alt: "Library",
+    },
+    components: [],
+    author: "Matthew Martin",
+    draft: true,
+    publishedDate: new Date(),
+  }),
+  new Article({
     title: "Technological Drive",
     description:
       "How did you feel when you first started programming? People I have asked have shared their experience as awe at the potential that opens up and dopamine rush of excitement to discover more.",
