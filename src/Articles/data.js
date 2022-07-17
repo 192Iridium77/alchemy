@@ -2,6 +2,42 @@ import Article from "./model";
 
 const articles = [
   new Article({
+    title: "Should you make your personal projects public?",
+    description:
+      "It’s a little scary not knowing who might be looking through your code or what they might do with it. But really, what could they really do?",
+    image: {
+      filename: "LockAndKeys",
+      extension: "jpg",
+      alt: "LockAndKeys",
+    },
+    components: [
+      {
+        type: "markdown",
+        data: {
+          html: `
+            <p>Hackers could find bugs and exploit your public services. This has happened to google&rsquo;s implementations of Android, but what they also found was that the public was able to alert them of vulnerabilities in the software and being exposed to attackers makes their software more resilient.</p>
+
+            <p>When you make your code public, employers get a glimpse into your skills and interests. They can see how you organise folders, how you solve problems, segregate code and what tools you like to use. This is likely good for you, unless you fear their judgement.</p>
+
+            <p>Companies could steal your prized ideas and code and make millions off of your hard work and creation. So instead of google buying your IP and company for millions, they could just fork your repo and execute your idea with superior man power. Though, GraphQL is open and nobody has 'stolen' it, so why would they steal your code?</p>
+
+            <p>Researchers can use public code repositories to study software developers and to help build AI like github copilot.</p>
+
+            <p>Releasing your code out to the public may have positive impacts for people across the world. People may utilise your code to build up a ground breaking idea, or they may just read it and learn new patterns and ideas that could make them better at coding. They might use it in their businesses to help millions of people.</p>
+
+            <p>Software engineers from anywhere in the world might see your ideas and goals and if they happen to share your interest they may contribute their skills and effort to make it work.</p>
+
+            <p>So, should you make your code public? It is risky, but it seems to be an act of generosity. Generous people attract generous people, but they are vulnerable to exploitation.</p>
+
+            <p>Whether you write public code depends on your confidence, courage and generosity.</p>`,
+        },
+      },
+    ],
+    author: "Matthew Martin",
+    draft: true,
+    publishedDate: new Date(),
+  }),
+  new Article({
     title: "Must Reads - Business",
     description:
       "At Sine, I have discovered that many of my coworkers love to listen to audio books. I thought it would be exciting if we could share book lists in all sorts of categories like business, leadership and finance.",
@@ -56,7 +92,7 @@ const articles = [
   new Article({
     title: "Code confidence with Typescript",
     description:
-      "It can be daunting working with code repositories written by other developers. For example, what do we expect a variable like textureDetail to look like? It could be a string, a file object with a name, date, &nbsp;url and kb size, or even a base64 image hash for all we know. How can we confidently write code in this scenario?",
+      "It can be daunting working with code repositories written by other developers. For example, what do we expect a variable like textureDetail to look like? It could be a string, a file object with a name, date, url and kb size, or even a base64 image hash for all we know. How can we confidently write code in this scenario?",
     image: {
       filename: "japanPlaza",
       extension: "jpg",
