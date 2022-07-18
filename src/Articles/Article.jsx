@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import Markdown from "../components/Markdown";
 
 function Article() {
-  const { id } = useParams();
-  const article = articles.find((article) => article.id === id);
+  const { slug } = useParams();
+  const article = articles.find((article) => article.slug === slug);
   const image = article.image;
 
   return (

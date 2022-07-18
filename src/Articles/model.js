@@ -1,8 +1,9 @@
 import uniqid from "uniqid";
 class Article {
-  constructor({ components, author, title, description, image } = {}) {
+  constructor({ components, author, title, description, image, slug } = {}) {
     this.id = uniqid();
     this.title = title || "Title Here";
+    this.slug = slug || "slug-here";
     this.description = description || "Description Here";
     this.components = components || [];
     this.author = author || "Author Name";

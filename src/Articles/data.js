@@ -2,9 +2,10 @@ import Article from "./model";
 
 const articles = [
   new Article({
-    title: "Should you make your personal projects public?",
+    title: "Public vs Private Repos",
+    slug: "public-vs-private-repos",
     description:
-      "It’s a little scary not knowing who might be looking through your code or what they might do with it. But really, what could they really do?",
+      "It's a little scary not knowing who might be looking through your code or what they might do with it. But really, what could they really do?",
     image: {
       filename: "LockAndKeys",
       extension: "jpg",
@@ -39,6 +40,7 @@ const articles = [
   }),
   new Article({
     title: "Must Reads - Business",
+    slug: "must-reads-business",
     description:
       "At Sine, I have discovered that many of my coworkers love to listen to audio books. I thought it would be exciting if we could share book lists in all sorts of categories like business, leadership and finance.",
     image: {
@@ -52,7 +54,8 @@ const articles = [
     publishedDate: new Date(),
   }),
   new Article({
-    title: "Technological Drive",
+    title: "Tech Drive",
+    slug: "tech-drive",
     description:
       "How did you feel when you first started programming? People I have asked have shared their experience as awe at the potential that opens up and dopamine rush of excitement to discover more.",
     image: {
@@ -91,6 +94,7 @@ const articles = [
   }),
   new Article({
     title: "Code confidence with Typescript",
+    slug: "code-confidence-with-typescript",
     description:
       "It can be daunting working with code repositories written by other developers. For example, what do we expect a variable like textureDetail to look like? It could be a string, a file object with a name, date, url and kb size, or even a base64 image hash for all we know. How can we confidently write code in this scenario?",
     image: {
