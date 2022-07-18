@@ -13,10 +13,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  @apply text-gray-900;
 }
 
 p {
   @apply py-2;
+  @apply text-base;
 }
 
 a {

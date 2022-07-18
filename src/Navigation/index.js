@@ -10,7 +10,17 @@ function Navigation() {
               <img src="/logo.png" className="nav-logo" alt="logo" />
             </a>
           </div>
-          <div className="w-4/12"></div>
+          <div className="w-4/12 flex gap-8 justify-center">
+            <a href="/" className="border-b border-primary-200">
+              Articles
+            </a>
+            {/* <Link
+              to={{ href: "/about" }}
+              className="border-b border-primary-200"
+            >
+              About
+            </Link> */}
+          </div>
           <div className="w-4/12 justify-end flex">
             <a
               className="bg-primary-200 rounded text-white px-4 py-2"

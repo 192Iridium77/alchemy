@@ -1,6 +1,14 @@
 import uniqid from "uniqid";
 class Article {
-  constructor({ components, author, title, description, image, slug } = {}) {
+  constructor({
+    components,
+    author,
+    title,
+    description,
+    image,
+    slug,
+    publishedDate,
+  } = {}) {
     this.id = uniqid();
     this.title = title || "Title Here";
     this.slug = slug || "slug-here";
@@ -8,7 +16,7 @@ class Article {
     this.components = components || [];
     this.author = author || "Author Name";
     this.draft = true;
-    this.publishedDate = null;
+    this.publishedDate = publishedDate || null;
     this.image = image || null; // Todo: Image Class
   }
 

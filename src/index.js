@@ -11,8 +11,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navigation />
     <BrowserRouter>
+      <Navigation />
       <Switch>
         <Route path="/" exact component={Home}></Route>
         <Route path="/article/:slug" component={Article}></Route>

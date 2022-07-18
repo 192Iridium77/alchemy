@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Markdown from "../components/Markdown";
 
 function ArticleCard({ article }) {
   const image = article.image;
@@ -11,11 +12,13 @@ function ArticleCard({ article }) {
             src={`/images/${image.filename}.${image.extension}`}
             alt={image.alt}
             className="aspect-ration-16/9"
-          ></img>
+          />
           <div className="p-8">
             <h1 className="text-xl">{article.title}</h1>
-            <p className="mt-8">{`${article.description.slice(0, 198)}...`}</p>
-            <div className="flex mt-8">Read More</div>
+            <Markdown data={{ html: article.description }}></Markdown>
+            <div className="inline mt-8 text-primary-200 border-b border-primary-200">
+              Read More
+            </div>
           </div>
         </div>
       </Link>
