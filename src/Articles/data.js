@@ -2,7 +2,7 @@ import Article from "./model";
 
 const articles = [
   new Article({
-    title: "Public vs Private Repos",
+    title: "Public Git Repos",
     slug: "public-vs-private-repos",
     description:
       "<p>It's a little scary not knowing who might be looking through your code or what they might do with it. But really, what could they really do?</p>",
@@ -57,7 +57,7 @@ const articles = [
     title: "Tech Drive",
     slug: "tech-drive",
     description:
-      "<p>Do you remember what it was like when you first discovered programming? People I have asked have shared their experience as awe at the potential that opens up coupled with desire to discover more.</p>",
+      "<p>Do you remember what it was like when you first discovered programming? Some Software Engineers share their experience as awe at the potential that opens up coupled with desire to discover more.</p>",
     image: {
       filename: "cityFeature",
       extension: "jpg",
