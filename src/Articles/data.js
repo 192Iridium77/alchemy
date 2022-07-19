@@ -57,7 +57,7 @@ const articles = [
     title: "Tech Drive",
     slug: "tech-drive",
     description:
-      "<p>Do you remember what it was like when you first discovered programming? Some Software Engineers share their experience as awe at the potential that opens up coupled with desire to discover more.</p>",
+      "<p>Do you remember what it was like when you first discovered programming? Software Engineers asked share their experience as awe at the potential that opens up coupled with desire to discover more.</p>",
     image: {
       filename: "cityFeature",
       extension: "jpg",
