@@ -15,7 +15,7 @@ function Article() {
           style={{
             height: "400px",
             backgroundImage: `linear-gradient(
-            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4 ),
             rgba(0, 0, 0, 0.4)
           ), url(/images/${image.filename}.${image.extension})`,
           }}
