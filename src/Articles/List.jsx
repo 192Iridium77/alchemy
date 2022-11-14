@@ -1,5 +1,5 @@
 import Card from "./Card";
-import articles from "./data";
+import articles from "../data";
 
 function ArticlesList() {
   return (

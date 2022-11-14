@@ -1,10 +1,14 @@
-import articles from "./data";
+import articles from "../data";
 import { useParams } from "react-router-dom";
 import Markdown from "../components/Markdown";
+import Review from "../components/Review";
 
 function Article() {
   const { slug } = useParams();
-  const article = articles.find((article) => article.slug === slug);
+  const article = articles.find((article) => {
+    return article.slug === slug;
+  });
+  console.log("🚀 ~ file: Article.jsx ~ line 8 ~ Article ~ article", article);
   const image = article.image;
 
   return (
@@ -28,13 +32,14 @@ function Article() {
           </div>
         </div>
       </div>
-      <div className="mt-16 w-8/12 text px-8">
+      <div className="mt-16 text px-8">
         <Markdown data={{ html: article.description }} />
         {article.components.map((component, index) => {
           if (component.type === "markdown") {
-            return (
-              <Markdown key={index} className="mt-4" data={component.data} />
-            );
+            return <Markdown key={index} {...component} />;
+          }
+          if (component.type === "review") {
+            return <Review key={index} {...component} />;
           }
           return "";
         })}
