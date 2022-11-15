@@ -13,7 +13,7 @@ export default function Review({
     <div className="hover:shadow-md border border-gray-100 m-12">
       <div className="flex">
         <div className="w-3/12 p-8">
-          <img src={image.url} />
+          <img src={image.url} alt="book" />
         </div>
         <div className="w-9/12 p-8">
           <h2 className="text-xl">{title}</h2>
