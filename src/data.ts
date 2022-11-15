@@ -1,5 +1,3 @@
-const bookHeight = "260";
-
 interface Component {
   type: "markdown" | "image" | "review";
 }
@@ -140,21 +138,6 @@ const articles: Article[] = [
           the effects of competition. This book has acted as an excellent introduction to a wide variety of concepts that should be relevant to anyone with a job.
         </p>`,
       },
-      // {
-      //   type: "markdown",
-      //   html: `
-      //       <p><b>The Personal MBA</b> by <i>Josh Kaufman</i></p>
-      //       <img src="https://m.media-amazon.com/images/I/41hATmwd5LL.jpg" style="height: ${bookHeight}px;"/>
-      //       <p>
-      //         I certainly never went to Business School and I'm surely not the only Software Engineer that did not even know what an MBA (Masters of Business Administration) even is!
-      //         Kaufman's 'The Personal MBA' is a comprehensive introduction to business concepts, from psychological and biological drives that businesses aim to meet, to business models and core concepts like 'the bottom line' and
-      //         the effects of competition. This book has acted as an excellent introduction to a wide variety of concepts that should be relevant to anyone with a job.
-      //       </p>
-      //       <p>5/5 Kaufman takes what could be a very dry subject and makes it sharp and accessible.</p>
-
-      //       <br />
-      //     `,
-      // },
     ],
     author: "Matthew Martin",
     draft: true,

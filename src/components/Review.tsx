@@ -6,7 +6,7 @@ export default function Review({
   author,
   image,
   text,
-  rating,
+  //   rating,
   quote,
 }: ReviewProps) {
   return (
