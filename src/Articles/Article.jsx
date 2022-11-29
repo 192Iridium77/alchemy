@@ -8,7 +8,7 @@ function Article() {
   const article = articles.find((article) => {
     return article.slug === slug;
   });
-  console.log("🚀 ~ file: Article.jsx ~ line 8 ~ Article ~ article", article);
+
   const image = article.image;
 
   return (

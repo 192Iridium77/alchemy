@@ -45,7 +45,10 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.17",
+    "@types/react": "^17.0.52",
+    "@types/react-dom": "^18.0.9",
+    "@types/react-router": "^5.1.19",
+    "@types/react-router-dom": "^5.3.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }

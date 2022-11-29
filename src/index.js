@@ -4,6 +4,7 @@ import "./index.css";
 import Navigation from "./Navigation/index";
 import Home from "./Home";
 import Article from "./Articles/Article";
+import About from "./About/About";
 import NotFound from "./NotFound";
 import Footer from "./Footer";
 import reportWebVitals from "./reportWebVitals";
@@ -16,6 +17,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact component={Home}></Route>
         <Route path="/article/:slug" component={Article}></Route>
+        <Route path="/about" component={About}></Route>
         <Route path="*">
           <NotFound />
         </Route>
