@@ -5,7 +5,7 @@ function ArticleCard({ article }) {
   const image = article.image;
 
   return (
-    <div className="ArticleCard w-6/12">
+    <div className="ArticleCard w-full md:w-6/12">
       <Link to={`/article/${article.slug}`} className="block text-black">
         <div className="hover:shadow-md border border-gray-100 m-4">
           <img

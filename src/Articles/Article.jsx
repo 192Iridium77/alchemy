@@ -1,4 +1,4 @@
-import articles from "../data";
+import { articles } from "../data";
 import { useParams } from "react-router-dom";
 import Markdown from "../components/Markdown";
 import Review from "../components/Review";

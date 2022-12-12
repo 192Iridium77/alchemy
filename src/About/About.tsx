@@ -8,8 +8,8 @@ function About() {
           <div className="w-6/12 pr-4">
             <div className="text-xl pb-4">Welcome to Alchemy Tech!</div>
             <div>
-              The goal of <b>Alchemy Tech</b> is to build innovative web apps
-              that provide education and foster creativity around the globe.
+              The goal of <b>Alchemy Tech</b> is to build innovative tools that
+              enhance education and foster creativity, worldwide.
             </div>
           </div>
           <div className="w-6/12 pl-4">
@@ -37,10 +37,18 @@ function About() {
                   backgroundImage: `url(/images/me.jpg)`,
                 }}
               ></div>
-              <div className="w-6/12">two</div>
+              <div className="w-6/12 p-4">
+                <div className="text-lg">Matt</div>
+                <div className="tracking-wider uppercase">Founder</div>
+                {/* <div>Read Bio</div> */}
+              </div>
             </div>
             <div className="flex w-full">
-              <div className="w-6/12">two</div>
+              <div className="w-6/12 p-4">
+                <div className="text-lg">Vanessa</div>
+                <div className="tracking-wider uppercase">Co-Founder</div>
+                {/* <div>Read Bio</div> */}
+              </div>
               <div
                 className="w-6/12 bg-cover bg-no-repeat bg-right-top"
                 style={{

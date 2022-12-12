@@ -45,7 +45,7 @@ export interface ArticleComponent {
   columns: number;
 }
 
-const articles: Article[] = [
+export const articles: Article[] = [
   {
     title: "Should your code be public?",
     slug: "public-vs-private-repos",
@@ -211,4 +211,15 @@ const articles: Article[] = [
   },
 ];
 
-export default articles;
+export const apps = [
+  {
+    url: "https://subrosa.alchemy-tech.com",
+    title: "Subrosa",
+    description: "Book creation app",
+  },
+  {
+    url: "https://arcade.alchemy-tech.com",
+    title: "Arcade",
+    description: "An Arcade full of Scratch Games",
+  },
+];
