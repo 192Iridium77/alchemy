@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Markdown from "../components/Markdown";
 
 export default function AppCard({ data }) {
