@@ -9,21 +9,19 @@ import Apps from "./Apps/List";
 import NotFound from "./NotFound";
 import Footer from "./Footer";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Navigation />
-      <Switch>
-        <Route path="/" exact component={Home}></Route>
-        <Route path="/article/:slug" component={Article}></Route>
-        <Route path="/about" component={About}></Route>
-        <Route path="/apps" component={Apps}></Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" exact element={<Home />}></Route>
+        <Route path="/article/:slug" element={<Article />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/apps" element={<Apps />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
     </BrowserRouter>
     <Footer />
   </React.StrictMode>,

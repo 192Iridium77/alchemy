@@ -215,11 +215,21 @@ export const apps = [
   {
     url: "https://subrosa.alchemy-tech.com",
     title: "Subrosa",
-    description: "Book creation app",
+    description: "An app for reading stories",
+    image: {
+      filename: "SubrosaLogo",
+      extension: "svg",
+      alt: "Subrosa Logo",
+    },
   },
   {
     url: "https://arcade.alchemy-tech.com",
     title: "Arcade",
-    description: "An Arcade full of Scratch Games",
+    description: "An Arcade for Vincent's Scratch Games",
+    image: {
+      filename: "AlchemyArcadeLogo",
+      extension: "png",
+      alt: "Alchemy Arcade Logo",
+    },
   },
 ];

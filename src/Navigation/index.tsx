@@ -13,11 +13,11 @@ function Navigation() {
             </a>
           </div>
           <div className="w-4/12 flex gap-8 justify-center">
-            <Link to="/apps" className="border-b border-primary-200">
-              Apps
-            </Link>
             <Link to="/" className="border-b border-primary-200">
               Articles
+            </Link>
+            <Link to="/apps" className="border-b border-primary-200">
+              Apps
             </Link>
             <Link to="/about" className="border-b border-primary-200">
               About

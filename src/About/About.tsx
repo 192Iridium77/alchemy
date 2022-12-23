@@ -1,6 +1,14 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 function About() {
+  const navigate = useNavigate();
+
+  const navToMyProfile = () => {
+    navigate("/about/matt");
+  };
+
   return (
     <div className="container mt-16">
       <div>
@@ -37,17 +45,28 @@ function About() {
                   backgroundImage: `url(/images/me.jpg)`,
                 }}
               ></div>
-              <div className="w-6/12 p-4">
+              <div className="w-6/12 p-4" onClick={navToMyProfile}>
                 <div className="text-lg">Matt</div>
-                <div className="tracking-wider uppercase">Founder</div>
-                {/* <div>Read Bio</div> */}
+                <div className="tracking-wider uppercase pt-4">Founder</div>
+                <div className="pt-4">
+                  Matt is a Software Engineer from Adelaide that has worked with
+                  Svelte Studios and Sine / Honeywell. He was educated in Maths,
+                  Physics and Chemistry at Adelaide University.
+                </div>
+                {/* <div>View Profile</div> */}
               </div>
             </div>
             <div className="flex w-full">
               <div className="w-6/12 p-4">
                 <div className="text-lg">Vanessa</div>
-                <div className="tracking-wider uppercase">Co-Founder</div>
-                {/* <div>Read Bio</div> */}
+                <div className="tracking-wider uppercase pt-4">Co-Founder</div>
+                <div className="pt-4">
+                  Vanessa is a Software Engineer from Adelaide that also started
+                  out with Svelte Studios in Adelaide under Senior Software
+                  Engineer Terence Kruger. She studied Computer Science at
+                  Deakin University in Melbourne and built a gecko robot that
+                  could climb walls!
+                </div>
               </div>
               <div
                 className="w-6/12 bg-cover bg-no-repeat bg-right-top"
