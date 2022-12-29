@@ -227,9 +227,19 @@ export const apps = [
     title: "Arcade",
     description: "An Arcade for Vincent's Scratch Games",
     image: {
-      filename: "AlchemyArcadeLogo",
+      filename: "ArcadeLogo",
       extension: "png",
       alt: "Alchemy Arcade Logo",
+    },
+  },
+  {
+    url: "https://money.alchemy-tech.com",
+    title: "Alchemy Money",
+    description: "A Mortgage Calculator",
+    image: {
+      filename: "MoneyLogo",
+      extension: "png",
+      alt: "Alchemy Money Logo",
     },
   },
 ];
