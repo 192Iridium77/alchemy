@@ -47,6 +47,74 @@ export interface ArticleComponent {
 
 export const articles: Article[] = [
   {
+    title: "Shelf Worthy: Finance",
+    slug: "must-reads-finance",
+    description: `<p>The Rich will tell you over and over, what you need in order to become rich is information. </p>`,
+    image: {
+      filename: "wallstreetbull2",
+      extension: "png",
+      alt: "Wall Street Bull",
+    },
+    components: [
+      {
+        type: "markdown",
+        html: `
+          <p>I have faith that if you can read 50 of the greatest finance books you can become wealthy. So I have set out to find the top books on finance, here it is:</p>
+        `,
+      },
+      {
+        type: "review",
+        title: "Rich Dad Poor Dad",
+        author: "Robert Kiyosaki",
+        image: {
+          url: "https://m.media-amazon.com/images/I/51u8ZRDCVoL._SX330_BO1,204,203,200_.jpg",
+        },
+        rating: 4.5,
+        quote:
+          "The single most powerful asset we all have is our mind. If it is trained well, it can create enormous wealth.",
+        text: `<p>Rich Dad Poor Dad has become a classic in the financial literature genre. The book provides a unique perspective on money and financial success through a parable of Kiyosaki's two fathers: his biological father, whom he refers to as the "poor dad," and his friend's father, whom he refers to as the "rich dad."</p>
+        <p>Through this narrative, Kiyosaki shares lessons he learned from both men about money, work, and financial literacy. One of the main themes of the book is the importance of financial education and the need to move beyond traditional ways of thinking about work and wealth. Kiyosaki argues that the traditional model of getting a good education, finding a stable job, and working hard to climb the corporate ladder is no longer sufficient in today's economy.</p>
+        <p>Rich Dad Poor Dad does not offer straight forward steps towards becoming wealthy, but instead offers a paradigm to put you in the right mindset to get there. His ideas stick well and Kiyosaki has put in effort to make sure they are timeless principles while giving relevant examples to aid in understanding.</p>
+        <p>Kiyosaki has written many books, of which his principles like the cashflow quadrant have been uncovered in great depth.</p>`,
+      },
+      {
+        type: "review",
+        title: "Motivated Money",
+        author: "Peter Thornhill",
+        image: {
+          url: "https://m.media-amazon.com/images/I/41kMkYpyCcL.jpg",
+        },
+        rating: 4.5,
+        quote:
+          "The single most powerful asset we all have is our mind. If it is trained well, it can create enormous wealth.",
+        text: `<p>Motivated Money provides a radically different view to that of Kiyosaki's Rich Dad Poor Dad. This book offers the 'safe, boring and practical' path towards riches.</p>
+        <p>Peter shows that if you were to have invested $100,000 into Australian industrials stocks in the 80's today you would be worth more than $17 million!</p>
+        <p>Peter's writing is full of wisdom, he is clearly well read and shares deep thoughts about where our civilization is headed and the psychology of money.</p>`,
+      },
+      {
+        type: "review",
+        title: "The Psychology of Money",
+        author: "Morgan Housel",
+        image: {
+          url: "https://m.media-amazon.com/images/I/41v+g6LqafL.jpg",
+        },
+        rating: 4,
+        quote:
+          "Doing well with money isn't necessarily about what you know. It's about how you behave. And behaviour is hard to teach, even to really smart people.",
+        text: `<p>The Psychology of Money is a book written by Morgan Housel that explores the complex and often irrational ways that people think about and behave with money. Through a series of engaging and thought-provoking essays, Housel examines the psychological biases, beliefs, and behaviors that shape our financial decisions and shape our relationship with money.</p>
+
+        <p>One of the key themes of the book is the idea that our emotional relationship with money can have a significant impact on our financial well-being. Housel argues that many of the financial mistakes we make are driven by our emotional responses to money, and he encourages readers to become more aware of these emotional triggers in order to make better financial decisions.</p>
+        
+        <p>In addition to examining the psychological aspects of money, the book also provides practical advice on topics such as saving, investing, and managing debt. Housel's writing is engaging and easy to understand, and he effectively uses real-life examples and anecdotes to illustrate his points.</p>
+        
+        <p>Overall, The Psychology of Money is a must-read for anyone looking to gain a deeper understanding of their own financial behavior and make better financial decisions. It is a thought-provoking and informative book that offers valuable insights into the psychological factors that shape our relationship with money.</p>`,
+      },
+    ],
+    author: "Matthew Martin",
+    draft: true,
+    publishedDate: new Date("30/12/2022 13:00"),
+  },
+  {
     title: "Should your code be public?",
     slug: "public-vs-private-repos",
     description:
@@ -82,7 +150,7 @@ export const articles: Article[] = [
     publishedDate: new Date("07/01/2022 18:00"),
   },
   {
-    title: "Shelf Worthy Business Books",
+    title: "Shelf Worthy: Business",
     slug: "must-reads-business",
     description: `<p>Here is a list of books that have inspired deeper conversations in my workplace about business.</p>`,
     image: {
@@ -137,6 +205,23 @@ export const articles: Article[] = [
           Kaufman's 'The Personal MBA' is a comprehensive introduction to business concepts, from psychological and biological drives that businesses aim to meet, to business models and core concepts like 'the bottom line' and
           the effects of competition. This book has acted as an excellent introduction to a wide variety of concepts that should be relevant to anyone with a job.
         </p>`,
+      },
+      {
+        type: "review",
+        title: "Zero to One",
+        author: "Peter Thiel",
+        image: {
+          url: "https://m.media-amazon.com/images/I/51JkDEpHUQL.jpg",
+        },
+        rating: 5,
+        quote: "Monopoly is the condition of every successful business.",
+        text: `<p>Zero to One is a business and entrepreneurship book written by Peter Thiel, co-founder of PayPal and early investor in companies such as Facebook and LinkedIn. In the book, Thiel argues that the key to creating value in the world is to &quot;go from zero to one,&quot; meaning to create something new and innovative rather than simply copying what already exists.</p>
+
+        <p>Thiel argues that the world is filled with opportunities for entrepreneurs to create new technologies, products, and services that have the potential to change the world. He encourages readers to think big and to focus on creating unique value rather than just competing in crowded markets.</p>
+        
+        <p>One of the key themes of the book is the importance of seeking out &quot;monopoly&quot; opportunities, or areas where a company can be the only player in a particular market. Thiel contends that these types of opportunities are the most likely to yield massive returns and to create lasting value.</p>
+        
+        <p>Overall, Zero to One is a must-read for entrepreneurs and business leaders looking for practical advice on how to create and sustain a successful company. It is an inspiring and thought-provoking read that encourages readers to think differently about the world of business and innovation.</p>`,
       },
     ],
     author: "Matthew Martin",
