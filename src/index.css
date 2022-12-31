@@ -28,3 +28,7 @@ a {
 a:hover {
   @apply border-primary-100;
 }
+
+ul li {
+  list-style-type: disc;
+}

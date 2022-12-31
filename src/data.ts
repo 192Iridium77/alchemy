@@ -13,6 +13,10 @@ export interface Image extends Partial<Component> {
   alt: string;
 }
 
+interface Video {
+  url: string;
+}
+
 export interface Review extends Partial<Component> {
   image: Partial<Image>;
   columns?: string;
@@ -21,6 +25,7 @@ export interface Review extends Partial<Component> {
   rating: number;
   quote: string;
   text: string;
+  video?: Video;
 }
 
 interface LocalImage {
@@ -59,7 +64,7 @@ export const articles: Article[] = [
       {
         type: "markdown",
         html: `
-          <p>I have faith that if you can read 50 of the greatest finance books you can become wealthy. So I have set out to find the top books on finance, here it is:</p>
+          <p>It is said by those who have obtained riches that if you can read 50 of the greatest finance books you can become wealthy. In this article, I list all of the books I have chosen as pavers for the path towards financial success. Here they are:</p>
         `,
       },
       {
@@ -74,8 +79,30 @@ export const articles: Article[] = [
           "The single most powerful asset we all have is our mind. If it is trained well, it can create enormous wealth.",
         text: `<p>Rich Dad Poor Dad has become a classic in the financial literature genre. The book provides a unique perspective on money and financial success through a parable of Kiyosaki's two fathers: his biological father, whom he refers to as the "poor dad," and his friend's father, whom he refers to as the "rich dad."</p>
         <p>Through this narrative, Kiyosaki shares lessons he learned from both men about money, work, and financial literacy. One of the main themes of the book is the importance of financial education and the need to move beyond traditional ways of thinking about work and wealth. Kiyosaki argues that the traditional model of getting a good education, finding a stable job, and working hard to climb the corporate ladder is no longer sufficient in today's economy.</p>
-        <p>Rich Dad Poor Dad does not offer straight forward steps towards becoming wealthy, but instead offers a paradigm to put you in the right mindset to get there. His ideas stick well and Kiyosaki has put in effort to make sure they are timeless principles while giving relevant examples to aid in understanding.</p>
-        <p>Kiyosaki has written many books, of which his principles like the cashflow quadrant have been uncovered in great depth.</p>`,
+        <b>Why read Rich Dad Poor Dad?</b>
+        <p>There is a good chance that if you have learned finance from family and school teachers that you have learned how to be middleclass or even poor. Rich Dad introduces a mindset you may never have had access too, or may never have even seen before.</p>
+        <b>Takeaways</b>
+        <ul>
+          <li>Growth in wages has instead gone to the entrepreneurs and investors, not employees.</li>
+          <li>Job is an acronym for "Just Over Broke"</li>
+          <li>Keep your daytime job, but mind your own business, purchase assets like stocks, bonds, businesses you don't have to run (that's a job), patents and real estate.</li>
+          <li>Companies: Earn, Spend, pay Taxes. Employees: Earn, pay Taxes, Spend.</li>
+          <li>Don't work for money, work to learn and gain assets. You either purchase assets, or create them.</li>
+          <li>"Saving is for losers." Since 1971, money was decoupled from gold, and is now staked entirely on trust. Your money in the bank decreases in value every time the market crashes as the government prints money to reduce the real value of its debts.</li>
+          <li>Your house is a liablity. It doesn't generate any cashflow, instead it takes money out of your pocket. An asset is a commodity you own that generates cashflow, focus on obtaining assets, not your income.</li>
+          <li>The rich will always pay less money in taxes, they don't work for money, money works for them. Life is a team game, the rich have a team of political influencers, laywers, brokers and accountants that come together to magic tax away. Governments get their tax from middle class workers.</li>
+          <li>Taxing the rich has historically failed every time. The rich play a different game than the middle class, and the taxes end up hitting them instead.</li>
+          <li>When your kids ask for a swimming pool, don't say 'I can't afford that!', instead ask 'How can we afford it?'. The former shuts down your brain, the later opens your mind to opportunities.</li>
+          <li>Seek teachers who have actually done what you are trying to do.</li>
+          <li>Utilize your emotions. Greed is the cure to lazyness, it makes life exciting so use it.</li>
+          <li>"Cynics Criticise, Winners analyse". Don't listen to the many people who will <i>chicken little</i> you.</li>
+        </ul>
+        <p>In the book rober states that you should "pay yourself first". I believe this is the most frightening advice he has. To not pay a mortgage and instead invest in shares sounds like a sure way to set your finances on fire. I do put 20% of my own money into deposits, and hope to use this to work towards assets, but I make sure to pay the mortgage first.</p>
+        <p>Kiyosaki has been an author since 1973 he has written 30 books and also offers a free game called <a href="https://www.richdad.com/products/cashflow-classic">CashFlow</a> you can play that is as fun as it is educational.</p>
+        <p>It has been said before that Rich Dad Poor Dad does not offer steps to become wealthy, this seems to be partly true. He can't tell you to go and buy that 1 bedroom appartment in a neighbourhood 20km from your home, that is the blank for you to fill in, and if you take his principles and try to apply them you will find the opportunities.</p>`,
+        video: {
+          url: "https://www.youtube.com/watch?v=azq0S0DKS50",
+        },
       },
       {
         type: "review",
@@ -86,7 +113,7 @@ export const articles: Article[] = [
         },
         rating: 4.5,
         quote:
-          "The single most powerful asset we all have is our mind. If it is trained well, it can create enormous wealth.",
+          "We're frightened of things we do not understand. Knowledge is power. And the sad part is that too many people have really very little knowledge and easily frightened by what what the hell is going on around them.",
         text: `<p>Motivated Money provides a radically different view to that of Kiyosaki's Rich Dad Poor Dad. This book offers the 'safe, boring and practical' path towards riches.</p>
         <p>Peter shows that if you were to have invested $100,000 into Australian industrials stocks in the 80's today you would be worth more than $17 million!</p>
         <p>Peter's writing is full of wisdom, he is clearly well read and shares deep thoughts about where our civilization is headed and the psychology of money.</p>`,
@@ -112,7 +139,7 @@ export const articles: Article[] = [
     ],
     author: "Matthew Martin",
     draft: true,
-    publishedDate: new Date("30/12/2022 13:00"),
+    publishedDate: new Date("12/30/2022 15:00"),
   },
   {
     title: "Should your code be public?",
