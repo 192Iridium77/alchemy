@@ -1,9 +1,9 @@
 import Card from "./Card";
-import { articles } from "../data";
+import articles from "../data/articles";
 
 function ArticlesList() {
   return (
-    <div className="ArticlesList container mt-16">
+    <div className="container mt-16">
       <div
         className="flex flex-wrap mt-16"
         style={{ marginLeft: "-1rem", marginRight: "-1rem" }}

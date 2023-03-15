@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { apps } from "../data";
+import apps from "../data/apps";
 
 function AppsList() {
   return (

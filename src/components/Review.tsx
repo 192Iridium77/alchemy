@@ -1,4 +1,4 @@
-import { Review as ReviewProps } from "../data";
+import { Review as ReviewProps } from "../types";
 import Markdown from "./Markdown";
 import React from "react";
 import ReactPlayer from "react-player";
@@ -24,14 +24,14 @@ export default function Review({
           <i className="float-right bg-gray-100 m-4 p-4 text-lg text-center w-7/12">
             {quote}
           </i>
-          <Markdown html={text}></Markdown>
+          <Markdown>{text}</Markdown>
+          {video?.url ? (
+            <div className="bg-gray-100 m-4 p-4 text-lg text-center">
+              <ReactPlayer url={video.url} width="100%" />
+            </div>
+          ) : null}
         </div>
       </div>
-      {video?.url ? (
-        <div className="bg-gray-100 m-4 p-4 text-lg text-center">
-          <ReactPlayer url={video.url} width="100%" />
-        </div>
-      ) : null}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { articles } from "../data";
+import articles from "../data/articles";
 import { useParams } from "react-router-dom";
 import Markdown from "../components/Markdown";
 import Review from "../components/Review";
@@ -33,10 +33,10 @@ function Article() {
         </div>
       </div>
       <div className="mt-16 text px-8">
-        <Markdown data={{ html: article.description }} />
+        <Markdown>{article.description}</Markdown>
         {article.components.map((component, index) => {
           if (component.type === "markdown") {
-            return <Markdown key={index} {...component} />;
+            return <Markdown key={index}>{component.text}</Markdown>;
           }
           if (component.type === "review") {
             return <Review key={index} {...component} />;

@@ -5,6 +5,7 @@ import Navigation from "./Navigation/index";
 import Home from "./Home";
 import Article from "./Articles/Article";
 import About from "./About/About";
+import Matt from "./About/Matt";
 import Apps from "./Apps/List";
 import NotFound from "./NotFound";
 import Footer from "./Footer";
@@ -19,6 +20,7 @@ ReactDOM.render(
         <Route path="/" exact element={<Home />}></Route>
         <Route path="/article/:slug" element={<Article />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/about/matt" element={<Matt />}></Route>
         <Route path="/apps" element={<Apps />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

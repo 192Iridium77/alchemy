@@ -37,7 +37,10 @@ function About() {
         <div className="flex">
           <div className="w-2/12"></div>
           <div className="w-8/12 border-2 border-gray-100">
-            <div className="flex w-full">
+            <div
+              className="flex w-full cursor-pointer"
+              onClick={navToMyProfile}
+            >
               <div
                 className="w-6/12 bg-cover bg-no-repeat bg-center"
                 style={{
@@ -45,7 +48,7 @@ function About() {
                   backgroundImage: `url(/images/me.jpg)`,
                 }}
               ></div>
-              <div className="w-6/12 p-4" onClick={navToMyProfile}>
+              <div className="w-6/12 p-4">
                 <div className="text-lg">Matt</div>
                 <div className="tracking-wider uppercase pt-4">Founder</div>
                 <div className="pt-4">
