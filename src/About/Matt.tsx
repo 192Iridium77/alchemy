@@ -77,7 +77,47 @@ export default function Matt() {
         <div className="text-xl flex justify-center"> Projects </div>
         <div className="flex flex-wrap justify-center gap-8 mt-8">
           <a
-            className="w-3/12 p-8 block shadow-lg rounded-md"
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
+            href="https://www.sine.co/"
+          >
+            <img
+              className="rounded-md border border-gray-50"
+              src="/images/sine.jpg"
+              alt="Sine"
+            />
+          </a>
+          <a
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
+            href="https://www.novasystems.com/au"
+          >
+            <img
+              className="rounded-md border border-gray-50"
+              src="/images/novasystems.jpg"
+              alt="Nova Systems"
+            />
+          </a>
+          <a
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
+            href="https://sahmri.org.au/"
+          >
+            <img
+              className="rounded-md border border-gray-50"
+              src="/images/sahmri.jpg"
+              alt="SAHMRI"
+            />
+          </a>
+          <a
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
+            href="https://www.naval-group.com/en/worldwide-presence#p-432-australia"
+          >
+            <img
+              className="rounded-md border border-gray-50"
+              src="/images/navalgroup.jpg"
+              alt="Naval Group"
+            />
+          </a>
+          <a
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
             href="https://www.visitadelaidehills.com.au/"
           >
             <img
@@ -87,7 +127,27 @@ export default function Matt() {
             />
           </a>
           <a
-            className="w-3/12 p-8 block shadow-lg rounded-md"
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
+            href="https://www.buildsited.com/"
+          >
+            <img
+              className="rounded-md border border-gray-50"
+              src="/images/sited.jpg"
+              alt="Sited"
+            />
+          </a>
+          <a
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
+            href="https://www.hendercare.com.au/"
+          >
+            <img
+              className="rounded-md border border-gray-50"
+              src="/images/hendercare.jpg"
+              alt="Hendercare"
+            />
+          </a>
+          <a
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
             href="https://www.samuseum.sa.gov.au/"
           >
             <img
@@ -97,7 +157,7 @@ export default function Matt() {
             />
           </a>
           <a
-            className="w-3/12 p-8 block shadow-lg rounded-md"
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
             href="https://www.barossa.com/"
           >
             <img
@@ -107,7 +167,7 @@ export default function Matt() {
             />
           </a>
           <a
-            className="w-3/12 p-8 block shadow-lg rounded-md"
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
             href="https://www.unitingcommunities.org/"
           >
             <img
@@ -117,7 +177,7 @@ export default function Matt() {
             />
           </a>
           <a
-            className="w-3/12 p-8 block shadow-lg rounded-md"
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
             href="https://bloombarflowers.com/"
           >
             <img
@@ -127,7 +187,7 @@ export default function Matt() {
             />
           </a>
           <a
-            className="w-3/12 p-8 block shadow-lg rounded-md"
+            className="md:w-3/12 p-8 block shadow-lg rounded-md"
             href="http://www.actionresearch.com.au/"
           >
             <img
