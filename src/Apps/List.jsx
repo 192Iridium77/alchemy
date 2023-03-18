@@ -3,7 +3,7 @@ import apps from "../data/apps";
 
 function AppsList() {
   return (
-    <div className="container mt-16">
+    <div className="container">
       <div
         className="flex flex-wrap mt-16"
         style={{ marginLeft: "-1rem", marginRight: "-1rem" }}

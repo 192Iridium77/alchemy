@@ -10,17 +10,26 @@ function About() {
   };
 
   return (
-    <div className="container mt-16">
+    <div className="container">
       <div>
-        <div className="flex">
-          <div className="w-6/12 pr-4">
+        <div className="md:flex">
+          <div className="md:w-6/12 md:pr-4">
             <div className="text-xl pb-4">Welcome to Alchemy Tech!</div>
             <div>
-              The goal of <b>Alchemy Tech</b> is to build innovative tools that
-              enhance education and foster creativity, worldwide.
+              <b>Alchemy Tech</b> is a software development company that
+              specializes in building custom solutions to help businesses
+              achieve their goals. With a team of highly skilled developers and
+              designers, we take pride in delivering software that is tailored
+              to the unique needs of each client. From web applications to
+              mobile apps and desktop software, we use the latest technologies
+              and industry best practices to deliver high-quality software that
+              is intuitive, user-friendly, and delivers measurable results. Our
+              passion for creating innovative solutions is what sets us apart,
+              and we look forward to working with you to bring your ideas to
+              life.
             </div>
           </div>
-          <div className="w-6/12 pl-4">
+          <div className="md:w-6/12 md:pl-4">
             <div
               className="bg-cover bg-no-repeat bg-center"
               style={{
@@ -35,20 +44,20 @@ function About() {
       <div>
         <div className="text-xl py-12">Our Team</div>
         <div className="flex">
-          <div className="w-2/12"></div>
-          <div className="w-8/12 border-2 border-gray-100">
+          <div className="md:w-2/12"></div>
+          <div className="md:w-8/12 border-2 border-gray-100">
             <div
-              className="flex w-full cursor-pointer"
+              className="md:flex w-full cursor-pointer"
               onClick={navToMyProfile}
             >
               <div
-                className="w-6/12 bg-cover bg-no-repeat bg-center"
+                className="md:w-6/12 bg-cover bg-no-repeat bg-center"
                 style={{
                   height: "300px",
                   backgroundImage: `url(/images/me.jpg)`,
                 }}
               ></div>
-              <div className="w-6/12 p-4">
+              <div className="md:w-6/12 p-4">
                 <div className="text-lg">Matt</div>
                 <div className="tracking-wider uppercase pt-4">Founder</div>
                 <div className="pt-4">
@@ -56,11 +65,19 @@ function About() {
                   Svelte Studios and Sine / Honeywell. He was educated in Maths,
                   Physics and Chemistry at Adelaide University.
                 </div>
-                {/* <div>View Profile</div> */}
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <a className="mt-4 block">View Profile</a>
               </div>
             </div>
-            <div className="flex w-full">
-              <div className="w-6/12 p-4">
+            <div className="md:flex md:flex-row-reverse w-full">
+              <div
+                className="md:w-6/12 bg-cover bg-no-repeat bg-right-top"
+                style={{
+                  height: "300px",
+                  backgroundImage: `url(/images/nessy.jpeg)`,
+                }}
+              ></div>
+              <div className="md:w-6/12 p-4">
                 <div className="text-lg">Vanessa</div>
                 <div className="tracking-wider uppercase pt-4">Co-Founder</div>
                 <div className="pt-4">
@@ -71,16 +88,9 @@ function About() {
                   could climb walls!
                 </div>
               </div>
-              <div
-                className="w-6/12 bg-cover bg-no-repeat bg-right-top"
-                style={{
-                  height: "300px",
-                  backgroundImage: `url(/images/nessy.jpeg)`,
-                }}
-              ></div>
             </div>
           </div>
-          <div className="w-2/12"></div>
+          <div className="md:w-2/12"></div>
         </div>
       </div>
     </div>
