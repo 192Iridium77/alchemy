@@ -1,17 +1,56 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { TopBar } from "alchemy-tech-ui";
+import { useMediaQuery } from "react-responsive";
+import Modal from "react-modal";
+import SignUp from "../User/SignUp";
+
+Modal.setAppElement("#root");
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    maxWidth: "600px",
+  },
+};
 
 function Navigation() {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  let maxWidth;
+  const isDesktopSmall = useMediaQuery({ query: "(min-width: 1024px)" });
+  const isDesktopMedium = useMediaQuery({ query: "(min-width: 1280px)" });
+  const isDesktopLarge = useMediaQuery({ query: "(min-width: 1536px)" });
+
+  if (isDesktopSmall) maxWidth = "1024px";
+  if (isDesktopMedium) maxWidth = "1280px";
+  if (isDesktopLarge) maxWidth = "1536px";
+
+  const openSignUp = () => {
+    setIsOpen(true);
+  };
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
-    <div className="bg-white">
-      <div className="container">
-        <header className="flex w-full items-center space-between py-8">
-          <div className="w-2/12 md:w-4/12 flex justify-start">
+    <>
+      <TopBar
+        logo={
+          <div className="flex h-full items-center ">
             <a href="/">
-              <img src="/AlchemyTechLogo.png" className="h-12" alt="logo" />
+              <img src="/AlchemyTechLogo.png" className="h-10" alt="logo" />
             </a>
           </div>
-          <div className="w-10/12 md:w-4/12 flex gap-8 justify-center">
+        }
+        navigationMenu={
+          <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
             <Link to="/" className="border-b border-primary-200">
               Articles
             </Link>
@@ -22,17 +61,33 @@ function Navigation() {
               About
             </Link>
           </div>
-          <div className="hidden md:flex w-4/12 justify-end">
-            <a
-              className="bg-primary-200 rounded text-white px-4 py-2"
-              href="mailto:matt.martin0108@gmail.com"
+        }
+        userMenu={
+          <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
+            <button
+              onClick={openSignUp}
+              className="text-primary-200 border-b border-primary-200"
             >
-              Contact
-            </a>
+              Sign Up
+            </button>
+            {/* <button className="text-primary-200 border-b border-primary-200">
+            Log In
+          </button> */}
+            {/* <button className="text-primary-200 border-b border-primary-200">
+            Log Out
+          </button> */}
           </div>
-        </header>
-      </div>
-    </div>
+        }
+        maxWidth={maxWidth}
+      />
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <SignUp></SignUp>
+      </Modal>
+    </>
   );
 }
 

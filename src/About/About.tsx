@@ -10,7 +10,7 @@ function About() {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-12">
       <div>
         <div className="md:flex">
           <div className="md:w-6/12 md:pr-4">

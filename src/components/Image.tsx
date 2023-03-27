@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Image as ImageProps } from "../types";
 
 export default function Image({ columns, url }: ImageProps) {

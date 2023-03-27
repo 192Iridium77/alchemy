@@ -34,10 +34,6 @@ There is a good chance that if you have learned finance from family and school t
 
 **Takeaways**
 
-*   Growth in wages has instead gone to the entrepreneurs and investors, not employees.
-*   Job is an acronym for "Just Over Broke"
-*   Keep your daytime job, but mind your own business, purchase assets like stocks, bonds, businesses you don't have to run (that's a job), patents and real estate.
-*   Companies: Earn, Spend, pay Taxes. Employees: Earn, pay Taxes, Spend.
 *   Don't work for money, work to learn and gain assets. You either purchase assets, or create them.
 *   "Saving is for losers." Since 1971, money was decoupled from gold, and is now staked entirely on trust. Your money in the bank decreases in value every time the market crashes as the government prints money to reduce the real value of its debts.
 *   Your house is a liablity. It doesn't generate any cashflow, instead it takes money out of your pocket. An asset is a commodity you own that generates cashflow, focus on obtaining assets, not your income.
@@ -48,7 +44,7 @@ There is a good chance that if you have learned finance from family and school t
 *   Utilize your emotions. Greed is the cure to lazyness, it makes life exciting so use it.
 *   "Cynics Criticise, Winners analyse". Don't listen to the many people who will _chicken little_ you.
 
-In the book rober states that you should "pay yourself first". I believe this is the most frightening advice he has. To not pay a mortgage and instead invest in shares sounds like a sure way to set your finances on fire. I do put 20% of my own money into deposits, and hope to use this to work towards assets, but I make sure to pay the mortgage first.
+In the book Robert states that you should "pay yourself first". I believe this is the most frightening advice he has. To not pay a mortgage and instead invest in shares sounds like a sure way to set your finances on fire. I do put 20% of my own money into deposits, and hope to use this to work towards assets, but I make sure to pay the mortgage first.
 
 Kiyosaki has been an author since 1973 he has written 30 books and also offers a free game called [CashFlow](https://www.richdad.com/products/cashflow-classic) you can play that is as fun as it is educational.
 

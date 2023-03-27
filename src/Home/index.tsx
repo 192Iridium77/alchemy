@@ -1,12 +1,10 @@
-// import './Home.css';
+import React from "react";
 import ArticlesList from "../Articles/List";
-// import AboutFeature from "../About/Feature";
 
 function Home() {
   return (
-    <div className="Home">
+    <div>
       <ArticlesList />
-      {/* <AboutFeature /> */}
     </div>
   );
 }
