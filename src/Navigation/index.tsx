@@ -42,6 +42,7 @@ function Navigation() {
 
   function closeModal() {
     setIsOpen(false);
+    document.body.style.overflow = "auto";
   }
 
   const disableScroll = () => {
