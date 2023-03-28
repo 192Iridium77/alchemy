@@ -44,6 +44,10 @@ function Navigation() {
     setIsOpen(false);
   }
 
+  const disableScroll = () => {
+    document.body.style.overflow = "hidden";
+  };
+
   return (
     <>
       {isSmallDesktop ? (
@@ -131,6 +135,7 @@ function Navigation() {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
+        onAfterOpen={disableScroll}
       >
         <SignUp></SignUp>
       </Modal>
