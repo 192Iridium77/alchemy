@@ -8,7 +8,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "alchemy-tech-ui": "^1.3.4",
+    "alchemy-tech-ui": "^1.3.6",
     "axios": "^1.3.4",
     "dompurify": "^2.3.1",
     "dotenv": "^16.0.3",
@@ -21,6 +21,7 @@
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.9.0",
     "react-scripts": "^5.0.1",
+    "react-toastify": "^9.1.2",
     "tailwindcss-aspect-ratio": "^3.0.0",
     "typescript": "^4.3.5",
     "uniqid": "^5.3.0",

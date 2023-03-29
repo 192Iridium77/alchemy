@@ -59,14 +59,16 @@ function About() {
               ></div>
               <div className="md:w-6/12 p-4">
                 <div className="text-lg">Matt</div>
-                <div className="tracking-wider uppercase pt-4">Founder</div>
+                <div className="text-sm tracking-wider uppercase pt-4">
+                  Founder
+                </div>
                 <div className="pt-4">
                   Matt is a Software Engineer from Adelaide that has worked with
                   Svelte Studios and Sine / Honeywell. He was educated in Maths,
                   Physics and Chemistry at Adelaide University.
                 </div>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="mt-4 block">View Profile</a>
+                <a className="mt-4 block underline">View Profile</a>
               </div>
             </div>
             <div className="md:flex md:flex-row-reverse w-full">
@@ -78,14 +80,15 @@ function About() {
                 }}
               ></div>
               <div className="md:w-6/12 p-4">
-                <div className="text-lg">Vanessa</div>
-                <div className="tracking-wider uppercase pt-4">Co-Founder</div>
+                <div className="text-lg">Ness</div>
+                <div className="text-sm tracking-wider uppercase pt-4">
+                  Co-Founder
+                </div>
                 <div className="pt-4">
-                  Vanessa is a Software Engineer from Adelaide that also started
+                  Ness is a Software Engineer from Adelaide that also started
                   out with Svelte Studios in Adelaide under Senior Software
                   Engineer Terence Kruger. She studied Computer Science at
-                  Deakin University in Melbourne and built a gecko robot that
-                  could climb walls!
+                  Deakin University in Melbourne.
                 </div>
               </div>
             </div>

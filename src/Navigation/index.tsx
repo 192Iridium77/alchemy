@@ -4,21 +4,23 @@ import { TopBar, MobileTopBar } from "alchemy-tech-ui";
 import { useMediaQuery } from "react-responsive";
 import Modal from "react-modal";
 import SignUp from "../User/SignUp";
-import { NavButton, Button } from "alchemy-tech-ui";
+import { NavButton, Button, Icon } from "alchemy-tech-ui";
+import styled from "styled-components";
 
 Modal.setAppElement("#root");
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    maxWidth: "600px",
-  },
-};
+const CloseModalButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+`;
 
 function Navigation() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -48,6 +50,19 @@ function Navigation() {
 
   const disableScroll = () => {
     document.body.style.overflow = "hidden";
+  };
+
+  // built in styling for ReactModal
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      maxWidth: "600px",
+    },
   };
 
   return (
@@ -133,7 +148,12 @@ function Navigation() {
         style={customStyles}
         onAfterOpen={disableScroll}
       >
-        <SignUp></SignUp>
+        <div className="relative">
+          <CloseModalButton onClick={closeModal}>
+            <Icon type="Close" color="white" />
+          </CloseModalButton>
+          <SignUp />
+        </div>
       </Modal>
     </>
   );

@@ -2,16 +2,21 @@ import React from "react";
 import { Formik } from "formik";
 import styled from "styled-components";
 import { signUp } from "../services/auth";
+import { Button } from "alchemy-tech-ui";
+import { toast } from "react-toastify";
 
 const FormContainer = styled(Formik)`
   margin-top: 1rem;
 `;
 
+const SignUpContainer = styled.div`
+  padding: 1.5rem;
+`;
+
 export default function SignUp() {
   return (
-    <div className="p-8">
+    <SignUpContainer>
       <div className="text-xl">Sign Up</div>
-      {/* <button onClick={closeModal}>close</button> */}
       <div className="mt-8">
         Welcome to Alchemy Tech! To get started, please fill out the quick and
         easy signup form below. By becoming a member, you'll have access to
@@ -32,11 +37,15 @@ export default function SignUp() {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(async () => {
-            await signUp({ username: values.email, password: values.password });
-            setSubmitting(false);
-          }, 400);
+        onSubmit={async (values, { setSubmitting }) => {
+          await signUp({ email: values.email, password: values.password });
+          toast.success(
+            "Congratulations! You have successfully signed up. Please use the login button to login.",
+            {
+              position: toast.POSITION.BOTTOM_RIGHT,
+            }
+          );
+          setSubmitting(false);
         }}
       >
         {({
@@ -74,16 +83,10 @@ export default function SignUp() {
             <div className="text-red-600">
               {errors.password && touched.password && errors.password}
             </div>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="block border border-black p-4"
-            >
-              Submit
-            </button>
+            <Button disabled={isSubmitting} text="Submit"></Button>
           </form>
         )}
       </FormContainer>
-    </div>
+    </SignUpContainer>
   );
 }

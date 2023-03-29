@@ -1,7 +1,7 @@
 import axios from "./axios";
 
 interface SignUpParams {
-  username: string;
+  email: string;
   password: string;
 }
 

@@ -11,6 +11,8 @@ import NotFound from "./NotFound";
 import Footer from "./Footer";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,6 +27,7 @@ ReactDOM.render(
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
+    <ToastContainer></ToastContainer>
     <Footer />
   </React.StrictMode>,
   document.getElementById("root")
