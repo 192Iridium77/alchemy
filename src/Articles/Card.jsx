@@ -16,9 +16,6 @@ function ArticleCard({ article }) {
           <div className="p-8">
             <h1 className="text-xl">{article.title}</h1>
             <Markdown data={{ html: article.description }}></Markdown>
-            <div className="inline mt-8 text-primary-200 border-b border-primary-200">
-              Read More
-            </div>
           </div>
         </div>
       </Link>

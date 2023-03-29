@@ -21,14 +21,6 @@ p {
   @apply text-base;
 }
 
-a {
-  @apply text-primary-200;
-}
-
-a:hover {
-  @apply border-primary-100;
-}
-
 ul li {
   list-style-type: disc;
 }

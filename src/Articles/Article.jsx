@@ -26,9 +26,11 @@ function Article() {
         ></div>
         <div className="text-white absolute pl-8 pb-8 bottom-0">
           <div className="text-2xl">{article.title}</div>
-          <div className="text">by {article.author}</div>
+          <div className="text-sm uppercase tracking-widest">
+            {article.author}
+          </div>
           <div className="text-sm">
-            {article.publishedDate.toLocaleString()}
+            {article.publishedDate.toLocaleDateString("en-AU")}
           </div>
         </div>
       </div>

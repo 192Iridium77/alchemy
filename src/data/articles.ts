@@ -90,7 +90,7 @@ Overall, The Psychology of Money is a must-read for anyone looking to gain a dee
     ],
     author: "Matthew Martin",
     draft: true,
-    publishedDate: new Date("12/30/2022 15:00"),
+    publishedDate: new Date("12/30/2022"),
   },
   {
     title: "Should your code be public?",
@@ -124,7 +124,7 @@ Maybe it depends heavily on what you are coding? If you build a virus to underst
     ],
     author: "Matthew Martin",
     draft: true,
-    publishedDate: new Date("07/01/2022 18:00"),
+    publishedDate: new Date("07/01/2022"),
   },
   {
     title: "Shelf Worthy: Business",
@@ -200,7 +200,7 @@ Overall, Zero to One is a must-read for entrepreneurs and business leaders looki
     ],
     author: "Matthew Martin",
     draft: true,
-    publishedDate: new Date("05/12/2022 13:00"),
+    publishedDate: new Date("05/12/2022"),
   },
   {
     title: "Tech Drive",
@@ -236,7 +236,7 @@ In this article, I have set out to take control of my career and to set higher g
     ],
     author: "Matthew Martin",
     draft: true,
-    publishedDate: new Date("08/07/2021 15:00"),
+    publishedDate: new Date("08/07/2021"),
   },
   {
     title: "Code confidence with Typescript",
@@ -266,7 +266,7 @@ The only reason I can currently see not to use typescript is when you have not l
     ],
     author: "Matthew Martin",
     draft: true,
-    publishedDate: new Date("07/03/2021 09:00"),
+    publishedDate: new Date("07/03/2021"),
   },
 ];
 
