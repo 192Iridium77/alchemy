@@ -1,5 +1,22 @@
 import axios from "axios";
 
-export default axios.create({
+const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
 });
+
+axiosInstance.interceptors.request.use(
+  (config) => {
+    const { origin } = new URL(config.baseURL || "");
+    const allowedOrigins = [process.env.REACT_APP_API_URL];
+    const token = localStorage.getItem("token");
+    if (allowedOrigins.includes(origin)) {
+      config.headers.authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+export default axiosInstance;

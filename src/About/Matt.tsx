@@ -205,7 +205,7 @@ export default function Matt() {
     return (
       <div>
         <div className="text-xl flex justify-center mt-8"> Certifications </div>
-        <div className="flex flex-wrap justify-center mt-8 gap-8 -mx-8">
+        <div className="flex flex-wrap justify-center mt-8 gap-8 -mx-4">
           <a
             className="md:w-5/12 p-8 block bg-black"
             href="/files/graphql-by-example.pdf"

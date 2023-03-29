@@ -17,7 +17,7 @@ const signUp = async (params: SignUpParams) => {
 
 const logIn = async (params: LogInParams) => {
   const { data } = await axios.post("/auth/login", params);
-  console.log("🚀 ~ file: auth.ts:20 ~ logIn ~ data:", data);
+  localStorage.setItem("token", data.accessToken);
   return data;
 };
 
