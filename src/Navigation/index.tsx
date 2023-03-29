@@ -4,6 +4,7 @@ import { TopBar, MobileTopBar } from "alchemy-tech-ui";
 import { useMediaQuery } from "react-responsive";
 import Modal from "react-modal";
 import SignUp from "../User/SignUp";
+import LogIn from "../User/LogIn";
 import { NavButton, Button, Icon } from "alchemy-tech-ui";
 import styled from "styled-components";
 
@@ -22,8 +23,16 @@ const CloseModalButton = styled.div`
   height: 32px;
 `;
 
+enum ModalContentType {
+  SIGN_UP = "signUp",
+  LOG_IN = "logIn",
+}
+
 function Navigation() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalContentType, setModalContentType] = React.useState<
+    ModalContentType | undefined
+  >();
 
   let maxWidth;
   // todo make some kind of responsive hook
@@ -41,10 +50,16 @@ function Navigation() {
 
   const openSignUp = () => {
     setIsOpen(true);
+    setModalContentType(ModalContentType.SIGN_UP);
+  };
+  const openLogIn = () => {
+    setIsOpen(true);
+    setModalContentType(ModalContentType.LOG_IN);
   };
 
   function closeModal() {
     setIsOpen(false);
+    setModalContentType(undefined);
     document.body.style.overflow = "auto";
   }
 
@@ -92,14 +107,9 @@ function Navigation() {
             </div>
           }
           userMenu={
-            <div className="flex gap-8 p-4">
-              <Button onClick={openSignUp} text="Sign Up" />
-              {/* <button className="text-primary-200 border-b border-primary-200">
-          Log In
-        </button> */}
-              {/* <button className="text-primary-200 border-b border-primary-200">
-          Log Out
-        </button> */}
+            <div className="flex gap-4 p-4">
+              <Button onClick={openSignUp} text="Sign up" />
+              <Button onClick={openLogIn} text="Log in" />
             </div>
           }
           maxWidth={maxWidth}
@@ -128,15 +138,8 @@ function Navigation() {
           }
           userMenu={
             <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
-              <button onClick={openSignUp} className="underline text-bold">
-                Sign Up
-              </button>
-              {/* <button className="text-primary-200 border-b border-primary-200">
-            Log In
-          </button> */}
-              {/* <button className="text-primary-200 border-b border-primary-200">
-            Log Out
-          </button> */}
+              <Button onClick={openSignUp} text="Sign up" />
+              <Button onClick={openLogIn} text="Log in" />
             </div>
           }
         />
@@ -152,7 +155,11 @@ function Navigation() {
           <CloseModalButton onClick={closeModal}>
             <Icon type="Close" color="white" />
           </CloseModalButton>
-          <SignUp />
+          {modalContentType === ModalContentType.SIGN_UP ? (
+            <SignUp closeModal={closeModal} />
+          ) : modalContentType === ModalContentType.LOG_IN ? (
+            <LogIn closeModal={closeModal} />
+          ) : null}
         </div>
       </Modal>
     </>

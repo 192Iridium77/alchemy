@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import styled from "styled-components";
-import { signUp } from "../services/auth";
+import { logIn } from "../services/auth";
 import { Button } from "alchemy-tech-ui";
 import { toast } from "react-toastify";
 
@@ -9,24 +9,19 @@ const FormContainer = styled(Formik)`
   margin-top: 1rem;
 `;
 
-const SignUpContainer = styled.div`
+const LogInContainer = styled.div`
   padding: 1.5rem;
 `;
 
-interface SignUpProps {
+interface LogInProps {
   closeModal: () => void;
 }
 
-export default function SignUp({ closeModal }: SignUpProps) {
+export default function LogIn({ closeModal }: LogInProps) {
   return (
-    <SignUpContainer>
-      <div className="text-xl">Sign Up</div>
-      <div className="mt-8">
-        Welcome to Alchemy Tech! To get started, please fill out the quick and
-        easy signup form below. By becoming a member, you'll have access to
-        exclusive content, resources, and opportunities to collaborate with
-        like-minded individuals.
-      </div>
+    <LogInContainer>
+      <div className="text-xl">Log In</div>
+      <div className="mt-8">Welcome to Alchemy Tech!</div>
 
       <FormContainer
         initialValues={{ email: "", password: "" }}
@@ -42,13 +37,16 @@ export default function SignUp({ closeModal }: SignUpProps) {
           return errors;
         }}
         onSubmit={async (values, { setSubmitting }) => {
-          await signUp({ email: values.email, password: values.password });
-          toast.success(
-            "Congratulations! You have successfully signed up. Please use the login button to login.",
-            {
+          try {
+            await logIn({ email: values.email, password: values.password });
+            toast.success("You have successfully logged in.", {
               position: toast.POSITION.BOTTOM_RIGHT,
-            }
-          );
+            });
+          } catch (error) {
+            toast.error("Something went wrong.", {
+              position: toast.POSITION.BOTTOM_RIGHT,
+            });
+          }
           setSubmitting(false);
           closeModal();
         }}
@@ -92,6 +90,6 @@ export default function SignUp({ closeModal }: SignUpProps) {
           </form>
         )}
       </FormContainer>
-    </SignUpContainer>
+    </LogInContainer>
   );
 }

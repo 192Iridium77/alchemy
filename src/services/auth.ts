@@ -5,10 +5,20 @@ interface SignUpParams {
   password: string;
 }
 
+interface LogInParams {
+  email: string;
+  password: string;
+}
+
 const signUp = async (params: SignUpParams) => {
   const { data } = await axios.post("/auth/signup", params);
-
-  console.log("🚀 ~ file: auth.ts:7 ~ signUp ~ data:", data);
+  return data;
 };
 
-export { signUp };
+const logIn = async (params: LogInParams) => {
+  const { data } = await axios.post("/auth/login", params);
+  console.log("🚀 ~ file: auth.ts:20 ~ logIn ~ data:", data);
+  return data;
+};
+
+export { signUp, logIn };
