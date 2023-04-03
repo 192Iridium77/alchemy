@@ -1,34 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Navigation from "./Navigation/index";
-import Home from "./Home";
-import Article from "./Articles/Article";
-import About from "./About/About";
-import Matt from "./About/Matt";
-import Apps from "./Apps/List";
-import NotFound from "./NotFound";
-import Footer from "./Footer";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import AuthProvider from "./context/AuthProvider";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navigation />
-      <Routes>
-        <Route path="/" exact element={<Home />}></Route>
-        <Route path="/article/:slug" element={<Article />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/about/matt" element={<Matt />}></Route>
-        <Route path="/apps" element={<Apps />}></Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </BrowserRouter>
-    <ToastContainer></ToastContainer>
-    <Footer />
   </React.StrictMode>,
   document.getElementById("root")
 );

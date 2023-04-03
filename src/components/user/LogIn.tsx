@@ -1,9 +1,10 @@
 import React from "react";
 import { Formik } from "formik";
 import styled from "styled-components";
-import { logIn } from "../services/auth";
+import { getLoggedInUser, logIn } from "../../services/auth/auth.service";
 import { Button } from "alchemy-tech-ui";
 import { toast } from "react-toastify";
+import useAuthContext from "../../context/useAuthContext";
 
 const FormContainer = styled(Formik)`
   margin-top: 1rem;
@@ -18,6 +19,7 @@ interface LogInProps {
 }
 
 export default function LogIn({ closeModal }: LogInProps) {
+  const { setUser } = useAuthContext();
   return (
     <LogInContainer>
       <div className="text-xl">Log In</div>
@@ -39,6 +41,8 @@ export default function LogIn({ closeModal }: LogInProps) {
         onSubmit={async (values, { setSubmitting }) => {
           try {
             await logIn({ email: values.email, password: values.password });
+            const user = await getLoggedInUser();
+            setUser(user);
             toast.success("You have successfully logged in.", {
               position: toast.POSITION.BOTTOM_RIGHT,
             });

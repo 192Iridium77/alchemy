@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik } from "formik";
 import styled from "styled-components";
-import { signUp } from "../services/auth";
+import { signUp } from "../../services/auth/auth.service";
 import { Button } from "alchemy-tech-ui";
 import { toast } from "react-toastify";
 

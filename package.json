@@ -8,13 +8,14 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "alchemy-tech-ui": "^1.3.6",
+    "alchemy-tech-ui": "^1.4.0",
     "axios": "^1.3.4",
     "dompurify": "^2.3.1",
     "dotenv": "^16.0.3",
     "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-floating-button": "^1.1.1",
     "react-markdown": "^8.0.4",
     "react-modal": "^3.16.1",
     "react-player": "^2.11.0",

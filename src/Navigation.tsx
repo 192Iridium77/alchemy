@@ -3,10 +3,11 @@ import { NavLink } from "react-router-dom";
 import { TopBar, MobileTopBar } from "alchemy-tech-ui";
 import { useMediaQuery } from "react-responsive";
 import Modal from "react-modal";
-import SignUp from "../User/SignUp";
-import LogIn from "../User/LogIn";
+import SignUp from "./components/user/SignUp";
+import LogIn from "./components/user/LogIn";
 import { NavButton, Button, Icon } from "alchemy-tech-ui";
 import styled from "styled-components";
+import userAuthContext from "./context/useAuthContext";
 
 Modal.setAppElement("#root");
 
@@ -33,6 +34,7 @@ function Navigation() {
   const [modalContentType, setModalContentType] = React.useState<
     ModalContentType | undefined
   >();
+  const { user, setUser } = userAuthContext();
 
   let maxWidth;
   // todo make some kind of responsive hook
@@ -52,6 +54,7 @@ function Navigation() {
     setIsOpen(true);
     setModalContentType(ModalContentType.SIGN_UP);
   };
+
   const openLogIn = () => {
     setIsOpen(true);
     setModalContentType(ModalContentType.LOG_IN);
@@ -65,6 +68,12 @@ function Navigation() {
 
   const disableScroll = () => {
     document.body.style.overflow = "hidden";
+  };
+
+  const logOut = async () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    setUser();
   };
 
   // built in styling for ReactModal
@@ -108,8 +117,14 @@ function Navigation() {
           }
           userMenu={
             <div className="flex gap-4 p-4">
-              <Button onClick={openSignUp} text="Sign up" />
-              <Button onClick={openLogIn} text="Log in" />
+              {user ? (
+                <Button onClick={logOut} text="Log out" />
+              ) : (
+                <>
+                  <Button onClick={openSignUp} text="Sign up" />
+                  <Button onClick={openLogIn} text="Log in" />
+                </>
+              )}
             </div>
           }
           maxWidth={maxWidth}

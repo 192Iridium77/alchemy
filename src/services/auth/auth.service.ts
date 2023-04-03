@@ -1,4 +1,5 @@
-import axios from "./axios";
+import axios from "../axios";
+import { User } from "../../types/user.types";
 
 interface SignUpParams {
   email: string;
@@ -17,8 +18,21 @@ const signUp = async (params: SignUpParams) => {
 
 const logIn = async (params: LogInParams) => {
   const { data } = await axios.post("/auth/login", params);
+
   localStorage.setItem("token", data.accessToken);
+  localStorage.setItem("userId", data.userId);
+
   return data;
 };
 
-export { signUp, logIn };
+const getLoggedInUser = async (): Promise<User | undefined> => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    const userId = localStorage.getItem("userId");
+    const { data } = await axios.get(`/users/${userId}`);
+    return data;
+  }
+};
+
+export { signUp, logIn, getLoggedInUser };
