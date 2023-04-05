@@ -1,3 +1,5 @@
+import React from "react";
+
 import articles from "../data/articles";
 import { useParams } from "react-router-dom";
 import Markdown from "../components/Markdown";
@@ -8,6 +10,8 @@ function Article() {
   const article = articles.find((article) => {
     return article.slug === slug;
   });
+
+  if (!article) return <div>404 not found</div>;
 
   const image = article.image;
 
@@ -38,9 +42,11 @@ function Article() {
         <Markdown>{article.description}</Markdown>
         {article.components.map((component, index) => {
           if (component.type === "markdown") {
-            return <Markdown key={index}>{component.text}</Markdown>;
+            // @ts-ignore
+            return <Markdown key={index}>{component.text || ""}</Markdown>;
           }
           if (component.type === "review") {
+            // @ts-ignore
             return <Review key={index} {...component} />;
           }
           return "";
