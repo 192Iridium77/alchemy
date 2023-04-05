@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Markdown from "../components/Markdown";
 import Review from "../components/Review";
 
-function Article() {
+export default function Article() {
   const { slug } = useParams();
   const article = articles.find((article) => {
     return article.slug === slug;
@@ -55,5 +55,3 @@ function Article() {
     </div>
   );
 }
-
-export default Article;
