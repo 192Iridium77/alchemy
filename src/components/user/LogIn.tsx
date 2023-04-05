@@ -46,13 +46,13 @@ export default function LogIn({ closeModal }: LogInProps) {
             toast.success("You have successfully logged in.", {
               position: toast.POSITION.BOTTOM_RIGHT,
             });
+            closeModal();
           } catch (error) {
             toast.error("Something went wrong.", {
               position: toast.POSITION.BOTTOM_RIGHT,
             });
           }
           setSubmitting(false);
-          closeModal();
         }}
       >
         {({

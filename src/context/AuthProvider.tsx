@@ -13,6 +13,12 @@ const AuthProvider = ({ children }: any) => {
     })();
   }, []);
 
+  const logOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    setUser(undefined);
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -20,6 +26,7 @@ const AuthProvider = ({ children }: any) => {
         setUser,
         isAuthenticated: user?.id,
         isAdmin: user?.role === UserRole.ADMIN,
+        logOut,
       }}
     >
       {children}
