@@ -15,9 +15,10 @@ import NotFound from "../NotFound";
 import Loading from "../components/Loading";
 
 const LoadingContainer = styled.div`
-  position: absolute;
-  top: 40%;
-  left: 40%;
+  diplay: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 200px 0;
 `;
 
 const AdminTools = styled.div`
@@ -51,10 +52,10 @@ export default function ArticleComponent({
         const fetchedArticle = await articlesService.getArticleBySlug(slug);
         setImageId(fetchedArticle.imageId);
         setArticle(fetchedArticle);
-        setLoading(false);
       } catch (error) {
         toast.error("An unknown error occured while loading the article");
       }
+      setLoading(false);
     }
 
     fetchArticle();
