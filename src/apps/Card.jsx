@@ -9,7 +9,7 @@ export default function AppCard({ data }) {
             <img
               src={`/images/${image.filename}.${image.extension}`}
               alt={image.alt}
-              className="aspect-ration-16/9"
+              className="aspect-ration-16/9 w-full"
             />
           ) : null}
           <div className="p-8" style={{ minHeight: "140px" }}>

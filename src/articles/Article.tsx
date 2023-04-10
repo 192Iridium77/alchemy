@@ -84,7 +84,7 @@ export default function ArticleComponent({
       {isAdmin() && article ? (
         <AdminTools>
           <Icon
-            type="Document"
+            type="Edit"
             color="white"
             onClick={() => openEditArticleModal({ articleId: article.id })}
           />
