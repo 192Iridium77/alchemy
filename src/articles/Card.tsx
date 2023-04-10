@@ -5,6 +5,8 @@ import imagesService from "../images/image.service";
 import { Article } from "./article.types";
 import styled from "styled-components";
 import { colors } from "alchemy-tech-ui";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { toast } from "react-toastify";
 
 interface ArticleCardProps {
   article: Article;
@@ -15,6 +17,7 @@ interface ArticleContentProps {
 }
 
 const ArticleContainer = styled.div`
+  position: relative;
   width: 100%;
   @media (min-width: 768px) {
     width: 50%;
@@ -40,7 +43,7 @@ const ArticleContent = styled.div<ArticleContentProps>`
   min-height: 600px;
 `;
 
-const ArticleImage = styled.img`
+const ArticleImage = styled(LazyLoadImage)`
   aspect-ratio: 16 / 9;
 `;
 
@@ -58,7 +61,7 @@ function ArticleCard({ article }: ArticleCardProps) {
         const fetchedImage = await imagesService.getImage(article.imageId);
         setImage(fetchedImage);
       } catch (error) {
-        console.error("Error fetching article:", error);
+        toast.error("Error fetching image");
       }
     }
 
@@ -69,7 +72,7 @@ function ArticleCard({ article }: ArticleCardProps) {
     <ArticleContainer>
       <ArticleLink to={`/articles/${article.slug}`}>
         <ArticleContent published={article.published}>
-          {image ? <ArticleImage src={image.url} alt={image.alt} /> : null}
+          <ArticleImage src={image?.url} alt={image?.alt} />
           <ArticleTitle>{article.title}</ArticleTitle>
         </ArticleContent>
       </ArticleLink>

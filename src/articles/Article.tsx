@@ -102,6 +102,8 @@ export default function ArticleComponent({
                 className="w-full bg-cover bg-no-repeat bg-bottom"
                 style={{
                   height: "400px",
+                  minHeight: "400px",
+                  backgroundColor: "black",
                   backgroundImage: `linear-gradient(
           rgba(0, 0, 0, 0.4 ),
           rgba(0, 0, 0, 0.4)
