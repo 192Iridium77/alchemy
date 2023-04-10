@@ -81,7 +81,7 @@ export default function GenerateArticle({ articleId }: Props) {
   };
 
   const navToArticle = (slug: string) => {
-    navigate(`/article/${slug}`);
+    navigate(`/articles/${slug}`);
   };
 
   const saveArticle = async () => {
@@ -145,7 +145,7 @@ export default function GenerateArticle({ articleId }: Props) {
             <ArticlePreviewContent>{article.title}</ArticlePreviewContent>
             <ArticlePreviewLabel>Slug</ArticlePreviewLabel>
             <ArticlePreviewContent>
-              /article/{article.slug}
+              /articles/{article.slug}
             </ArticlePreviewContent>
             <ArticlePreviewLabel>Description</ArticlePreviewLabel>
             <ArticlePreviewContent>{article.description}</ArticlePreviewContent>

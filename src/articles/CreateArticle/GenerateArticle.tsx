@@ -78,7 +78,7 @@ export default function GenerateArticle({ closeModal }: Props) {
   };
 
   const navToArticle = (slug: string) => {
-    navigate(`/article/${slug}`);
+    navigate(`/articles/${slug}`);
   };
 
   const createArticle = async () => {
@@ -145,7 +145,7 @@ export default function GenerateArticle({ closeModal }: Props) {
             <ArticlePreviewContent>{newArticle.title}</ArticlePreviewContent>
             <ArticlePreviewLabel>Slug</ArticlePreviewLabel>
             <ArticlePreviewContent>
-              /article/{newArticle.slug}
+              /articles/{newArticle.slug}
             </ArticlePreviewContent>
             <ArticlePreviewLabel>Description</ArticlePreviewLabel>
             <ArticlePreviewContent>

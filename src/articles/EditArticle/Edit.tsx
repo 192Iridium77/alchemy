@@ -33,7 +33,7 @@ export default function CreateArticleForm({ articleId, closeModal }: Props) {
   }, [article]);
 
   const navToArticle = (slug: string) => {
-    navigate(`/article/${slug}`);
+    navigate(`/articles/${slug}`);
   };
 
   if (!article || loadingArticle || !initialValues) return <Loading />;
