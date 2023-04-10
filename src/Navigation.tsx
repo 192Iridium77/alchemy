@@ -40,7 +40,7 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
           }
           navigationMenu={
             <div className="flex justify-center gap-4 p-4">
-              <NavLink to="/">
+              <NavLink to="/articles">
                 {({ isActive }) => (
                   <NavButton text="Articles" active={isActive} />
                 )}
@@ -54,7 +54,7 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
             </div>
           }
           userMenu={
-            <div className="flex gap-4 p-4">
+            <div className="flex gap-4">
               {user ? (
                 <Button onClick={logOut} text="Log out" />
               ) : (

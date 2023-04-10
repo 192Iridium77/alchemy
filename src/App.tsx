@@ -14,10 +14,12 @@ import Modal, { ModalTypes } from "./components/Modal";
 export default function App() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [modalComponent, setModalComponent] = React.useState<ModalTypes>();
+  const [data, setData] = React.useState<any>();
 
-  const openModal = (type: ModalTypes) => {
+  const openModal = (type: ModalTypes, data?: any) => {
     setIsOpen(true);
     setModalComponent(type);
+    setData(data);
   };
 
   const closeModal = () => {
@@ -38,6 +40,7 @@ export default function App() {
       />
       <Router
         openCreateArticleModal={() => openModal(ModalTypes.CreateArticle)}
+        openEditArticleModal={(data) => openModal(ModalTypes.EditArticle, data)}
       />
       <ToastContainer />
       <Modal
@@ -45,6 +48,7 @@ export default function App() {
         component={modalComponent}
         closeModal={closeModal}
         disableScroll={disableScroll}
+        data={data}
       />
       <Footer />
     </>

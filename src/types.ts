@@ -40,7 +40,7 @@ export interface Article {
   description: string;
   components: (Markdown | Image | Review)[];
   author: string;
-  draft: boolean;
+  published: boolean;
   publishedDate: Date;
   image: LocalImage;
 }

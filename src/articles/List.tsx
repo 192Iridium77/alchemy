@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import articles from "../data/articles";
 import useAuthContext from "../context/useAuthContext";
 import { Icon } from "alchemy-tech-ui";
 import styled from "styled-components";
 import { colors, spacing } from "alchemy-tech-ui";
+import articleService from "./articles.service";
+import { Article } from "./article.types";
 
 const AdminTools = styled.div`
   position: fixed;
@@ -21,10 +22,24 @@ interface ArticlesListProps {
 
 function ArticlesList({ openCreateArticleModal }: ArticlesListProps) {
   const { isAdmin } = useAuthContext();
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      if (isAdmin()) {
+        const fetchedArticles = await articleService.getArticles();
+        setArticles(fetchedArticles);
+      } else {
+        const fetchedArticles = await articleService.getPublishedArticles();
+        setArticles(fetchedArticles);
+      }
+    };
+    fetchArticles();
+  }, [isAdmin]);
 
   return (
     <div className="container">
-      {isAdmin ? (
+      {isAdmin() ? (
         <AdminTools>
           <Icon
             type="Document"

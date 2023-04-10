@@ -3,7 +3,8 @@ import ReactModal from "react-modal";
 import styled from "styled-components";
 import SignUp from "./user/SignUp";
 import LogIn from "./user/LogIn";
-import CreateArticle from "../articles/CreateArticle";
+import CreateArticle from "../articles/CreateArticle/ModalContent";
+import EditArticle from "../articles/EditArticle/ModalContent";
 import { Icon } from "alchemy-tech-ui";
 
 // built in styling for ReactModal
@@ -16,6 +17,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     maxWidth: "600px",
+    maxHeight: "75%",
   },
 };
 
@@ -40,12 +42,14 @@ export enum ModalTypes {
   SignUp = "SignUp",
   LogIn = "LogIn",
   CreateArticle = "CreateArticle",
+  EditArticle = "EditArticle",
 }
 
 const modalComponents = {
   [ModalTypes.SignUp]: SignUp,
   [ModalTypes.LogIn]: LogIn,
   [ModalTypes.CreateArticle]: CreateArticle,
+  [ModalTypes.EditArticle]: EditArticle,
 };
 
 interface ModalProps {
@@ -53,6 +57,7 @@ interface ModalProps {
   component?: ModalTypes;
   closeModal: () => void;
   disableScroll: () => void;
+  data: any;
 }
 
 ReactModal.setAppElement("#root");
@@ -62,8 +67,9 @@ export default function Modal({
   component,
   closeModal,
   disableScroll,
+  data,
 }: ModalProps) {
-  const ModalComponent = component ? modalComponents[component] : undefined;
+  const ModalComponent = component && modalComponents[component];
 
   return (
     <ReactModal
@@ -76,7 +82,9 @@ export default function Modal({
         <CloseModalButton>
           <Icon onClick={closeModal} type="Close" color="white" />
         </CloseModalButton>
-        {ModalComponent ? <ModalComponent closeModal={closeModal} /> : null}
+        {ModalComponent ? (
+          <ModalComponent closeModal={closeModal} data={data} />
+        ) : null}
       </ModalContainer>
     </ReactModal>
   );

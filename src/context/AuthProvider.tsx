@@ -19,13 +19,17 @@ const AuthProvider = ({ children }: any) => {
     setUser(undefined);
   };
 
+  const isAdmin = () => {
+    return user?.role === UserRole.ADMIN;
+  };
+
   return (
     <AuthContext.Provider
       value={{
         user,
         setUser,
         isAuthenticated: user?.id,
-        isAdmin: user?.role === UserRole.ADMIN,
+        isAdmin,
         logOut,
       }}
     >

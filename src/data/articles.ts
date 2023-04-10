@@ -1,6 +1,4 @@
-import { Article } from "../types";
-
-const articles: Article[] = [
+const articles: any[] = [
   {
     title: "Shelf Worthy: Finance",
     slug: "must-reads-finance",
