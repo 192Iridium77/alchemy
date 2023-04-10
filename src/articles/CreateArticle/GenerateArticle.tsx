@@ -59,13 +59,18 @@ export default function GenerateArticle({ closeModal }: Props) {
   const [question, setArticleQuestion] = useState<string>();
   const [loading, setLoading] = useState<boolean>(false);
 
-  const generateArticle = async (): Promise<Partial<Article>> => {
+  const generateArticle = async (): Promise<Partial<Article> | undefined> => {
     setLoading(true);
-    const result = await articlesService.generateArticle({
-      question,
-    });
-    setLoading(false);
-    return result;
+    try {
+      const result = await articlesService.generateArticle({
+        question,
+      });
+      setLoading(false);
+      return result;
+    } catch (err) {
+      toast.error("An unknown error occured");
+      setLoading(false);
+    }
   };
 
   const handlePrompt = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -112,13 +117,15 @@ export default function GenerateArticle({ closeModal }: Props) {
           value={question}
         />
         <Button
-          text={question ? "Regenerate" : "Generate"}
+          text="Generate"
           onClick={async () => {
             if (!question) return;
 
-            const { title, slug, description } = await generateArticle();
+            const generatedArticle = await generateArticle();
 
-            setNewArticle({ title, slug, description });
+            if (generatedArticle) {
+              setNewArticle(generatedArticle);
+            }
           }}
         />
       </PromptContainer>
