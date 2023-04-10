@@ -53,7 +53,7 @@ export default function ArticleComponent({
         setArticle(fetchedArticle);
         setLoading(false);
       } catch (error) {
-        toast.error("Error fetching image");
+        toast.error("An unknown error occured while loading the article");
       }
     }
 
@@ -67,7 +67,7 @@ export default function ArticleComponent({
         const fetchedImage = await imagesService.getImage(imageId);
         setImage(fetchedImage);
       } catch (error) {
-        console.error("Error fetching article:", error);
+        toast.error("An unknown error occured while loading the image");
       }
     }
 
