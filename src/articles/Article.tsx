@@ -54,7 +54,7 @@ export default function ArticleComponent({
       } catch (error) {
         toast.error("An unknown error occured while loading the article");
       }
-      setLoading(true);
+      setLoading(false);
     }
 
     fetchArticle();
