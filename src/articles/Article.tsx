@@ -15,9 +15,8 @@ import NotFound from "../NotFound";
 import Loading from "../components/Loading";
 
 const LoadingContainer = styled.div`
-  diplay: flex;
+  display: flex;
   justify-content: center;
-  width: 100%;
   margin: 200px 0;
 `;
 
@@ -55,7 +54,7 @@ export default function ArticleComponent({
       } catch (error) {
         toast.error("An unknown error occured while loading the article");
       }
-      setLoading(false);
+      setLoading(true);
     }
 
     fetchArticle();
