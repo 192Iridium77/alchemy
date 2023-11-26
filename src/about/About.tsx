@@ -67,8 +67,9 @@ function About() {
                   Svelte Studios and Sine / Honeywell. He was educated in Maths,
                   Physics and Chemistry at Adelaide University.
                 </div>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="mt-4 block underline">View Profile</a>
+                <a className="mt-4 block underline" href="#">
+                  View Profile
+                </a>
               </div>
             </div>
             <div className="md:flex md:flex-row-reverse w-full">
