@@ -1,4 +1,5 @@
 import React from "react";
+import Certifications from "./Certifications";
 
 export default function Matt() {
   const PhoneIcon = () => (
@@ -201,33 +202,33 @@ export default function Matt() {
     );
   };
 
-  const Certifications = () => {
-    return (
-      <div>
-        <div className="text-xl flex justify-center mt-8"> Certifications </div>
-        <div className="flex flex-wrap justify-center mt-8 gap-8 -mx-4">
-          <a
-            className="md:w-5/12 p-8 block bg-black"
-            href="/files/graphql-by-example.pdf"
-          >
-            <img
-              src="/images/gqlexample.jpg"
-              alt="Graphql by example certificate"
-            />
-          </a>
-          <a
-            className="md:w-5/12 p-8 block bg-black"
-            href="/files/go-the-complete-developers-guide.pdf"
-          >
-            <img
-              src="/images/godevsguide.jpg"
-              alt="Graphql by example certificate"
-            />
-          </a>
-        </div>
-      </div>
-    );
-  };
+  // const Certifications = () => {
+  //   return (
+  //     <div>
+  //       <div className="text-xl flex justify-center mt-8"> Certifications </div>
+  //       <div className="flex flex-wrap justify-center mt-8 gap-8 -mx-4">
+  //         <a
+  //           className="md:w-5/12 p-8 block bg-black"
+  //           href="/files/graphql-by-example.pdf"
+  //         >
+  //           <img
+  //             src="/images/gqlexample.jpg"
+  //             alt="Graphql by example certificate"
+  //           />
+  //         </a>
+  //         <a
+  //           className="md:w-5/12 p-8 block bg-black"
+  //           href="/files/go-the-complete-developers-guide.pdf"
+  //         >
+  //           <img
+  //             src="/images/godevsguide.jpg"
+  //             alt="Graphql by example certificate"
+  //           />
+  //         </a>
+  //       </div>
+  //     </div>
+  //   );
+  // };
 
   return (
     <div className="container mt-12">
