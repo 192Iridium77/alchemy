@@ -1,7 +1,7 @@
 import { Review as ReviewProps } from "../types";
 import Markdown from "./Markdown";
 import React from "react";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 
 export default function Review({
   title,
@@ -25,11 +25,11 @@ export default function Review({
             {quote}
           </i>
           <Markdown>{text}</Markdown>
-          {video?.url ? (
+          {/* {video?.url ? (
             <div className="bg-gray-100 md:m-4 md:p-4 text-lg text-center">
               <ReactPlayer url={video.url} width="100%" />
             </div>
-          ) : null}
+          ) : null} */}
         </div>
       </div>
     </div>
