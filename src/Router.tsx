@@ -8,8 +8,8 @@ import NotFound from "./NotFound";
 import { Route, Routes, Navigate } from "react-router-dom";
 
 interface RouterProps {
-  openCreateArticleModal: () => void;
-  openEditArticleModal: (data: any) => void;
+  openCreateArticleModal?: () => void;
+  openEditArticleModal?: (data: any) => void;
 }
 
 export default function Router({
@@ -23,12 +23,16 @@ export default function Router({
         <Route
           index
           element={
-            <ArticlesList openCreateArticleModal={openCreateArticleModal} />
+            // <ArticlesList openCreateArticleModal={openCreateArticleModal} />
+            <ArticlesList />
           }
         />
         <Route
           path=":slug"
-          element={<Article openEditArticleModal={openEditArticleModal} />}
+          element={
+            // <Article openEditArticleModal={openEditArticleModal} />
+            <Article />
+          }
         ></Route>
       </Route>
       <Route path="/about" element={<About />}></Route>

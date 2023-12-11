@@ -30,7 +30,7 @@ const AdminTools = styled.div`
 `;
 
 interface ArticleComponentProps {
-  openEditArticleModal: ({ articleId }: { articleId: string }) => void;
+  openEditArticleModal?: ({ articleId }: { articleId: string }) => void;
 }
 
 export default function ArticleComponent({
@@ -86,7 +86,7 @@ export default function ArticleComponent({
           <Icon
             type="Edit"
             color="white"
-            onClick={() => openEditArticleModal({ articleId: article.id })}
+            // onClick={() => openEditArticleModal({ articleId: article.id })}
           />
         </AdminTools>
       ) : null}

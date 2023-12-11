@@ -6,8 +6,8 @@ import { NavButton, Button } from "alchemy-tech-ui";
 import userAuthContext from "./context/useAuthContext";
 
 interface NavigationProps {
-  openLogIn: () => void;
-  openSignUp: () => void;
+  openLogIn?: () => void;
+  openSignUp?: () => void;
 }
 
 function Navigation({ openLogIn, openSignUp }: NavigationProps) {
@@ -53,18 +53,18 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
               </NavLink>
             </div>
           }
-          userMenu={
-            <div className="flex gap-4">
-              {user ? (
-                <Button onClick={logOut} text="Log out" />
-              ) : (
-                <>
-                  <Button onClick={openSignUp} text="Sign up" />
-                  <Button onClick={openLogIn} text="Log in" />
-                </>
-              )}
-            </div>
-          }
+          // userMenu={
+          //   <div className="flex gap-4">
+          //     {user ? (
+          //       <Button onClick={logOut} text="Log out" />
+          //     ) : (
+          //       <>
+          //         <Button onClick={openSignUp} text="Sign up" />
+          //         <Button onClick={openLogIn} text="Log in" />
+          //       </>
+          //     )}
+          //   </div>
+          // }
           maxWidth={maxWidth}
         />
       ) : (
@@ -89,18 +89,18 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
               </NavLink>
             </div>
           }
-          userMenu={
-            <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
-              {user ? (
-                <Button onClick={logOut} text="Log out" />
-              ) : (
-                <>
-                  <Button onClick={openSignUp} text="Sign up" />
-                  <Button onClick={openLogIn} text="Log in" />
-                </>
-              )}
-            </div>
-          }
+          // userMenu={
+          //   <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
+          //     {user ? (
+          //       <Button onClick={logOut} text="Log out" />
+          //     ) : (
+          //       <>
+          //         <Button onClick={openSignUp} text="Sign up" />
+          //         <Button onClick={openLogIn} text="Log in" />
+          //       </>
+          //     )}
+          //   </div>
+          // }
         />
       )}
     </>

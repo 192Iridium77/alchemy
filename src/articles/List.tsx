@@ -17,7 +17,7 @@ const AdminTools = styled.div`
 `;
 
 interface ArticlesListProps {
-  openCreateArticleModal: () => void;
+  openCreateArticleModal?: () => void;
 }
 
 function ArticlesList({ openCreateArticleModal }: ArticlesListProps) {
