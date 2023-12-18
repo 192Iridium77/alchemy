@@ -105,9 +105,9 @@ export default function ArticleComponent({
                   minHeight: "400px",
                   backgroundColor: "black",
                   backgroundImage: `linear-gradient(
-          rgba(0, 0, 0, 0.4 ),
-          rgba(0, 0, 0, 0.4)
-        ), url(${image.url})`,
+                    rgba(0, 0, 0, 0.4 ),
+                    rgba(0, 0, 0, 0.4)
+                  ), url(${image.url})`,
                 }}
               ></div>
             ) : null}
