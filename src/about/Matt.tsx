@@ -1,5 +1,6 @@
 import React from "react";
 import Certifications from "./Certifications";
+import { Helmet } from "react-helmet";
 
 export default function Matt() {
   const PhoneIcon = () => (
@@ -75,6 +76,13 @@ export default function Matt() {
   const Projects = () => {
     return (
       <div className="py-8">
+        <Helmet>
+          <title>Matt Martin | Software Engineer</title>
+          <meta
+            name="description"
+            content="Explore my software engineer portfolio showcasing projects with global and local impact. With expertise in Full Stack software development, I bring a blend of creativity and technical prowess to every project. Dive into a collection of my work that reflects a commitment to rapid prototyping, clean code, user-centric design, and a relentless pursuit of excellence in the world of software and business."
+          ></meta>
+        </Helmet>
         <div className="text-xl flex justify-center"> Projects </div>
         <div className="flex flex-wrap justify-center gap-8 mt-8">
           <a
