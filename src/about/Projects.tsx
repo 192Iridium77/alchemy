@@ -121,7 +121,7 @@ const Projects = () => {
             alt="Bloombar Flowers"
           />
         </a>
-        <a
+        {/* <a
           className="md:w-4/12 block p-4"
           href="http://www.actionresearch.com.au/"
         >
@@ -130,7 +130,7 @@ const Projects = () => {
             src="/images/action.jpg"
             alt="Action Market Research"
           />
-        </a>
+        </a> */}
       </div>
     </div>
   );
