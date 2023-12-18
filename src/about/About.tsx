@@ -6,7 +6,7 @@ function About() {
   const navigate = useNavigate();
 
   const navToMyProfile = () => {
-    navigate("/about/matt");
+    navigate("/about");
   };
 
   return (

@@ -35,8 +35,8 @@ export default function Router({
           }
         ></Route>
       </Route>
-      <Route path="/about" element={<About />}></Route>
-      <Route path="/about/matt" element={<Matt />}></Route>
+      <Route path="/about" element={<Matt />}></Route>
+      <Route path="/about/alchemy" element={<About />}></Route>
       <Route path="/apps" element={<Apps />}></Route>
       <Route path="*" element={<NotFound />}></Route>
     </Routes>
