@@ -97,7 +97,7 @@ Overall, The Psychology of Money is a must-read for anyone looking to gain a dee
       "It's a little scary not knowing who might be looking through your code or what they might do with it. But really, what could they do?",
     image: {
       filename: "LockAndKeys",
-      extension: "jpg",
+      extension: "webp",
       alt: "LockAndKeys",
     },
     components: [
@@ -130,7 +130,7 @@ Maybe it depends heavily on what you are coding? If you build a virus to underst
     description: `Here is a list of books that have inspired deeper conversations in my workplace about business.`,
     image: {
       filename: "library",
-      extension: "jpg",
+      extension: "webp",
       alt: "Library",
     },
     components: [
@@ -207,7 +207,7 @@ Overall, Zero to One is a must-read for entrepreneurs and business leaders looki
       "Do you remember what it was like when you first discovered programming? Software Engineers asked share their experience as awe at the potential that opens up coupled with desire to discover more.",
     image: {
       filename: "cityFeature",
-      extension: "jpg",
+      extension: "webp",
       alt: "City",
     },
     components: [
@@ -243,7 +243,7 @@ In this article, I have set out to take control of my career and to set higher g
       "It can be daunting working with code repositories written by other developers. For example, what do we expect a variable like <code>textureDetail</code> to look like? It could be a string, a file object with a name, date, url and kb size, or even a base64 image hash for all we know. How can we confidently write code in this scenario?",
     image: {
       filename: "japanPlaza",
-      extension: "jpg",
+      extension: "webp",
       alt: "City",
     },
     components: [
