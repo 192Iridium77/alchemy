@@ -50,10 +50,18 @@ const articlesService = {
   },
   getArticles: async (): Promise<Article[]> => {
     const { data } = await axios.get("/articles/admin");
+    console.log(
+      "🚀 ~ file: articles.service.ts:53 ~ getArticles: ~ data:",
+      data
+    );
     return data;
   },
   getPublishedArticles: async (): Promise<Article[]> => {
     const { data } = await axios.get("/articles");
+    console.log(
+      "🚀 ~ file: articles.service.ts:57 ~ getPublishedArticles: ~ data:",
+      data
+    );
     return data;
   },
 };
