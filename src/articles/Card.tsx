@@ -72,7 +72,7 @@ function ArticleCard({ article }: ArticleCardProps) {
     <ArticleContainer>
       <ArticleLink to={`/articles/${article.slug}`}>
         <ArticleContent published={article.published}>
-          <ArticleImage src={image?.url} alt={image?.alt} />
+          <ArticleImage src={image?.url} alt={image?.alt} width="800" />
           <ArticleTitle>{article.title}</ArticleTitle>
         </ArticleContent>
       </ArticleLink>
