@@ -39,7 +39,6 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.4.14",
-    "imagemin": "^8.0.1",
     "imagemin-webp": "^8.0.0",
     "postcss": "^8.4.21",
     "sass": "^1.60.0",
