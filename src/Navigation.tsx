@@ -34,7 +34,7 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
           logo={
             <div className="flex h-full items-center pl-4">
               <a href="/">
-                <img src="/AlchemyTechLogo.png" className="h-10" alt="logo" />
+                <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" />
               </a>
             </div>
           }
@@ -72,7 +72,7 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
           logo={
             <div className="flex h-full items-center">
               <a href="/">
-                <img src="/AlchemyTechLogo.png" className="h-10" alt="logo" />
+                <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" />
               </a>
             </div>
           }

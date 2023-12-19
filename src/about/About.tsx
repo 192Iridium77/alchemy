@@ -54,7 +54,7 @@ function About() {
                 className="md:w-6/12 bg-cover bg-no-repeat bg-center"
                 style={{
                   height: "300px",
-                  backgroundImage: `url(/images/me.jpg)`,
+                  backgroundImage: `url(/images/me.webp)`,
                 }}
               ></div>
               <div className="md:w-6/12 p-4">

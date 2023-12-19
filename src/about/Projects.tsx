@@ -30,23 +30,23 @@ const Projects = () => {
       <div className="flex flex-wrap justify-center mt-8">
         <ProjectCard
           href="https://www.hireup.com.au/"
-          imageUrl="/images/hireup.png"
+          imageUrl="/images/hireup.webp"
           alt="Hireup"
         ></ProjectCard>
         <ProjectCard
           href="https://www.sine.co/"
-          imageUrl="/images/honeywell.png"
+          imageUrl="/images/honeywell.webp"
           alt="Sine Honeywell"
         ></ProjectCard>
         <ProjectCard
           href="https://www.novasystems.com/au"
-          imageUrl="/images/novasystems.png"
+          imageUrl="/images/novasystems.webp"
           alt="Nova Systems"
         ></ProjectCard>
         <a className="md:w-4/12 block p-4" href="https://sahmri.org.au/">
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/sahmri.jpg"
+            src="/images/sahmri.webp"
             alt="SAHMRI"
           />
         </a>
@@ -56,7 +56,7 @@ const Projects = () => {
         >
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/navalgroup.jpg"
+            src="/images/navalgroup.webp"
             alt="Naval Group"
           />
         </a>
@@ -66,14 +66,14 @@ const Projects = () => {
         >
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/AdelaideHills.jpg"
+            src="/images/AdelaideHills.webp"
             alt="visit adelaide hills"
           />
         </a>
         <a className="md:w-4/12 block p-4" href="https://www.buildsited.com/">
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/sited.jpg"
+            src="/images/sited.webp"
             alt="Sited"
           />
         </a>
@@ -83,7 +83,7 @@ const Projects = () => {
         >
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/hendercare.jpg"
+            src="/images/hendercare.webp"
             alt="Hendercare"
           />
         </a>
@@ -93,14 +93,14 @@ const Projects = () => {
         >
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/SAM.jpg"
+            src="/images/SAM.webp"
             alt="SA Museum"
           />
         </a>
         <a className="md:w-4/12 block p-4" href="https://www.barossa.com/">
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/Barossa.jpg"
+            src="/images/Barossa.webp"
             alt="Barossa"
           />
         </a>
@@ -110,14 +110,14 @@ const Projects = () => {
         >
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/UC.jpg"
+            src="/images/UC.webp"
             alt="Uniting Communities"
           />
         </a>
         <a className="md:w-4/12 block p-4" href="https://bloombarflowers.com/">
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/bloom.jpg"
+            src="/images/bloom.webp"
             alt="Bloombar Flowers"
           />
         </a>
@@ -127,7 +127,7 @@ const Projects = () => {
         >
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"
-            src="/images/action.jpg"
+            src="/images/action.webp"
             alt="Action Market Research"
           />
         </a> */}

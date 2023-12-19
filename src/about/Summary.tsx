@@ -38,7 +38,7 @@ const Summary = () => {
     <div
       style={{
         height: 400,
-        backgroundImage: "url(/images/office.jpg)",
+        backgroundImage: "url(/images/office.webp)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -49,14 +49,14 @@ const Summary = () => {
         <div className="text-xl bg-white mt-4">Software Engineer</div>
         <div className="flex justify-center gap-2 mt-4 bg-white py-1">
           <a className="w-6 h-6 block" href="https://github.com/192Iridium77">
-            <img src="/images/github-mark.png" alt="github" />
+            <img src="/images/github-mark.webp" alt="github" />
           </a>
           <a
             className="w-6 h-6 block"
             href="https://www.linkedin.com/in/matthew-martin0108/"
             style={{ marginTop: 2 }}
           >
-            <img src="/images/linkedin.png" alt="linkedin" />
+            <img src="/images/linkedin.webp" alt="linkedin" />
           </a>
           <a href="tel:0477789182">
             <PhoneIcon></PhoneIcon>
