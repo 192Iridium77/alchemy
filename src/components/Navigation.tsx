@@ -48,6 +48,9 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
               <NavLink to="/about">
                 {({ isActive }) => <NavButton text="About" active={isActive} />}
               </NavLink>
+              <NavLink to="/books">
+                {({ isActive }) => <NavButton text="Books" active={isActive} />}
+              </NavLink>
               <NavLink to="/articles">
                 {({ isActive }) => (
                   <NavButton text="Articles" active={isActive} />
@@ -91,7 +94,10 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
               <NavLink to="/about" className="underline text-bold">
                 About
               </NavLink>
-              <NavLink to="/" className="underline text-bold">
+              <NavLink to="/books" className="underline text-bold">
+                Books
+              </NavLink>
+              <NavLink to="/articles" className="underline text-bold">
                 Articles
               </NavLink>
               <NavLink to="/apps" className="underline text-bold">

@@ -11,7 +11,7 @@ const ProjectCard = ({
 }) => {
   return (
     <a
-      className="p-8 block shadow-lg rounded-md border-solid border-gray-100 border"
+      className="p-8 block shadow-lg rounded-md border-solid border-gray-100 border mt-8"
       href={href}
     >
       <img

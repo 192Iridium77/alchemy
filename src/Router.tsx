@@ -2,6 +2,7 @@ import React from "react";
 import Article from "./articles/Article";
 import ArticlesList from "./articles/List";
 import Matt from "./about/Matt";
+import Books from "./books/List";
 import Apps from "./apps/List";
 import NotFound from "./components/NotFound";
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -23,18 +24,15 @@ export default function Router({
         <Route
           index
           element={
-            // <ArticlesList openCreateArticleModal={openCreateArticleModal} />
-            <ArticlesList />
+            <ArticlesList openCreateArticleModal={openCreateArticleModal} />
           }
         />
         <Route
           path=":slug"
-          element={
-            // <Article openEditArticleModal={openEditArticleModal} />
-            <Article />
-          }
+          element={<Article openEditArticleModal={openEditArticleModal} />}
         ></Route>
       </Route>
+      <Route path="/books" element={<Books />}></Route>
       <Route path="/apps" element={<Apps />}></Route>
       <Route path="*" element={<NotFound />}></Route>
     </Routes>
