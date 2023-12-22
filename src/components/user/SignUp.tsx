@@ -22,10 +22,13 @@ export default function SignUp({ closeModal }: SignUpProps) {
     <SignUpContainer>
       <div className="text-xl">Sign Up</div>
       <div className="mt-8">
-        Welcome to Alchemy Tech! To get started, please fill out the quick and
+        {/* Welcome to my portfolio! To get started, please fill out the quick and
         easy signup form below. By becoming a member, you'll have access to
         exclusive content, resources, and opportunities to collaborate with
         like-minded individuals.
+
+         */}
+        Work in progress! This is admin only.
       </div>
 
       <FormContainer

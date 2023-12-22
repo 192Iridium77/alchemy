@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { TopBar, MobileTopBar } from "alchemy-tech-ui";
+import { TopBar, MobileTopBar, Button } from "alchemy-tech-ui";
 import { useMediaQuery } from "react-responsive";
 import { NavButton } from "alchemy-tech-ui";
 import userAuthContext from "../context/useAuthContext";
@@ -39,7 +39,7 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
                 }}
               >
-                {/* <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" /> */}
+                <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" />
               </a>
             </div>
           }
@@ -58,18 +58,18 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
               </NavLink>
             </div>
           }
-          // userMenu={
-          //   <div className="flex gap-4">
-          //     {user ? (
-          //       <Button onClick={logOut} text="Log out" />
-          //     ) : (
-          //       <>
-          //         <Button onClick={openSignUp} text="Sign up" />
-          //         <Button onClick={openLogIn} text="Log in" />
-          //       </>
-          //     )}
-          //   </div>
-          // }
+          userMenu={
+            <div className="flex gap-4">
+              {user ? (
+                <Button onClick={logOut} text="Log out" />
+              ) : (
+                <>
+                  <Button onClick={openSignUp} text="Sign up" />
+                  <Button onClick={openLogIn} text="Log in" />
+                </>
+              )}
+            </div>
+          }
           maxWidth={maxWidth}
         />
       ) : (
@@ -82,8 +82,7 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
                 }}
               >
-                {/* <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" /> */}
-                Matt Martin
+                <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" />
               </a>
             </div>
           }
@@ -100,18 +99,18 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
               </NavLink>
             </div>
           }
-          // userMenu={
-          //   <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
-          //     {user ? (
-          //       <Button onClick={logOut} text="Log out" />
-          //     ) : (
-          //       <>
-          //         <Button onClick={openSignUp} text="Sign up" />
-          //         <Button onClick={openLogIn} text="Log in" />
-          //       </>
-          //     )}
-          //   </div>
-          // }
+          userMenu={
+            <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
+              {user ? (
+                <Button onClick={logOut} text="Log out" />
+              ) : (
+                <>
+                  <Button onClick={openSignUp} text="Sign up" />
+                  <Button onClick={openLogIn} text="Log in" />
+                </>
+              )}
+            </div>
+          }
         />
       )}
     </>
