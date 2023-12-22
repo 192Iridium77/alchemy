@@ -140,6 +140,111 @@ function ArticlesList() {
       },
       tag: "health",
     },
+    {
+      title: "The Lean Startup",
+      image: {
+        url: "https://m.media-amazon.com/images/I/51CTIr1bJxL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "The Personal MBA",
+      image: {
+        url: "https://m.media-amazon.com/images/I/411AhoeewjL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "Start with Why",
+      image: {
+        url: "https://m.media-amazon.com/images/I/51XeVKQCuNL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "The Culture Code",
+      image: {
+        url: "https://m.media-amazon.com/images/I/415gxAISkiL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "The Talent Code",
+      image: {
+        url: "https://m.media-amazon.com/images/I/414-PRbpjKL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "Leaders Eat Last",
+      image: {
+        url: "https://m.media-amazon.com/images/I/51N7FEOlx5L._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "Atomic Habits",
+      image: {
+        url: "https://m.media-amazon.com/images/I/51-nXsSRfZL._SY445_SX342_.jpg",
+      },
+      tag: "growth",
+    },
+    {
+      title: "Make your bed",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41mZ3G9bcmL._SY445_SX342_.jpg",
+      },
+      tag: "growth",
+    },
+    {
+      title: "The Mountain is You",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41N62t+ANTL._SY445_SX342_.jpg",
+      },
+      tag: "growth",
+    },
+    {
+      title: "The 5AM Club",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41alUjROZ5L._SY445_SX342_.jpg",
+      },
+      tag: "growth",
+    },
+    {
+      title: "Never Split the Difference",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41XQlCeEUaL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "Do Hard Things",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41N+aBO5ouL._SY445_SX342_.jpg",
+      },
+      tag: "growth",
+    },
+    {
+      title: "Good to Great",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41OsGfas+FL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "Zero to One",
+      image: {
+        url: "https://m.media-amazon.com/images/I/51JkDEpHUQL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "This is Marketing",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41fSSCIrnjL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
   ];
 
   const filtered = selectedFilter
