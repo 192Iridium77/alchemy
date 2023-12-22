@@ -1,10 +1,9 @@
 import React from "react";
 import Article from "./articles/Article";
 import ArticlesList from "./articles/List";
-import About from "./about/About";
 import Matt from "./about/Matt";
 import Apps from "./apps/List";
-import NotFound from "./NotFound";
+import NotFound from "./components/NotFound";
 import { Route, Routes, Navigate } from "react-router-dom";
 
 interface RouterProps {
@@ -18,7 +17,8 @@ export default function Router({
 }: RouterProps) {
   return (
     <Routes>
-      <Route path="/" element={<Navigate replace to="/articles" />} />
+      <Route path="/" element={<Navigate replace to="/about" />} />
+      <Route path="/about" element={<Matt />}></Route>
       <Route path="/articles">
         <Route
           index
@@ -35,8 +35,6 @@ export default function Router({
           }
         ></Route>
       </Route>
-      <Route path="/about" element={<Matt />}></Route>
-      <Route path="/about/alchemy" element={<About />}></Route>
       <Route path="/apps" element={<Apps />}></Route>
       <Route path="*" element={<NotFound />}></Route>
     </Routes>

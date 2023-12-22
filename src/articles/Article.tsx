@@ -11,7 +11,7 @@ import useAuthContext from "../context/useAuthContext";
 import styled from "styled-components";
 import { spacing, colors, Icon } from "alchemy-tech-ui";
 import { toast } from "react-toastify";
-import NotFound from "../NotFound";
+import NotFound from "../components/NotFound";
 import Loading from "../components/Loading";
 
 const LoadingContainer = styled.div`

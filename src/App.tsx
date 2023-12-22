@@ -2,7 +2,7 @@ import React from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import Navigation from "./Navigation";
+import Navigation from "./components/Navigation";
 import Footer from "./Footer";
 import Router from "./Router";
 // import Modal, { ModalTypes } from "./components/Modal";

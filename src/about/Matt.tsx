@@ -2,6 +2,7 @@ import React from "react";
 import Certifications from "./Certifications";
 import Projects from "./Projects";
 import Summary from "./Summary";
+import WorkWithMe from "./WorkWithMe";
 import { Helmet } from "react-helmet";
 
 export default function Matt() {
@@ -15,6 +16,7 @@ export default function Matt() {
         ></meta>
       </Helmet>
       <Summary />
+      <WorkWithMe />
       <Certifications />
       <Projects />
     </div>

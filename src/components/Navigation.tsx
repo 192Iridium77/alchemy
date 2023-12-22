@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { TopBar, MobileTopBar } from "alchemy-tech-ui";
 import { useMediaQuery } from "react-responsive";
-import { NavButton, Button } from "alchemy-tech-ui";
-import userAuthContext from "./context/useAuthContext";
+import { NavButton } from "alchemy-tech-ui";
+import userAuthContext from "../context/useAuthContext";
 
 interface NavigationProps {
   openLogIn?: () => void;
@@ -33,13 +33,21 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
         <TopBar
           logo={
             <div className="flex h-full items-center pl-4">
-              <a href="/">
-                <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" />
+              <a
+                href="/"
+                style={{
+                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                }}
+              >
+                {/* <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" /> */}
               </a>
             </div>
           }
           navigationMenu={
             <div className="flex justify-center gap-4 p-4">
+              <NavLink to="/about">
+                {({ isActive }) => <NavButton text="About" active={isActive} />}
+              </NavLink>
               <NavLink to="/articles">
                 {({ isActive }) => (
                   <NavButton text="Articles" active={isActive} />
@@ -47,9 +55,6 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
               </NavLink>
               <NavLink to="/apps">
                 {({ isActive }) => <NavButton text="Apps" active={isActive} />}
-              </NavLink>
-              <NavLink to="/about">
-                {({ isActive }) => <NavButton text="About" active={isActive} />}
               </NavLink>
             </div>
           }
@@ -71,21 +76,27 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
         <MobileTopBar
           logo={
             <div className="flex h-full items-center">
-              <a href="/">
-                <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" />
+              <a
+                href="/"
+                style={{
+                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                }}
+              >
+                {/* <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" /> */}
+                Matt Martin
               </a>
             </div>
           }
           navigationMenu={
             <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
+              <NavLink to="/about" className="underline text-bold">
+                About
+              </NavLink>
               <NavLink to="/" className="underline text-bold">
                 Articles
               </NavLink>
               <NavLink to="/apps" className="underline text-bold">
                 Apps
-              </NavLink>
-              <NavLink to="/about" className="underline text-bold">
-                About
               </NavLink>
             </div>
           }
