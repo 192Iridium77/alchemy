@@ -335,7 +335,7 @@ function ArticlesList() {
       <div className="flex flex-wrap mt-8">
         {filtered.map((book) => {
           return (
-            <div className="w-3/12">
+            <div className="w-6/12 md:w-3/12">
               <Card book={book} />
             </div>
           );

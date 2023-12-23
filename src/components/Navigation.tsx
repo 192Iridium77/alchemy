@@ -39,7 +39,7 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
                 }}
               >
-                <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" />
+                <img src="/Logo.png" className="h-10" alt="logo" />
               </a>
             </div>
           }
@@ -85,7 +85,7 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
                   fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
                 }}
               >
-                <img src="/AlchemyTechLogo.webp" className="h-10" alt="logo" />
+                <img src="/Logo.png" className="h-10" alt="logo" />
               </a>
             </div>
           }
