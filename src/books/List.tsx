@@ -245,6 +245,48 @@ function ArticlesList() {
       },
       tag: "business",
     },
+    {
+      title: "Ready, Aim, Fire",
+      image: {
+        url: "https://m.media-amazon.com/images/I/4106jRy2-IL._SY344_BO1,204,203,200_QL70_ML2_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "Data Is Everybody's Business",
+      image: {
+        url: "https://m.media-amazon.com/images/I/51IYDVa-ueL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "The StorySelling Method",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41nRbb-AT3L._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "The Oxygen Advantage",
+      image: {
+        url: "https://m.media-amazon.com/images/I/51PY-bZWJ0L._SY445_SX342_.jpg",
+      },
+      tag: "health",
+    },
+    {
+      title: "The Four",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41tf7UsmhsL._SY445_SX342_.jpg",
+      },
+      tag: "business",
+    },
+    {
+      title: "The Algebra of Happiness",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41qlrJWdHZL._SY445_SX342_.jpg",
+      },
+      tag: "growth",
+    },
   ];
 
   const filtered = selectedFilter
