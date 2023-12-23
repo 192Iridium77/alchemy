@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 import { Button } from "alchemy-tech-ui";
 import styled from "styled-components";
+import { sortBy } from "lodash";
 
 interface TagProps {
   active: boolean;
@@ -293,7 +294,7 @@ function ArticlesList() {
     ? books.filter((book) => {
         return book.tag === selectedFilter;
       })
-    : books;
+    : sortBy(books, "title");
 
   const toggleFilter = (tag: React.SetStateAction<string>) => {
     if (selectedFilter === tag) {
