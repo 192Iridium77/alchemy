@@ -1,17 +1,16 @@
 import React from "react";
 import Article from "./articles/Article";
 import ArticlesList from "./articles/List";
-import Matt from "./about/Index";
+import About from "./about/Index";
 import Books from "./books/List";
 import Apps from "./apps/List";
 import NotFound from "./components/NotFound";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 export default function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate replace to="/about" />} />
-      <Route path="/about" element={<Matt />}></Route>
+      <Route path="/" element={<About />}></Route>
       <Route path="/articles">
         <Route index element={<ArticlesList />} />
         <Route path=":slug" element={<Article />}></Route>
