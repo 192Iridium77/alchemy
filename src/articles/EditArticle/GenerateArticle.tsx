@@ -122,7 +122,6 @@ export default function GenerateArticle({ articleId }: Props) {
           value={question}
         />
         <Button
-          text={question ? "Regenerate" : "Generate"}
           onClick={async () => {
             if (!question) return;
 
@@ -130,7 +129,9 @@ export default function GenerateArticle({ articleId }: Props) {
 
             setNewArticle({ title, slug, description });
           }}
-        />
+        >
+          {question ? "Regenerate" : "Generate"}
+        </Button>
       </PromptContainer>
 
       {loading || loadingArticle ? (
@@ -153,7 +154,7 @@ export default function GenerateArticle({ articleId }: Props) {
             <ArticlePreviewLabel>Description</ArticlePreviewLabel>
             <ArticlePreviewContent>{article.description}</ArticlePreviewContent>
           </ArticlePreviewContainer>
-          <SaveButton text="Save" onClick={saveArticle} />
+          <SaveButton onClick={saveArticle}>Save</SaveButton>
         </>
       ) : null}
     </>

@@ -322,25 +322,29 @@ function ArticlesList() {
     <div className="container">
       <div className="flex justify-center mt-8">
         <Tag
-          text="Wealth"
           onClick={() => toggleFilter("wealth")}
           active={selectedFilter === "wealth"}
-        ></Tag>
+        >
+          Wealth
+        </Tag>
         <Tag
-          text="Growth"
           onClick={() => toggleFilter("growth")}
           active={selectedFilter === "growth"}
-        ></Tag>
+        >
+          Growth
+        </Tag>
         <Tag
-          text="Business"
           onClick={() => toggleFilter("business")}
           active={selectedFilter === "business"}
-        ></Tag>
+        >
+          Business
+        </Tag>
         <Tag
-          text="Health"
           onClick={() => toggleFilter("health")}
           active={selectedFilter === "health"}
-        ></Tag>
+        >
+          Health
+        </Tag>
         {/* <Tag text="Performance"></Tag>
         <Tag text="Culture"></Tag>
         <Tag text="Leadership"></Tag>

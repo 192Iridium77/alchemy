@@ -9,3 +9,15 @@ export interface Article {
   publishedDate: Date;
   imageId: string;
 }
+
+export enum ComponentType {
+  markdown = "markdown",
+  image = "image",
+  table = "table",
+}
+
+export interface MarkdownComponent {
+  id: string;
+  type: ComponentType.markdown;
+  content: string;
+}

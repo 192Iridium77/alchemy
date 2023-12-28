@@ -10,8 +10,8 @@ const certificatesData = [
 
 const Certificates = () => {
   return (
-    <div>
-      <div className="text-xl flex justify-center mt-8">Credentials</div>
+    <div id="credentials">
+      <h3 className="text-xl flex justify-center mt-8">Credentials</h3>
       <div className="flex flex-wrap mt-8">
         {certificatesData.map((certificate, index) => (
           <a

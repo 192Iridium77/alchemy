@@ -5,7 +5,7 @@ import articlesService from "../articles.service";
 import { spacing, Button } from "alchemy-tech-ui";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import FormTextArea from "../../components/FormTextArea";
+// import FormTextArea from "../../components/FormTextArea";
 import FormInput from "../../components/FormInput";
 import FormCheckBox from "../../components/CheckBox";
 import { Article } from "../article.types";
@@ -21,7 +21,7 @@ interface Props {
   articleId: string;
 }
 
-export default function CreateArticleForm({ articleId }: Props) {
+export default function EditArticleForm({ articleId }: Props) {
   const navigate = useNavigate();
   const { isAdmin } = useAuthContext();
   const { article, loadingArticle } = useFetchArticle({ articleId });
@@ -75,7 +75,7 @@ export default function CreateArticleForm({ articleId }: Props) {
         isSubmitting,
       }) => (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <FormInput
+          {/* <FormInput
             label="Title"
             name="title"
             placeholder="title"
@@ -84,9 +84,9 @@ export default function CreateArticleForm({ articleId }: Props) {
             value={values.title}
             touched={touched.title}
             errors={errors.title}
-          />
+          /> */}
 
-          <FormInput
+          {/* <FormInput
             label="Author"
             name="author"
             placeholder="author"
@@ -95,7 +95,7 @@ export default function CreateArticleForm({ articleId }: Props) {
             value={values.author}
             touched={touched.author}
             errors={errors.author}
-          />
+          /> */}
 
           <FormInput
             label="Slug"
@@ -108,7 +108,7 @@ export default function CreateArticleForm({ articleId }: Props) {
             errors={errors.slug}
           />
 
-          <FormTextArea
+          {/* <FormTextArea
             name="description"
             label="Description"
             placeholder="description"
@@ -117,7 +117,7 @@ export default function CreateArticleForm({ articleId }: Props) {
             value={values.description}
             error={errors.description}
             touched={touched.description}
-          />
+          /> */}
 
           {isAdmin() ? (
             <FormCheckBox
@@ -131,7 +131,7 @@ export default function CreateArticleForm({ articleId }: Props) {
             />
           ) : null}
 
-          <Button disabled={isSubmitting} text="Save" />
+          <Button disabled={isSubmitting}>Save</Button>
         </form>
       )}
     </FormContainer>

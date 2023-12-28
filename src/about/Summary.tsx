@@ -36,6 +36,7 @@ const EmailIcon = () => (
 const Summary = () => {
   return (
     <div
+      id="contacts"
       style={{
         height: 400,
         backgroundImage: "url(/images/office.webp)",
@@ -45,8 +46,8 @@ const Summary = () => {
       }}
     >
       <div className="flex flex-col justify-center items-center h-full">
-        <div className="text-4xl bg-white">Matt Martin</div>
-        <div className="text-xl bg-white mt-4">Software Engineer</div>
+        <h1 className="text-4xl bg-white">Matt Martin</h1>
+        <h2 className="text-xl bg-white mt-4">Software Engineer</h2>
         <div className="flex justify-center gap-2 mt-4 bg-white py-1">
           <a className="w-6 h-6 block" href="https://github.com/192Iridium77">
             <img src="/images/github-mark.webp" alt="github" />

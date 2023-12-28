@@ -25,8 +25,8 @@ const ProjectCard = ({
 
 const Projects = () => {
   return (
-    <div className="py-8">
-      <div className="text-xl flex justify-center"> Projects </div>
+    <div id="projects" className="py-8">
+      <h3 className="text-xl flex justify-center"> Projects </h3>
       <div className="flex flex-wrap justify-center mt-8">
         <ProjectCard
           href="https://www.hireup.com.au/"

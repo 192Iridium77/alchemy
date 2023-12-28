@@ -10,7 +10,7 @@ import imagesService from "../images/image.service";
 import { Image } from "../types";
 import useAuthContext from "../context/useAuthContext";
 import styled from "styled-components";
-import { spacing, colors, Icon } from "alchemy-tech-ui";
+import { spacing, colors, Icon, Button } from "alchemy-tech-ui";
 import { toast } from "react-toastify";
 import NotFound from "../components/NotFound";
 import Loading from "../components/Loading";
@@ -27,7 +27,6 @@ const AdminTools = styled.div`
   top: 40%;
   left: 0;
   border-radius: 0 ${spacing(1)} ${spacing(1)} 0;
-  padding: ${spacing(3)};
   background-color: ${colors.system[900]};
 `;
 
@@ -40,11 +39,16 @@ export default function ArticleComponent() {
   const [image, setImage] = useState<Image>();
   const [loading, setLoading] = useState<boolean>(true);
 
-  const modalRef = useRef();
+  const editArticleModalRef = useRef();
+  const createComponentModalRef = useRef();
 
-  const openModal = () => {
+  const openModalEditArticle = () => {
     // @ts-ignore
-    modalRef?.current?.openModal();
+    editArticleModalRef?.current?.openModal();
+  };
+  const openCreateComponentModal = () => {
+    // @ts-ignore
+    createComponentModalRef?.current?.openModal();
   };
 
   useEffect(() => {
@@ -56,8 +60,9 @@ export default function ArticleComponent() {
         setArticle(fetchedArticle);
       } catch (error) {
         toast.error("An unknown error occured while loading the article");
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     }
 
     fetchArticle();
@@ -86,7 +91,9 @@ export default function ArticleComponent() {
     <div className="Article container mt-8">
       {isAdmin() && article ? (
         <AdminTools>
-          <Icon type="Edit" color="white" onClick={openModal} />
+          <button onClick={openModalEditArticle} className="p-4 cursor-pointer">
+            <Icon type="Edit" color="white" />
+          </button>
         </AdminTools>
       ) : null}
       {loading ? (
@@ -135,9 +142,17 @@ export default function ArticleComponent() {
               }
               return "";
             })}
+            {isAdmin() ? (
+              <Button admin onClick={openCreateComponentModal}>
+                Add Component
+              </Button>
+            ) : null}
           </div>
-          <Modal ref={modalRef}>
-            <EditArticle data={{ articleId: article?.id }}></EditArticle>
+          <Modal ref={editArticleModalRef}>
+            <EditArticle articleId={article!.id}></EditArticle>
+          </Modal>
+          <Modal ref={createComponentModalRef}>
+            <div>Create Component Form Here</div>
           </Modal>
         </>
       )}

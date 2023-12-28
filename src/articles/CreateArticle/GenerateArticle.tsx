@@ -117,7 +117,6 @@ export default function GenerateArticle({ closeModal }: Props) {
           value={question}
         />
         <Button
-          text="Generate"
           onClick={async () => {
             if (!question) return;
 
@@ -127,7 +126,9 @@ export default function GenerateArticle({ closeModal }: Props) {
               setNewArticle(generatedArticle);
             }
           }}
-        />
+        >
+          Generate
+        </Button>
       </PromptContainer>
 
       {loading ? (
@@ -152,7 +153,7 @@ export default function GenerateArticle({ closeModal }: Props) {
               {newArticle.description}
             </ArticlePreviewContent>
           </ArticlePreviewContainer>
-          <CreateButton text="Create" onClick={createArticle} />
+          <CreateButton onClick={createArticle}>Create</CreateButton>
         </>
       ) : null}
     </>

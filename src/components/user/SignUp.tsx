@@ -91,7 +91,7 @@ export default function SignUp({ onCloseModal }: SignUpProps) {
             <div className="text-red-600">
               {errors.password && touched.password && errors.password}
             </div>
-            <Button disabled={isSubmitting} text="Submit"></Button>
+            <Button disabled={isSubmitting}>Submit</Button>
           </form>
         )}
       </FormContainer>

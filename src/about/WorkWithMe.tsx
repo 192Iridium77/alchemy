@@ -17,12 +17,12 @@ const WorkWithMe = () => {
 📊 Project Management`;
 
   return (
-    <div>
-      <div className="text-xl justify-center mt-8 hidden md:flex">
+    <div id="workwithme">
+      <h3 className="text-xl justify-center mt-8 hidden md:flex">
         Work With Me
-      </div>
+      </h3>
       <div className="flex flex-col md:flex-row mt-8">
-        <div className="md:w-3/12 p-8 border border-gray-100">
+        <menu className="md:w-3/12 p-8 border border-gray-100">
           <div>
             <a
               href="#contacts"
@@ -55,11 +55,11 @@ const WorkWithMe = () => {
               Projects
             </a>
           </div>
-        </div>
+        </menu>
         <div className="md:w-9/12 p-8">
-          <div className="text-xl justify-center mt-8 block md:hidden">
+          <h3 className="text-xl justify-center mt-8 block md:hidden">
             Work With Me
-          </div>
+          </h3>
           <div className="text-lg mt-8 md:mt-0">Hello World!</div>
           <p>
             I am a seasoned Australian Software Engineer with a rich background

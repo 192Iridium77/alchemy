@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { TopBar, MobileTopBar, Button } from "alchemy-tech-ui";
 import { useMediaQuery } from "react-responsive";
-import { NavButton } from "alchemy-tech-ui";
+import { NavLink as AlchemyLink } from "alchemy-tech-ui";
 import userAuthContext from "../context/useAuthContext";
 import SignUp from "./user/SignUp";
 import LogIn from "./user/LogIn";
@@ -66,29 +66,35 @@ function Navigation() {
           navigationMenu={
             <div className="flex justify-center gap-4 p-4">
               <NavLink to="/about">
-                {({ isActive }) => <NavButton text="About" active={isActive} />}
+                {({ isActive }) => (
+                  <AlchemyLink text="About" active={isActive} />
+                )}
               </NavLink>
               <NavLink to="/books">
-                {({ isActive }) => <NavButton text="Books" active={isActive} />}
+                {({ isActive }) => (
+                  <AlchemyLink text="Books" active={isActive} />
+                )}
               </NavLink>
               <NavLink to="/articles">
                 {({ isActive }) => (
-                  <NavButton text="Articles" active={isActive} />
+                  <AlchemyLink text="Articles" active={isActive} />
                 )}
               </NavLink>
               <NavLink to="/apps">
-                {({ isActive }) => <NavButton text="Apps" active={isActive} />}
+                {({ isActive }) => (
+                  <AlchemyLink text="Apps" active={isActive} />
+                )}
               </NavLink>
             </div>
           }
           userMenu={
             <div className="flex gap-4">
               {user ? (
-                <Button onClick={logOut} text="Log out" />
+                <Button onClick={logOut}>Log out</Button>
               ) : (
                 <>
-                  <Button onClick={openSignUp} text="Sign up" />
-                  <Button onClick={openLogIn} text="Log in" />
+                  <Button onClick={openSignUp}>Sign up</Button>
+                  <Button onClick={openLogIn}>Log in</Button>
                 </>
               )}
             </div>
@@ -128,11 +134,11 @@ function Navigation() {
           userMenu={
             <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
               {user ? (
-                <Button onClick={logOut} text="Log out" />
+                <Button onClick={logOut}>Log out</Button>
               ) : (
                 <>
-                  <Button onClick={openSignUp} text="Sign up" />
-                  <Button onClick={openLogIn} text="Log in" />
+                  <Button onClick={openSignUp}>Sign up</Button>
+                  <Button onClick={openLogIn}>Log in</Button>
                 </>
               )}
             </div>

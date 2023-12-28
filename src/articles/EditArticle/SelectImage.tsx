@@ -107,7 +107,7 @@ export default function SelectImage({ articleId }: Props) {
       ) : (
         <div>No Images Available.</div>
       )}
-      <SaveButton text="Save" onClick={saveArticle} />
+      <SaveButton onClick={saveArticle}>Save</SaveButton>
     </div>
   );
 }

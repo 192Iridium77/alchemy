@@ -5,7 +5,7 @@ import Summary from "./Summary";
 import WorkWithMe from "./WorkWithMe";
 import { Helmet } from "react-helmet";
 
-export default function Matt() {
+export default function About() {
   return (
     <div className="container mt-12">
       <Helmet>
