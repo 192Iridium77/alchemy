@@ -1,11 +1,8 @@
-import React from "react";
+import React, { forwardRef, useImperativeHandle } from "react";
 import ReactModal from "react-modal";
 import styled from "styled-components";
-import SignUp from "./user/SignUp";
-import LogIn from "./user/LogIn";
-import CreateArticle from "../articles/CreateArticle/ModalContent";
-import EditArticle from "../articles/EditArticle/ModalContent";
 import { Icon } from "alchemy-tech-ui";
+import { ReactElement } from "react-markdown/lib/react-markdown"; // wtf?
 
 // built in styling for ReactModal
 const customStyles = {
@@ -38,42 +35,37 @@ const ModalContainer = styled.div`
   position: relative;
 `;
 
-export enum ModalTypes {
-  SignUp = "SignUp",
-  LogIn = "LogIn",
-  CreateArticle = "CreateArticle",
-  EditArticle = "EditArticle",
-}
-
-const modalComponents = {
-  [ModalTypes.SignUp]: SignUp,
-  [ModalTypes.LogIn]: LogIn,
-  [ModalTypes.CreateArticle]: CreateArticle,
-  [ModalTypes.EditArticle]: EditArticle,
-};
-
 interface ModalProps {
-  isOpen: boolean;
-  component?: ModalTypes;
-  closeModal: () => void;
-  disableScroll: () => void;
-  data: any;
+  children: ReactElement;
 }
 
 ReactModal.setAppElement("#root");
 
-export default function Modal({
-  isOpen,
-  component,
-  closeModal,
-  disableScroll,
-  data,
-}: ModalProps) {
-  const ModalComponent = component && modalComponents[component];
+export const Modal = forwardRef(({ children }: ModalProps, ref) => {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+    disableScroll();
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    document.body.style.overflow = "auto";
+  };
+
+  const disableScroll = () => {
+    document.body.style.overflow = "hidden";
+  };
+
+  useImperativeHandle(ref, () => ({
+    openModal,
+    closeModal,
+  }));
 
   return (
     <ReactModal
-      isOpen={isOpen}
+      isOpen={modalIsOpen}
       onRequestClose={closeModal}
       style={customStyles}
       onAfterOpen={disableScroll}
@@ -82,10 +74,8 @@ export default function Modal({
         <CloseModalButton>
           <Icon onClick={closeModal} type="Close" color="white" />
         </CloseModalButton>
-        {ModalComponent ? (
-          <ModalComponent closeModal={closeModal} data={data} />
-        ) : null}
+        {children}
       </ModalContainer>
     </ReactModal>
   );
-}
+});

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import { useParams } from "react-router-dom";
 import Markdown from "../components/Markdown";
+import { Modal } from "../components/Modal";
 import Review from "../components/Review";
 import articlesService from "./articles.service";
 import { Article } from "./article.types";
@@ -13,6 +14,7 @@ import { spacing, colors, Icon } from "alchemy-tech-ui";
 import { toast } from "react-toastify";
 import NotFound from "../components/NotFound";
 import Loading from "../components/Loading";
+import EditArticle from "./EditArticle/ModalContent"; // TODO rename to Edit
 
 const LoadingContainer = styled.div`
   display: flex;
@@ -29,13 +31,7 @@ const AdminTools = styled.div`
   background-color: ${colors.system[900]};
 `;
 
-interface ArticleComponentProps {
-  openEditArticleModal?: ({ articleId }: { articleId: string }) => void;
-}
-
-export default function ArticleComponent({
-  openEditArticleModal,
-}: ArticleComponentProps) {
+export default function ArticleComponent() {
   const { isAdmin } = useAuthContext();
   const { slug } = useParams();
 
@@ -43,6 +39,13 @@ export default function ArticleComponent({
   const [imageId, setImageId] = useState<string>();
   const [image, setImage] = useState<Image>();
   const [loading, setLoading] = useState<boolean>(true);
+
+  const modalRef = useRef();
+
+  const openModal = () => {
+    // @ts-ignore
+    modalRef?.current?.openModal();
+  };
 
   useEffect(() => {
     async function fetchArticle() {
@@ -83,11 +86,7 @@ export default function ArticleComponent({
     <div className="Article container mt-8">
       {isAdmin() && article ? (
         <AdminTools>
-          <Icon
-            type="Edit"
-            color="white"
-            // onClick={() => openEditArticleModal({ articleId: article.id })}
-          />
+          <Icon type="Edit" color="white" onClick={openModal} />
         </AdminTools>
       ) : null}
       {loading ? (
@@ -137,6 +136,9 @@ export default function ArticleComponent({
               return "";
             })}
           </div>
+          <Modal ref={modalRef}>
+            <EditArticle data={{ articleId: article?.id }}></EditArticle>
+          </Modal>
         </>
       )}
     </div>

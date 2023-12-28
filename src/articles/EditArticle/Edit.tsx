@@ -19,10 +19,9 @@ const FormContainer = styled(Formik)`
 
 interface Props {
   articleId: string;
-  closeModal: () => void;
 }
 
-export default function CreateArticleForm({ articleId, closeModal }: Props) {
+export default function CreateArticleForm({ articleId }: Props) {
   const navigate = useNavigate();
   const { isAdmin } = useAuthContext();
   const { article, loadingArticle } = useFetchArticle({ articleId });

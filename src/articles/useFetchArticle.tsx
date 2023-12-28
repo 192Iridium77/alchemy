@@ -22,8 +22,9 @@ export default function useFetchArticle({ articleId }: Props) {
         setSelectedImageId(fetchedArticle.imageId);
       } catch (error) {
         toast.error("Error fetching image");
+      } finally {
+        setLoadingArticle(false);
       }
-      setLoadingArticle(false);
     };
 
     fetchArticle();

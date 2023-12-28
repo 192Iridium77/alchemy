@@ -5,6 +5,7 @@ import { getLoggedInUser, logIn } from "../../services/auth/auth.service";
 import { Button } from "alchemy-tech-ui";
 import { toast } from "react-toastify";
 import useAuthContext from "../../context/useAuthContext";
+import { AxiosError } from "axios";
 
 const FormContainer = styled(Formik)`
   margin-top: 1rem;
@@ -15,10 +16,10 @@ const LogInContainer = styled.div`
 `;
 
 interface LogInProps {
-  closeModal: () => void;
+  onCloseModal: () => void;
 }
 
-export default function LogIn({ closeModal }: LogInProps) {
+export default function LogIn({ onCloseModal }: LogInProps) {
   const { setUser } = useAuthContext();
   return (
     <LogInContainer>
@@ -46,11 +47,23 @@ export default function LogIn({ closeModal }: LogInProps) {
             toast.success("You have successfully logged in.", {
               position: toast.POSITION.BOTTOM_RIGHT,
             });
-            closeModal();
+            onCloseModal();
           } catch (error) {
-            toast.error("Something went wrong.", {
-              position: toast.POSITION.BOTTOM_RIGHT,
-            });
+            if (
+              error instanceof AxiosError &&
+              error?.response?.status === 401
+            ) {
+              toast.error(
+                "Oops! The password you entered is incorrect. Double-check it and give it another shot.",
+                {
+                  position: toast.POSITION.BOTTOM_RIGHT,
+                }
+              );
+            } else {
+              toast.error("Something went wrong.", {
+                position: toast.POSITION.BOTTOM_RIGHT,
+              });
+            }
           }
           setSubmitting(false);
         }}

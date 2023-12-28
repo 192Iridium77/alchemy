@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { TopBar, MobileTopBar, Button } from "alchemy-tech-ui";
 import { useMediaQuery } from "react-responsive";
 import { NavButton } from "alchemy-tech-ui";
 import userAuthContext from "../context/useAuthContext";
+import SignUp from "./user/SignUp";
+import LogIn from "./user/LogIn";
+import { Modal } from "../components/Modal";
 
-interface NavigationProps {
-  openLogIn?: () => void;
-  openSignUp?: () => void;
-}
-
-function Navigation({ openLogIn, openSignUp }: NavigationProps) {
+function Navigation() {
   const { user, logOut } = userAuthContext();
+  const signUpModalRef = useRef();
+  const logInModalRef = useRef();
+
+  const openSignUp = () => {
+    // @ts-ignore
+    signUpModalRef?.current?.openModal();
+  };
+
+  const closeSignUp = () => {
+    // @ts-ignore
+    signUpModalRef?.current?.closeModal();
+  };
+
+  const openLogIn = () => {
+    // @ts-ignore
+    logInModalRef?.current?.openModal();
+  };
+
+  const closeLogin = () => {
+    // @ts-ignore
+    logInModalRef?.current?.closeModal();
+  };
 
   let maxWidth;
   // todo make some kind of responsive hook
@@ -119,6 +139,12 @@ function Navigation({ openLogIn, openSignUp }: NavigationProps) {
           }
         />
       )}
+      <Modal ref={logInModalRef}>
+        <LogIn onCloseModal={closeLogin}></LogIn>
+      </Modal>
+      <Modal ref={signUpModalRef}>
+        <SignUp onCloseModal={closeSignUp}></SignUp>
+      </Modal>
     </>
   );
 }

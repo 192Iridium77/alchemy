@@ -8,6 +8,7 @@ import Loading from "../../components/Loading";
 import useFetchArticle from "../useFetchArticle";
 import { useNavigate } from "react-router-dom";
 
+// TODO find out why this uses articleId?
 interface Props {
   articleId: string;
 }
@@ -56,7 +57,9 @@ const SaveButton = styled(Button)`
 export default function GenerateArticle({ articleId }: Props) {
   const navigate = useNavigate();
 
-  const { article, loadingArticle } = useFetchArticle({ articleId });
+  const { article, loadingArticle } = useFetchArticle({
+    articleId,
+  });
 
   const [newArticle, setNewArticle] = useState<Partial<Article>>();
   const [question, setArticleQuestion] = useState<string>();

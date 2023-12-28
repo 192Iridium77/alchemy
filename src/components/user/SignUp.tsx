@@ -14,10 +14,10 @@ const SignUpContainer = styled.div`
 `;
 
 interface SignUpProps {
-  closeModal: () => void;
+  onCloseModal: () => void;
 }
 
-export default function SignUp({ closeModal }: SignUpProps) {
+export default function SignUp({ onCloseModal }: SignUpProps) {
   return (
     <SignUpContainer>
       <div className="text-xl">Sign Up</div>
@@ -53,7 +53,7 @@ export default function SignUp({ closeModal }: SignUpProps) {
             }
           );
           setSubmitting(false);
-          closeModal();
+          onCloseModal();
         }}
       >
         {({

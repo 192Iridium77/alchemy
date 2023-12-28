@@ -7,30 +7,14 @@ import Apps from "./apps/List";
 import NotFound from "./components/NotFound";
 import { Route, Routes, Navigate } from "react-router-dom";
 
-interface RouterProps {
-  openCreateArticleModal?: () => void;
-  openEditArticleModal?: (data: any) => void;
-}
-
-export default function Router({
-  openCreateArticleModal,
-  openEditArticleModal,
-}: RouterProps) {
+export default function Router() {
   return (
     <Routes>
       <Route path="/" element={<Navigate replace to="/about" />} />
       <Route path="/about" element={<Matt />}></Route>
       <Route path="/articles">
-        <Route
-          index
-          element={
-            <ArticlesList openCreateArticleModal={openCreateArticleModal} />
-          }
-        />
-        <Route
-          path=":slug"
-          element={<Article openEditArticleModal={openEditArticleModal} />}
-        ></Route>
+        <Route index element={<ArticlesList />} />
+        <Route path=":slug" element={<Article />}></Route>
       </Route>
       <Route path="/books" element={<Books />}></Route>
       <Route path="/apps" element={<Apps />}></Route>

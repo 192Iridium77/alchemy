@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Card from "./Card";
 import useAuthContext from "../context/useAuthContext";
 import { Icon } from "alchemy-tech-ui";
@@ -6,6 +6,8 @@ import styled from "styled-components";
 import { colors, spacing } from "alchemy-tech-ui";
 import articleService from "./articles.service";
 import { Article } from "./article.types";
+import GenerateArticle from "./EditArticle/GenerateArticle";
+import { Modal } from "../components/Modal";
 
 const AdminTools = styled.div`
   position: fixed;
@@ -16,13 +18,16 @@ const AdminTools = styled.div`
   background-color: ${colors.system[900]};
 `;
 
-interface ArticlesListProps {
-  openCreateArticleModal?: () => void;
-}
-
-function ArticlesList({ openCreateArticleModal }: ArticlesListProps) {
+function ArticlesList() {
   const { isAdmin } = useAuthContext();
   const [articles, setArticles] = useState<Article[]>([]);
+
+  const modalRef = useRef();
+
+  const openModal = () => {
+    // @ts-ignore
+    modalRef.current.openModal();
+  };
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -41,11 +46,7 @@ function ArticlesList({ openCreateArticleModal }: ArticlesListProps) {
     <div className="container">
       {isAdmin() ? (
         <AdminTools>
-          <Icon
-            type="Document"
-            color="white"
-            onClick={openCreateArticleModal}
-          />
+          <Icon type="Document" color="white" onClick={openModal} />
         </AdminTools>
       ) : null}
       <div
@@ -56,6 +57,9 @@ function ArticlesList({ openCreateArticleModal }: ArticlesListProps) {
           return <Card key={article.slug} article={article} />;
         })}
       </div>
+      <Modal ref={modalRef}>
+        <GenerateArticle articleId=""></GenerateArticle>
+      </Modal>
     </div>
   );
 }

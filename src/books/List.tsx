@@ -288,6 +288,20 @@ function ArticlesList() {
       },
       tag: "growth",
     },
+    {
+      title: "Algorithms to Live by",
+      image: {
+        url: "https://m.media-amazon.com/images/I/41aKUPBkc1L._SY445_SX342_.jpg",
+      },
+      tag: "growth",
+    },
+    {
+      title: "Gonzo Capitalism",
+      image: {
+        url: "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51NrxRIutuL._SY445_SX342_.jpg",
+      },
+      tag: "finance",
+    },
   ];
 
   const filtered = selectedFilter

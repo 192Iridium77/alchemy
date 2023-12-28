@@ -23,11 +23,10 @@ const CreateArticleContainer = styled.div<CreateArticleContainerProps>`
 `;
 
 interface ModalContentProps {
-  closeModal: () => void;
   data: any;
 }
 
-export default function ModalContent({ closeModal, data }: ModalContentProps) {
+export default function ModalContent({ data }: ModalContentProps) {
   const isDesktop = useMediaQuery({ query: "(min-width: 1042px)" });
   const { articleId } = data;
 
@@ -36,9 +35,7 @@ export default function ModalContent({ closeModal, data }: ModalContentProps) {
       <ArticleTitle>Edit Article</ArticleTitle>
       <Tabs>
         <Tab label="Edit">
-          {articleId ? (
-            <Edit articleId={articleId} closeModal={closeModal} />
-          ) : null}
+          {articleId ? <Edit articleId={articleId} /> : null}
         </Tab>
         <Tab label="Generate">
           {articleId ? <GenerateArticle articleId={articleId} /> : null}
