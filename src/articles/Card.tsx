@@ -58,8 +58,10 @@ function ArticleCard({ article }: ArticleCardProps) {
   useEffect(() => {
     async function fetchImage() {
       try {
-        const fetchedImage = await imagesService.getImage(article.imageId);
-        setImage(fetchedImage);
+        if (article.imageId) {
+          const fetchedImage = await imagesService.getImage(article.imageId);
+          setImage(fetchedImage);
+        }
       } catch (error) {
         toast.error("Error fetching image");
       }
@@ -72,7 +74,14 @@ function ArticleCard({ article }: ArticleCardProps) {
     <ArticleContainer>
       <ArticleLink to={`/articles/${article.slug}`}>
         <ArticleContent published={article.published}>
-          <ArticleImage src={image?.url} alt={image?.alt} width="800" />
+          {image?.url ? (
+            <ArticleImage src={image?.url} alt={image?.alt} width="800" />
+          ) : (
+            <div
+              className="bg-gray-500 w-full"
+              style={{ height: "300px" }}
+            ></div>
+          )}
           <ArticleTitle>{article.title}</ArticleTitle>
         </ArticleContent>
       </ArticleLink>

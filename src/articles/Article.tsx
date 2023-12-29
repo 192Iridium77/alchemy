@@ -103,7 +103,7 @@ export default function ArticleComponent() {
       ) : (
         <>
           <div className="relative bg-black">
-            {image ? (
+            {image?.url ? (
               <div
                 className="w-full bg-cover bg-no-repeat bg-bottom"
                 style={{
@@ -116,7 +116,12 @@ export default function ArticleComponent() {
                   ), url(${image.url})`,
                 }}
               ></div>
-            ) : null}
+            ) : (
+              <div
+                className="w-full bg-gray-500"
+                style={{ height: "400px" }}
+              ></div>
+            )}
             <div className="text-white absolute px-8 pb-8 bottom-0">
               <div className="text-2xl">{article?.title}</div>
               <div className="text-sm uppercase tracking-widest">

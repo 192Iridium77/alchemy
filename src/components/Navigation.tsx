@@ -65,7 +65,7 @@ function Navigation() {
           }
           navigationMenu={
             <div className="flex justify-center gap-4 p-4">
-              <NavLink to="/about">
+              <NavLink to="/">
                 {({ isActive }) => (
                   <AlchemyLink text="About" active={isActive} />
                 )}
@@ -117,7 +117,7 @@ function Navigation() {
           }
           navigationMenu={
             <div className="flex flex-col gap-8 bg-white drop-shadow-lg p-4">
-              <NavLink to="/about" className="underline text-bold">
+              <NavLink to="/" className="underline text-bold">
                 About
               </NavLink>
               <NavLink to="/books" className="underline text-bold">
