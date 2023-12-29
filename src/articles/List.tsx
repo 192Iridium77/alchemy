@@ -46,7 +46,9 @@ function ArticlesList() {
     <div className="container">
       {isAdmin() ? (
         <AdminTools>
-          <Icon type="Document" color="white" onClick={openModal} />
+          <button onClick={openModal}>
+            <Icon type="Document" color="white" />
+          </button>
         </AdminTools>
       ) : null}
       <div

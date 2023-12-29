@@ -72,7 +72,9 @@ export const Modal = forwardRef(({ children }: ModalProps, ref) => {
     >
       <ModalContainer>
         <CloseModalButton>
-          <Icon onClick={closeModal} type="Close" color="white" />
+          <button onClick={closeModal}>
+            <Icon type="Close" color="white" />
+          </button>
         </CloseModalButton>
         {children}
       </ModalContainer>
