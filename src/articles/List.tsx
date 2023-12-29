@@ -58,7 +58,7 @@ function ArticlesList() {
         })}
       </div>
       <Modal ref={modalRef}>
-        <GenerateArticle articleId=""></GenerateArticle>
+        <GenerateArticle></GenerateArticle>
       </Modal>
     </div>
   );

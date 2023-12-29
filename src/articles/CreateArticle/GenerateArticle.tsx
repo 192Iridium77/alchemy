@@ -65,6 +65,11 @@ export default function GenerateArticle({ closeModal }: Props) {
       const result = await articlesService.generateArticle({
         question,
       });
+      console.log(
+        "🚀 ~ file: GenerateArticle.tsx:68 ~ generateArticle ~ result:",
+        result
+      );
+      toast.error("Article successfully generated.");
       setLoading(false);
       return result;
     } catch (err) {
@@ -105,6 +110,7 @@ export default function GenerateArticle({ closeModal }: Props) {
         Prompt
       </ArticlePreviewLabel>
       <PromptContainer>
+        why is there nothing
         <PromptInput
           id="prompt"
           className="block p-4 border border-gray-200"
@@ -121,6 +127,10 @@ export default function GenerateArticle({ closeModal }: Props) {
             if (!question) return;
 
             const generatedArticle = await generateArticle();
+            console.log(
+              "🚀 ~ file: GenerateArticle.tsx:124 ~ onClick={ ~ generatedArticle:",
+              generatedArticle
+            );
 
             if (generatedArticle) {
               setNewArticle(generatedArticle);
@@ -130,13 +140,13 @@ export default function GenerateArticle({ closeModal }: Props) {
           Generate
         </Button>
       </PromptContainer>
-
       {loading ? (
         <LoadingContainer>
           <Loading color={colors.gray["600"]} />
         </LoadingContainer>
       ) : null}
-
+      wtf?
+      {newArticle?.title}
       {newArticle ? (
         <>
           <ArticlePreviewContainer>

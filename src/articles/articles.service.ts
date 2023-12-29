@@ -5,7 +5,7 @@ const articlesService = {
   generateArticle: async ({ question }: any) => {
     const { data: description } = await axios.post("/articles/generate", {
       prompt: `
-          Write an article summary for the following question:
+          Write an article introduction for the following question:
           ${question}
           Identifying the most important details of the topic without critique or analysis.
       `,

@@ -49,26 +49,22 @@ const ArticlePreviewContent = styled.div`
   margin-top: ${spacing(2)};
 `;
 
-const SaveButton = styled(Button)`
+const Create = styled(Button)`
   width: 100%;
   margin-top: ${spacing(6)};
 `;
 
-export default function GenerateArticle({ articleId }: Props) {
+export default function GenerateArticle() {
   const navigate = useNavigate();
-
-  const { article, loadingArticle } = useFetchArticle({
-    articleId,
-  });
 
   const [newArticle, setNewArticle] = useState<Partial<Article>>();
   const [question, setArticleQuestion] = useState<string>();
   const [loading, setLoading] = useState<boolean>(false);
 
-  useEffect(() => {
-    setNewArticle(article);
-    setArticleQuestion(article?.question);
-  }, [article]);
+  // useEffect(() => {
+  //   setNewArticle(article);
+  //   setArticleQuestion(article?.question);
+  // }, [article]);
 
   const generateArticle = async (): Promise<Partial<Article>> => {
     setLoading(true);
@@ -87,18 +83,16 @@ export default function GenerateArticle({ articleId }: Props) {
     navigate(`/articles/${slug}`);
   };
 
-  const saveArticle = async () => {
+  const create = async () => {
     try {
-      await articlesService.updateArticle(articleId, {
-        ...article,
+      const article = await articlesService.createArticle({
         ...newArticle,
         question,
       });
-      if (newArticle?.slug && article?.slug !== newArticle?.slug) {
-        navToArticle(newArticle.slug);
+      if (newArticle?.slug) {
+        navToArticle(article.slug);
       }
-
-      toast.success("Article Saved Successfully");
+      toast.success("A new article was created");
     } catch (err) {
       toast.error("An unknown error occured");
     }
@@ -134,27 +128,29 @@ export default function GenerateArticle({ articleId }: Props) {
         </Button>
       </PromptContainer>
 
-      {loading || loadingArticle ? (
+      {loading ? (
         <LoadingContainer>
           <Loading color={colors.gray["600"]} />
         </LoadingContainer>
       ) : null}
 
-      {article ? (
+      {newArticle ? (
         <>
           <ArticlePreviewContainer>
             <ArticlePreviewLabel style={{ marginTop: 0 }}>
               Title
             </ArticlePreviewLabel>
-            <ArticlePreviewContent>{article.title}</ArticlePreviewContent>
+            <ArticlePreviewContent>{newArticle.title}</ArticlePreviewContent>
             <ArticlePreviewLabel>Slug</ArticlePreviewLabel>
             <ArticlePreviewContent>
-              /articles/{article.slug}
+              /articles/{newArticle.slug}
             </ArticlePreviewContent>
             <ArticlePreviewLabel>Description</ArticlePreviewLabel>
-            <ArticlePreviewContent>{article.description}</ArticlePreviewContent>
+            <ArticlePreviewContent>
+              {newArticle.description}
+            </ArticlePreviewContent>
           </ArticlePreviewContainer>
-          <SaveButton onClick={saveArticle}>Save</SaveButton>
+          <Create onClick={create}>Create</Create>
         </>
       ) : null}
     </>
