@@ -1,5 +1,10 @@
 module.exports = {
-  purge: [],
+  content: [
+    "./src/**/*.html",
+    "./src/**/*.js",
+    "./src/**/*.css", // Add this line if your styles are in CSS files
+    // Add other paths as needed
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {

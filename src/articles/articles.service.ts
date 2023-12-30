@@ -1,5 +1,5 @@
 import axios from "../services/axios";
-import { Article, MarkdownComponent } from "./article.types";
+import { Article, Component, MarkdownComponent } from "./article.types";
 
 const articlesService = {
   generateArticle: async ({ question }: any) => {
@@ -64,19 +64,29 @@ const articlesService = {
     );
     return data;
   },
-  createComponent: async (
-    articleId: Article["id"],
-    content: MarkdownComponent["content"]
-  ): Promise<MarkdownComponent> => {
+  createComponent: async ({
+    articleId,
+    text,
+    componentOrder,
+  }: {
+    articleId: Article["id"];
+    text: MarkdownComponent["text"];
+    componentOrder: number;
+  }): Promise<MarkdownComponent> => {
     const { data } = await axios.post(
       `/articles/${articleId}/component/markdown`,
-      content
+      { text, componentOrder }
     );
 
+    return data;
+  },
+  getArticleComponents: async (articleId: string): Promise<Component[]> => {
+    const { data } = await axios.get(`/articles/${articleId}/components`);
     console.log(
-      "🚀 ~ file: articles.service.ts:70 ~ createComponent: ~ data:",
+      "🚀 ~ file: articles.service.ts:85 ~ getArticleComponents: ~ data:",
       data
     );
+
     return data;
   },
 };

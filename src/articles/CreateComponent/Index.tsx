@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, ChangeEvent } from "react";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import { Button, spacing } from "alchemy-tech-ui";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
-import articlesService from "../articles.service";
+import MDEditor from "@uiw/react-md-editor";
 
 const ArticleTitle = styled.div`
   font-size: 1.875rem;
@@ -27,7 +27,13 @@ const CreateArticleContainer = styled.div<CreateArticleContainerProps>`
 
 interface ModalContentProps {
   closeModal: () => void;
+  handleComponentCreated: (
+    articleId: string,
+    text: string,
+    componentOrder: number
+  ) => void;
   articleId: string;
+  componentOrder: number;
 }
 
 const StyledFormik = styled(Formik)`
@@ -37,12 +43,28 @@ const StyledFormik = styled(Formik)`
 export default function ModalContent({
   articleId,
   closeModal,
+  componentOrder,
+  handleComponentCreated,
 }: ModalContentProps) {
   const isDesktop = useMediaQuery({ query: "(min-width: 1042px)" });
+  const [selectedComponentType, setSelectedComponentType] =
+    useState<string>("markdown");
+  const [copy, setCopy] = useState<string>("");
+
+  const handleComponentTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedComponentType(event.target.value);
+  };
+  const handleCopyChange = (
+    value?: string | undefined,
+    event?: React.ChangeEvent<HTMLTextAreaElement> | undefined
+  ) => {
+    console.log("🚀 ~ file: Index.tsx:51 ~ handleCopyChange ~ val:", value);
+    setCopy(value || "");
+  };
 
   return (
     <CreateArticleContainer isDesktop={isDesktop}>
-      <ArticleTitle>Create Article</ArticleTitle>
+      <ArticleTitle>Add Component</ArticleTitle>
       <FormContainer>
         <StyledFormik
           initialValues={{}}
@@ -51,12 +73,15 @@ export default function ModalContent({
           }}
           onSubmit={async (values, { setSubmitting }) => {
             try {
-              await articlesService.createComponent(articleId, "");
+              // TODO pass in componentOrder
+              handleComponentCreated(articleId, copy, componentOrder);
               toast.success("Component created successfully");
             } catch (err) {
               toast.error("An unknown error occured");
+            } finally {
+              setSubmitting(false);
+              closeModal();
             }
-            setSubmitting(false);
           }}
         >
           {({
@@ -69,8 +94,23 @@ export default function ModalContent({
             isSubmitting,
           }) => (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              Markdown Editor Here
-              <Button disabled={isSubmitting}>Save</Button>
+              <label htmlFor="component-type">Select a component type</label>
+              <select
+                id="component-type"
+                className="border border-gray-200 p-4"
+                onChange={handleComponentTypeChange}
+              >
+                <option value="markdown">Markdown</option>
+              </select>
+
+              {
+                // this will need to be a switch later
+                selectedComponentType === "markdown" ? (
+                  <MDEditor value={copy} onChange={handleCopyChange} />
+                ) : null
+              }
+
+              <Button disabled={isSubmitting}>Add</Button>
             </form>
           )}
         </StyledFormik>

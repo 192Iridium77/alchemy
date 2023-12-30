@@ -19,5 +19,8 @@ export enum ComponentType {
 export interface MarkdownComponent {
   id: string;
   type: ComponentType.markdown;
-  content: string;
+  text: string;
 }
+
+// to be union of component types
+export type Component = MarkdownComponent;

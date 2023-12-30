@@ -5,7 +5,7 @@ import Markdown from "../components/Markdown";
 import { Modal } from "../components/Modal";
 import Review from "../components/Review";
 import articlesService from "./articles.service";
-import { Article } from "./article.types";
+import { Article, Component } from "./article.types";
 import imagesService from "../images/image.service";
 import { Image } from "../types";
 import useAuthContext from "../context/useAuthContext";
@@ -15,6 +15,7 @@ import { toast } from "react-toastify";
 import NotFound from "../components/NotFound";
 import Loading from "../components/Loading";
 import EditArticle from "./EditArticle/ModalContent"; // TODO rename to Edit
+import CreateComponent from "./CreateComponent/Index";
 
 const LoadingContainer = styled.div`
   display: flex;
@@ -24,10 +25,11 @@ const LoadingContainer = styled.div`
 
 const AdminTools = styled.div`
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
   top: 40%;
   left: 0;
-  border-radius: 0 ${spacing(1)} ${spacing(1)} 0;
-  background-color: ${colors.system[900]};
 `;
 
 export default function ArticleComponent() {
@@ -35,6 +37,7 @@ export default function ArticleComponent() {
   const { slug } = useParams();
 
   const [article, setArticle] = useState<Article>();
+  const [articleComponents, setArticleComponents] = useState<Component[]>([]);
   const [imageId, setImageId] = useState<string>();
   const [image, setImage] = useState<Image>();
   const [loading, setLoading] = useState<boolean>(true);
@@ -51,22 +54,52 @@ export default function ArticleComponent() {
     createComponentModalRef?.current?.openModal();
   };
 
-  useEffect(() => {
-    async function fetchArticle() {
-      try {
-        if (!slug) return;
-        const fetchedArticle = await articlesService.getArticleBySlug(slug);
-        setImageId(fetchedArticle.imageId);
-        setArticle(fetchedArticle);
-      } catch (error) {
-        toast.error("An unknown error occured while loading the article");
-      } finally {
-        setLoading(false);
-      }
+  async function fetchArticle() {
+    try {
+      if (!slug) return;
+      console.log("FETCHING ARTICLE");
+      const fetchedArticle = await articlesService.getArticleBySlug(slug);
+      setImageId(fetchedArticle.imageId);
+      setArticle(fetchedArticle);
+    } catch (error) {
+      toast.error("An unknown error occured while loading the article");
+    } finally {
+      setLoading(false);
     }
+  }
 
+  async function fetchComponents() {
+    try {
+      if (!article) return;
+      const result = await articlesService.getArticleComponents(article.id);
+      setArticleComponents(result);
+    } catch (error) {
+      toast.error("An unknown error occured while loading the article");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function saveArticle() {
+    // articlesService.updateArticle()
+    // TODO update article, pass in components
+    // get article should return article with components
+  }
+
+  const closeCreateComponentModal = async () => {
+    // @ts-ignore
+    createComponentModalRef?.current?.closeModal();
+    await fetchArticle();
+    await fetchComponents();
+  };
+
+  useEffect(() => {
     fetchArticle();
   }, [slug]);
+
+  useEffect(() => {
+    fetchComponents();
+  }, [article]);
 
   useEffect(() => {
     async function fetchImage() {
@@ -82,18 +115,27 @@ export default function ArticleComponent() {
     fetchImage();
   }, [imageId]);
 
-  if (!loading && !article) return <NotFound></NotFound>;
+  const handleComponentCreated = (component: Component) => {
+    setArticleComponents((previous) => {
+      return [...previous, component];
+    });
+  };
 
-  // todo add components and load components
-  const components: any = [];
+  if (!loading && !article) return <NotFound></NotFound>;
 
   return (
     <div className="Article container mt-8">
       {isAdmin() && article ? (
         <AdminTools>
-          <button onClick={openModalEditArticle} className="p-4 cursor-pointer">
-            <Icon type="Edit" color="white" />
-          </button>
+          <Button admin onClick={openModalEditArticle}>
+            SETTINGS
+          </Button>
+          <Button admin onClick={() => {}}>
+            SEO
+          </Button>
+          <Button admin onClick={saveArticle}>
+            SAVE
+          </Button>
         </AdminTools>
       ) : null}
       {loading ? (
@@ -136,10 +178,23 @@ export default function ArticleComponent() {
           </div>
           <div className="mt-16 text px-8">
             <Markdown>{article?.description}</Markdown>
-            {components.map((component: any, index: number) => {
+            {articleComponents.map((component: Component, index: number) => {
               if (component.type === "markdown") {
                 // @ts-ignore
-                return <Markdown key={index}>{component.text || ""}</Markdown>;
+                return (
+                  <div
+                    className={`mt-4 ${
+                      isAdmin ? "relative border border-purple-200" : ""
+                    }`}
+                  >
+                    <Markdown key={index}>{component.text || ""}</Markdown>
+                    {isAdmin() ? (
+                      <div className="absolute top-0 right-0">
+                        <Button admin>EDIT</Button>
+                      </div>
+                    ) : null}
+                  </div>
+                );
               }
               if (component.type === "review") {
                 // @ts-ignore
@@ -148,17 +203,28 @@ export default function ArticleComponent() {
               return "";
             })}
             {isAdmin() ? (
-              <Button admin onClick={openCreateComponentModal}>
-                Add Component
-              </Button>
+              <div className="flex justify-end">
+                <Button
+                  className="mt-4"
+                  admin
+                  onClick={openCreateComponentModal}
+                >
+                  ADD COMPONENT
+                </Button>
+              </div>
             ) : null}
           </div>
           <Modal ref={editArticleModalRef}>
             <EditArticle articleId={article!.id}></EditArticle>
           </Modal>
-          <Modal ref={createComponentModalRef}>
-            <div>Create Component Form Here</div>
-          </Modal>
+          {/* <Modal ref={createComponentModalRef}>
+            <CreateComponent
+              articleId={article!.id}
+              closeModal={closeCreateComponentModal}
+              componentOrder={articleComponents.length + 1}
+              handleComponentCreated={handleComponentCreated}
+            ></CreateComponent>
+          </Modal> */}
         </>
       )}
     </div>
