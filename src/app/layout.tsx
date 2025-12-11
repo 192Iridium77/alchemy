@@ -4,6 +4,7 @@ import "../index.css";
 import Navigation from "../components/Navigation";
 import Footer from "../Footer";
 import ToastContainer from "../components/ToastContainer";
+import { Analytics } from "@vercel/analytics/next";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={dmSans.className}>
+        <Analytics />
         <Navigation />
         {children}
         <ToastContainer />

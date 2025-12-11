@@ -11,6 +11,7 @@
   "dependencies": {
     "@netlify/plugin-lighthouse": "^5.0.0",
     "@uiw/react-md-editor": "^3.25.6",
+    "@vercel/analytics": "^1.6.1",
     "alchemy-tech-ui": "^3.4.2",
     "dompurify": "^2.3.1",
     "lodash": "^4.17.21",
