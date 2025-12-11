@@ -11,9 +11,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Matt Martin | Software Engineer",
+  title: "Matt Martin",
   description:
-    "Explore my software engineer portfolio showcasing projects with global and local impact. With expertise in Full Stack software development, I bring a blend of creativity and technical prowess to every project.",
+    "Explore my portfolio showcasing projects with global impact. With technical expertise, I bring a blend of creativity and customer focus to every project.",
 };
 
 export default function RootLayout({
