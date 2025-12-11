@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Projects | Matt Martin",
-  description: "Explore my software engineering projects with global and local impact.",
+  description:
+    "Explore my software engineering projects with global and local impact.",
 };
 
 export default function ProjectsPage() {
@@ -13,4 +14,3 @@ export default function ProjectsPage() {
     </div>
   );
 }
-
