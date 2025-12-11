@@ -29,13 +29,12 @@ function Footer() {
             href="https://www.linkedin.com/in/matthew-martin0108/"
             style={{ marginTop: 2 }}
           >
-            <img
-              src="/images/linkedin.webp"
-              alt="linkedin"
-              style={{ filter: "grayscale(100%)" }}
-            />
+            <img src="/images/linkedin.webp" alt="linkedin" />
           </a>
-          <a href="mailto:matt.martin0108@gmail.com">
+          <a
+            href="mailto:matt.martin0108@gmail.com"
+            className="text-xs md:text-base"
+          >
             matt.martin0108@gmail.com
           </a>
         </div>

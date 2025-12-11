@@ -1,5 +1,4 @@
 import About from "../about/Index";
-import { BooksList } from "../books/List";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,14 +11,6 @@ export default function Home() {
   return (
     <>
       <About />
-      <div id="books" className="mt-16">
-        <div className="container">
-          <h3 className="text-xl flex justify-center mb-8">
-            Recommended Books
-          </h3>
-        </div>
-        <BooksList />
-      </div>
     </>
   );
 }
