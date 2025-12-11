@@ -11,7 +11,7 @@ const ProjectCard = ({
 }) => {
   return (
     <a
-      className="p-8 block shadow-lg rounded-md border-solid border-gray-100 border mt-8"
+      className="block shadow-lg rounded-md border-solid border-gray-100 border mt-8"
       href={href}
     >
       <img
@@ -29,13 +29,18 @@ const Projects = () => {
       <h3 className="text-xl flex justify-center"> Projects </h3>
       <div className="flex flex-wrap justify-center mt-8">
         <ProjectCard
+          href="https://leonardo.ai/"
+          imageUrl="/images/leonardoai.png"
+          alt="Leonardo AI"
+        ></ProjectCard>
+        <ProjectCard
           href="https://www.hireup.com.au/"
-          imageUrl="/images/hireup.webp"
+          imageUrl="/images/hireup.png"
           alt="Hireup"
         ></ProjectCard>
         <ProjectCard
           href="https://www.sine.co/"
-          imageUrl="/images/honeywell.webp"
+          imageUrl="/images/honeywell.png"
           alt="Sine Honeywell"
         ></ProjectCard>
         <ProjectCard
@@ -43,6 +48,7 @@ const Projects = () => {
           imageUrl="/images/novasystems.webp"
           alt="Nova Systems"
         ></ProjectCard>
+
         <a className="md:w-4/12 block p-4" href="https://sahmri.org.au/">
           <img
             className="rounded-md border border-gray-50 p-4 shadow-lg"

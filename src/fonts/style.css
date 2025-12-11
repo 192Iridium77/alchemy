@@ -1,6 +1,7 @@
 @font-face {
-    font-family: 'EBGaramond';
-    src: local('EBGaramond'), url(./EBGaramond/EBGaramond-Regular.ttf) format('truetype');
-    /* other formats include: 'woff2', 'truetype, 'opentype',
-                              'embedded-opentype', and 'svg' */
-  }
+  font-family: 'EBGaramond';
+  src: local('EBGaramond'), url(../fonts/EBGaramond/EBGaramond-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

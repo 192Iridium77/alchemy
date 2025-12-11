@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Image } from "../types";
-import imagesService from "../images/image.service";
+"use client";
+
+import React from "react";
+import Link from "next/link";
 import { Article } from "./article.types";
 import styled from "styled-components";
 import { colors } from "alchemy-tech-ui";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { toast } from "react-toastify";
 
 interface ArticleCardProps {
   article: Article;
@@ -24,9 +23,10 @@ const ArticleContainer = styled.div`
   }
 `;
 
-const ArticleLink = styled(Link)`
+const ArticleLink = styled.a`
   display: block;
   color: black;
+  text-decoration: none;
 `;
 
 const ArticleContent = styled.div<ArticleContentProps>`
@@ -53,38 +53,28 @@ const ArticleTitle = styled.h1`
 `;
 
 function ArticleCard({ article }: ArticleCardProps) {
-  const [image, setImage] = useState<Image>();
-
-  useEffect(() => {
-    async function fetchImage() {
-      try {
-        if (article.imageId) {
-          const fetchedImage = await imagesService.getImage(article.imageId);
-          setImage(fetchedImage);
-        }
-      } catch (error) {
-        toast.error("Error fetching image");
-      }
-    }
-
-    fetchImage();
-  }, [article]);
+  const imageUrl = article.image
+    ? `/images/${article.image.filename}.${article.image.extension}`
+    : null;
+  const imageAlt = article.image?.alt || article.title;
 
   return (
     <ArticleContainer>
-      <ArticleLink to={`/articles/${article.slug}`}>
-        <ArticleContent published={article.published}>
-          {image?.url ? (
-            <ArticleImage src={image?.url} alt={image?.alt} width="800" />
-          ) : (
-            <div
-              className="bg-gray-500 w-full"
-              style={{ height: "300px" }}
-            ></div>
-          )}
-          <ArticleTitle>{article.title}</ArticleTitle>
-        </ArticleContent>
-      </ArticleLink>
+      <Link href={`/articles/${article.slug}`} passHref legacyBehavior>
+        <ArticleLink>
+          <ArticleContent published={!article.draft}>
+            {imageUrl ? (
+              <ArticleImage src={imageUrl} alt={imageAlt} width="800" />
+            ) : (
+              <div
+                className="bg-gray-500 w-full"
+                style={{ height: "300px" }}
+              ></div>
+            )}
+            <ArticleTitle>{article.title}</ArticleTitle>
+          </ArticleContent>
+        </ArticleLink>
+      </Link>
     </ArticleContainer>
   );
 }

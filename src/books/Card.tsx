@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Image } from "../types";
-import imagesService from "../images/image.service";
+"use client";
+
+import React from "react";
 import { Book } from "./book.types";
 import styled from "styled-components";
-import { colors } from "alchemy-tech-ui";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface BookCardProps {

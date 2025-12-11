@@ -1,11 +1,12 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.html",
-    "./src/**/*.js",
-    "./src/**/*.css", // Add this line if your styles are in CSS files
-    // Add other paths as needed
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "class", // Enable class-based dark mode
   theme: {
     extend: {
       fontSize: {
@@ -141,5 +142,4 @@ module.exports = {
     extend: {},
   },
   plugins: [require("tailwindcss-aspect-ratio")],
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
 };

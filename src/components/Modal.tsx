@@ -1,3 +1,5 @@
+"use client";
+
 import React, { forwardRef, useImperativeHandle } from "react";
 import ReactModal from "react-modal";
 import styled from "styled-components";
@@ -39,7 +41,9 @@ interface ModalProps {
   children: ReactElement;
 }
 
-ReactModal.setAppElement("#root");
+if (typeof window !== "undefined") {
+  ReactModal.setAppElement("body");
+}
 
 export const Modal = forwardRef(({ children }: ModalProps, ref) => {
   const [modalIsOpen, setIsOpen] = React.useState(false);

@@ -1,3 +1,5 @@
+"use client";
+
 import Card from "./Card";
 import apps from "../data/apps";
 
