@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "../index.css";
-import "../fonts/style.css";
 import Navigation from "../components/Navigation";
 import Footer from "../Footer";
 import ToastContainer from "../components/ToastContainer";
 
-const spaceGrotesk = Space_Grotesk({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={spaceGrotesk.className}>
+      <body className={dmSans.className}>
         <Navigation />
         {children}
         <ToastContainer />
