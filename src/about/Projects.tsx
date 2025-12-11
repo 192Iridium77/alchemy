@@ -76,9 +76,9 @@ const Projects = ({ limit }: { limit?: number }) => {
     />,
     <ProjectCard
       key="honeywell"
-      href="https://www.sine.co/"
-      imageUrl="/images/honeywell.png"
-      alt="Sine Honeywell"
+      href="https://www.honeywell.com/us/en"
+      imageUrl="/images/honeywell.jpg"
+      alt="Honeywell"
     />,
     <ProjectCard
       key="novasystems"

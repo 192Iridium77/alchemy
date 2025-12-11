@@ -16,13 +16,13 @@ const Certificates = () => {
         {certificatesData.map((certificate, index) => (
           <a
             key={index}
-            className="md:w-6/12 p-4 block"
+            className="md:w-6/12 block"
             href={`/certificates/${certificate}.pdf`}
           >
             <img
               src={`/certificates/${certificate}.jpeg`}
               alt={`Certificate ${index + 1}`}
-              className="shadow-md p-2"
+              className="shadow-md"
             />
           </a>
         ))}
