@@ -36,7 +36,7 @@ function Footer() {
             />
           </a>
           <a href="mailto:matt.martin0108@gmail.com">
-            <EmailIcon></EmailIcon>
+            matt.martin0108@gmail.com
           </a>
         </div>
         <div className="text-xs">Matthew Martin</div>

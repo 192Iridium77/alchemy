@@ -1,6 +1,6 @@
 import React from "react";
 
-const Summary = () => {
+export const Hero = () => {
   return (
     <div
       id="contacts"
@@ -10,9 +10,9 @@ const Summary = () => {
       }}
     >
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center h-full px-4 md:px-8">
-        <div className="flex flex-col items-start">
-          <h1 className="text-2xl md:text-4xl uppercase mt-32 md:mt-0">
-            Matt
+        <div className="flex flex-col">
+          <h1 className="text-2xl md:text-4xl mt-32 md:mt-0">
+            Matthew
             <br />
             Martin
           </h1>
@@ -21,7 +21,7 @@ const Summary = () => {
           <img
             src="/images/profileimage2.png"
             alt="Matt Martin"
-            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64 h-96 md:w-[400px] md:h-[550px] object-cover bg-white shadow-lg"
+            className="absolute bottom-0 left-3/4 transform -translate-x-3/4 w-64 h-96 md:w-[300px] md:h-[400px] object-cover border border-gray-100 shadow-lg"
             style={{ filter: "grayscale(100%)" }}
           />
         </div>
@@ -29,5 +29,3 @@ const Summary = () => {
     </div>
   );
 };
-
-export default Summary;

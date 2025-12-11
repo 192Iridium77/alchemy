@@ -1,14 +1,12 @@
 import React from "react";
-import Certifications from "./Certifications";
 import Projects from "./Projects";
-import Summary from "./Summary";
-import WorkWithMe from "./WorkWithMe";
+import { Hero } from "./Hero";
 import Companies from "./Companies";
 
 export default function About() {
   return (
     <>
-      <Summary />
+      <Hero />
       <div className="container mt-12">
         <Companies />
         <Projects />

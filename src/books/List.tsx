@@ -27,7 +27,7 @@ const Tag = styled(Button)<TagProps>`
   }}
 `;
 
-function ArticlesList() {
+export const BooksList = () => {
   const [selectedFilter, setSelectedFilter] = useState("");
 
   const books: any[] = [
@@ -67,13 +67,6 @@ function ArticlesList() {
       tag: "wealth",
     },
     {
-      title: "Money with Jess",
-      image: {
-        url: "https://m.media-amazon.com/images/I/51HSRJfjAdL._SX258_BO1,204,203,200_QL70_ML2_.jpg",
-      },
-      tag: "wealth",
-    },
-    {
       title: "The Barefoot Investor",
       image: {
         url: "https://m.media-amazon.com/images/I/51ghP8dUZ1L._SY445_SX342_.jpg",
@@ -102,23 +95,9 @@ function ArticlesList() {
       tag: "business",
     },
     {
-      title: "Outlive",
-      image: {
-        url: "https://m.media-amazon.com/images/I/41PEArjEK-L._SY445_SX342_.jpg",
-      },
-      tag: "health",
-    },
-    {
       title: "Lifespan",
       image: {
         url: "https://m.media-amazon.com/images/I/51Uq+wgRJCL._SY445_SX342_.jpg",
-      },
-      tag: "health",
-    },
-    {
-      title: "Breath",
-      image: {
-        url: "https://m.media-amazon.com/images/I/41aYi-hfFOL._SY445_SX342_.jpg",
       },
       tag: "health",
     },
@@ -133,13 +112,6 @@ function ArticlesList() {
       title: "The Telomere Effect",
       image: {
         url: "https://m.media-amazon.com/images/I/51sX-q+6XmL._SY445_SX342_.jpg",
-      },
-      tag: "health",
-    },
-    {
-      title: "The molecule of more",
-      image: {
-        url: "https://m.media-amazon.com/images/I/41155JzBFmL._SY445_SX342_.jpg",
       },
       tag: "health",
     },
@@ -179,13 +151,6 @@ function ArticlesList() {
       tag: "business",
     },
     {
-      title: "Leaders Eat Last",
-      image: {
-        url: "https://m.media-amazon.com/images/I/51N7FEOlx5L._SY445_SX342_.jpg",
-      },
-      tag: "business",
-    },
-    {
       title: "Atomic Habits",
       image: {
         url: "https://m.media-amazon.com/images/I/51-nXsSRfZL._SY445_SX342_.jpg",
@@ -203,13 +168,6 @@ function ArticlesList() {
       title: "The Mountain is You",
       image: {
         url: "https://m.media-amazon.com/images/I/41N62t+ANTL._SY445_SX342_.jpg",
-      },
-      tag: "growth",
-    },
-    {
-      title: "The 5AM Club",
-      image: {
-        url: "https://m.media-amazon.com/images/I/41alUjROZ5L._SY445_SX342_.jpg",
       },
       tag: "growth",
     },
@@ -245,13 +203,6 @@ function ArticlesList() {
       title: "This is Marketing",
       image: {
         url: "https://m.media-amazon.com/images/I/41fSSCIrnjL._SY445_SX342_.jpg",
-      },
-      tag: "business",
-    },
-    {
-      title: "Ready, Aim, Fire",
-      image: {
-        url: "https://m.media-amazon.com/images/I/4106jRy2-IL._SY344_BO1,204,203,200_QL70_ML2_.jpg",
       },
       tag: "business",
     },
@@ -296,13 +247,6 @@ function ArticlesList() {
         url: "https://m.media-amazon.com/images/I/41aKUPBkc1L._SY445_SX342_.jpg",
       },
       tag: "growth",
-    },
-    {
-      title: "Gonzo Capitalism",
-      image: {
-        url: "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51NrxRIutuL._SY445_SX342_.jpg",
-      },
-      tag: "finance",
     },
   ];
 
@@ -363,6 +307,4 @@ function ArticlesList() {
       </div>
     </div>
   );
-}
-
-export default ArticlesList;
+};

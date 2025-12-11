@@ -1,6 +1,5 @@
 import About from "../about/Index";
-import BooksList from "../books/List";
-import AppsList from "../apps/List";
+import { BooksList } from "../books/List";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../components/Button";
 
 const CompanyCard = ({
   href,
@@ -10,16 +11,14 @@ const CompanyCard = ({
   imageUrl: string;
 }) => {
   return (
-    <a
-      className="block shadow-lg rounded-md border-solid border-gray-100 border mt-8"
-      href={href}
-    >
-      <img
-        className="rounded-md border border-gray-50"
-        src={imageUrl}
-        alt={alt}
-      />
-    </a>
+    <div className="block shadow-lg rounded-md border-solid border-gray-100 border mt-8 relative group">
+      <div className="relative rounded-md border border-gray-50 overflow-hidden">
+        <img className="rounded-md w-full h-auto" src={imageUrl} alt={alt} />
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+          <Button href={href}>View</Button>
+        </div>
+      </div>
+    </div>
   );
 };
 
