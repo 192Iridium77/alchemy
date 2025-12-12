@@ -88,7 +88,7 @@ const Projects = ({ limit }: { limit?: number }) => {
       imageUrl="/images/leonardoai.png"
       alt="Leonardo AI"
       title="Canva | Leonardo.Ai"
-      description="I joined 2024 as a Senior Frontend Software Engineer before the Canva acquisition. I have worked on UI performance for image feeds, Blueprints, Optimising GraphQL Caching and more."
+      description="Senior Frontend Software Engineer (2024) before the Canva acquisition. Worked on UI performance for image feeds, Blueprints, and optimizing GraphQL caching."
     />,
     <ProjectCard
       key="hireup"
@@ -96,7 +96,7 @@ const Projects = ({ limit }: { limit?: number }) => {
       imageUrl="/images/hireup.png"
       alt="Hireup"
       title="Hireup"
-      description="I joined 2023 as a Senior Fullstack Engineer where I worked on upgrading tooling, reduced build time by 3x by fixing a styling bottleneck, fixed a pre-rendering related password vulnerability and built features with high Accessibility requirements."
+      description="Senior Fullstack Engineer (2023). Upgraded tooling, reduced build time by 3x by fixing a styling bottleneck, fixed a pre-rendering related password vulnerability, and built features with high accessibility requirements."
     />,
     <ProjectCard
       key="honeywell"
@@ -104,7 +104,7 @@ const Projects = ({ limit }: { limit?: number }) => {
       imageUrl="/images/honeywell.jpg"
       alt="Honeywell"
       title="Honeywell | Sine"
-      description="I joined 2021, I worked on huge third party integrations with thousands of Honeywell Global subsidiaries, created a GraphQL wrapper over microservices and built a scheduling app for 16k bangladore office workers during the covid-19 pandemic."
+      description="Worked on large third-party integrations with thousands of Honeywell Global subsidiaries (2021). Created a GraphQL wrapper over microservices and built a scheduling app for 16k Bangalore office workers during the COVID-19 pandemic."
     />,
     <ProjectCard
       key="novasystems"
