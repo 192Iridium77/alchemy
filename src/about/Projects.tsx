@@ -6,14 +6,19 @@ const ProjectCard = ({
   href,
   alt,
   imageUrl,
+  title,
+  description,
 }: {
   href: string;
   alt: string;
   imageUrl: string;
+  title: string;
+  description?: string;
 }) => {
   return (
-    <div className="block shadow-lg rounded-md border-solid border-gray-100 border mt-8 relative group w-full">
-      <div className="relative rounded-md border border-gray-50 overflow-hidden w-full">
+    <div className="block mt-8 relative group w-full">
+      <h3 className="text-lg font-semibold mb-2 text-left p-4">{title}</h3>
+      <div className="relative rounded-md border border-gray-200 shadow-lg overflow-hidden w-full">
         <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
           <Image
             src={imageUrl}
@@ -27,6 +32,11 @@ const ProjectCard = ({
           <Button href={href}>View</Button>
         </div>
       </div>
+      {description && (
+        <p className="text-sm text-gray-600 mt-4 px-4 min-h-[100px]">
+          {description}
+        </p>
+      )}
     </div>
   );
 };
@@ -35,14 +45,19 @@ const OtherProjectCard = ({
   href,
   alt,
   imageUrl,
+  title,
+  description,
 }: {
   href: string;
   alt: string;
   imageUrl: string;
+  title: string;
+  description?: string;
 }) => {
   return (
-    <div className="md:w-4/12 block p-4 relative group w-full">
-      <div className="relative rounded-md border border-gray-50 overflow-hidden shadow-lg w-full">
+    <div className="block relative group w-full">
+      <h3 className="text-lg font-semibold mb-2 text-left p-4">{title}</h3>
+      <div className="relative rounded-md border border-gray-200 shadow-lg overflow-hidden w-full">
         <div className="relative w-full" style={{ aspectRatio: "9/20" }}>
           <Image
             src={imageUrl}
@@ -56,6 +71,11 @@ const OtherProjectCard = ({
           <Button href={href}>View</Button>
         </div>
       </div>
+      {description && (
+        <p className="text-sm text-gray-600 mt-4 px-4 min-h-[100px]">
+          {description}
+        </p>
+      )}
     </div>
   );
 };
@@ -67,78 +87,94 @@ const Projects = ({ limit }: { limit?: number }) => {
       href="https://leonardo.ai/"
       imageUrl="/images/leonardoai.png"
       alt="Leonardo AI"
+      title="Canva | Leonardo.Ai"
+      description="I joined 2024 as a Senior Frontend Software Engineer before the Canva acquisition. I have worked on UI performance for image feeds, Blueprints, Optimising GraphQL Caching and more."
     />,
     <ProjectCard
       key="hireup"
       href="https://www.hireup.com.au/"
       imageUrl="/images/hireup.png"
       alt="Hireup"
+      title="Hireup"
+      description="I joined 2023 as a Senior Fullstack Engineer where I worked on upgrading tooling, reduced build time by 3x by fixing a styling bottleneck, fixed a pre-rendering related password vulnerability and built features with high Accessibility requirements."
     />,
     <ProjectCard
       key="honeywell"
       href="https://www.honeywell.com/us/en"
       imageUrl="/images/honeywell.jpg"
       alt="Honeywell"
+      title="Honeywell | Sine"
+      description="I joined 2021, I worked on huge third party integrations with thousands of Honeywell Global subsidiaries, created a GraphQL wrapper over microservices and built a scheduling app for 16k bangladore office workers during the covid-19 pandemic."
     />,
     <ProjectCard
       key="novasystems"
       href="https://www.novasystems.com/au"
       imageUrl="/images/novasystems.webp"
       alt="Nova Systems"
+      title="Nova Systems"
     />,
     <OtherProjectCard
       key="sahmri"
       href="https://sahmri.org.au/"
       imageUrl="/images/sahmri.webp"
       alt="SAHMRI"
+      title="SAHMRI"
     />,
     <OtherProjectCard
       key="navalgroup"
       href="https://www.naval-group.com/en/worldwide-presence#p-432-australia"
       imageUrl="/images/navalgroup.webp"
       alt="Naval Group"
+      title="Naval Group"
     />,
     <OtherProjectCard
       key="adelaidehills"
       href="https://www.visitadelaidehills.com.au/"
       imageUrl="/images/AdelaideHills.webp"
       alt="visit adelaide hills"
+      title="Adelaide Hills"
     />,
     <OtherProjectCard
       key="sited"
       href="https://www.buildsited.com/"
       imageUrl="/images/sited.webp"
       alt="Sited"
+      title="Sited"
     />,
     <OtherProjectCard
       key="hendercare"
       href="https://www.hendercare.com.au/"
       imageUrl="/images/hendercare.webp"
       alt="Hendercare"
+      title="Hendercare"
     />,
     <OtherProjectCard
       key="sam"
       href="https://www.samuseum.sa.gov.au/"
       imageUrl="/images/SAM.webp"
       alt="SA Museum"
+      title="SA Museum"
     />,
     <OtherProjectCard
       key="barossa"
       href="https://www.barossa.com/"
       imageUrl="/images/Barossa.webp"
       alt="Barossa"
+      title="Barossa"
     />,
     <OtherProjectCard
       key="uc"
       href="https://www.unitingcommunities.org/"
       imageUrl="/images/UC.webp"
       alt="Uniting Communities"
+      title="Uniting Communities"
     />,
     <OtherProjectCard
       key="bloom"
       href="https://bloombarflowers.com/"
       imageUrl="/images/bloom.webp"
       alt="Bloombar Flowers"
+      title="Bloombar Flowers"
     />,
   ];
 
@@ -146,8 +182,8 @@ const Projects = ({ limit }: { limit?: number }) => {
 
   return (
     <div id="projects" className="py-8">
-      <h3 className="text-xl flex justify-center">Projects</h3>
-      <div className="flex flex-wrap justify-center mt-8">
+      <h2 className="text-xl flex justify-center">Projects</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         {displayedProjects}
       </div>
     </div>
