@@ -12,7 +12,7 @@ export const Hero = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center h-full px-4 md:px-8">
         <div className="flex flex-col">
           <h1 className="text-2xl md:text-4xl mt-32 md:mt-0">
-            Matthew
+            Matt
             <br />
             Martin
           </h1>

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Matt Martin",
   description:
-    "Explore my portfolio showcasing projects with global and local impact. With technical expertise, I bring a blend of creativity and technical prowess to every project. Dive into a collection of my work that reflects a commitment to rapid prototyping, clean code, user-centric design, and a relentless pursuit of excellence.",
+    "Portfolio showcasing projects with global and local impact. A blend of creativity and technical expertise in rapid prototyping, clean code, and user-centric design.",
   openGraph: {
     title: "Matt Martin",
     description:
