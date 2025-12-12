@@ -19,10 +19,10 @@ export const Hero = () => {
         </div>
         <div className="relative flex-1 h-full w-full md:w-auto overflow-visible">
           <img
-            src="/images/profileimage2.png"
+            src="/images/profileimage3.png"
             alt="Matt Martin"
-            className="absolute bottom-0 left-3/4 transform -translate-x-3/4 w-64 h-96 md:w-[300px] md:h-[400px] object-cover border border-gray-100 shadow-lg"
-            style={{ filter: "grayscale(100%)" }}
+            className="absolute bottom-0 right-0 w-full h-full md:w-[500px] md:h-[600px] object-cover"
+            // style={{ filter: "grayscale(100%)" }}
           />
         </div>
       </div>
