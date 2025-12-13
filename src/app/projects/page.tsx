@@ -1,4 +1,4 @@
-import Projects from "../../about/Projects";
+import Projects from "../about/Projects";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

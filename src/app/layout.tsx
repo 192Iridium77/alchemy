@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "../index.css";
-import Navigation from "../components/Navigation";
-import Footer from "../Footer";
-import ToastContainer from "../components/ToastContainer";
+import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
+import ToastContainer from "./components/ToastContainer";
 import { Analytics } from "@vercel/analytics/next";
 
 const dmSans = DM_Sans({

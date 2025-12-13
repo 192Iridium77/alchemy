@@ -1,4 +1,4 @@
-import Companies from "../../about/Companies";
+import Companies from "../about/Companies";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,4 +13,3 @@ export default function CompaniesPage() {
     </div>
   );
 }
-

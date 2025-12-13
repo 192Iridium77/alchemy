@@ -1,4 +1,4 @@
-import About from "../about/Index";
+import About from "./about/Index";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -1,4 +1,4 @@
-import Certificates from "../../about/Certifications";
+import Certificates from "../about/Certifications";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,4 +13,3 @@ export default function CertificationsPage() {
     </div>
   );
 }
-
